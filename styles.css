@@ -63,6 +63,19 @@
     /* Тени */
     --shadow-small: 0px 12px 24px 0px rgba(34, 34, 34, 0.3);
     --shadow-regular: 0px 12px 24px 0px rgba(114, 110, 110, 0.24);
+    
+    /* Система размеров */
+    --size-0: 0px;
+    --size-xxxs: 2px;
+    --size-xxs: 4px;
+    --size-xs: 6px;
+    --size-s: 8px;
+    --size-s-spec: 12px;
+    --size-m: 16px;
+    --size-m-spec: 20px;
+    --size-l: 24px;
+    --size-xl: 32px;
+    --size-xxl: 40px;
 }
 
 /* Цветовая палитра - Dark Theme */
@@ -113,6 +126,19 @@
     /* Тени */
     --shadow-small: 0px 8px 16px 0px rgba(11, 11, 11, 0.7);
     --shadow-regular: 0px 12px 24px 0px rgba(0, 0, 0, 0.4);
+    
+    /* Система размеров */
+    --size-0: 0px;
+    --size-xxxs: 2px;
+    --size-xxs: 4px;
+    --size-xs: 6px;
+    --size-s: 8px;
+    --size-s-spec: 12px;
+    --size-m: 16px;
+    --size-m-spec: 20px;
+    --size-l: 24px;
+    --size-xl: 32px;
+    --size-xxl: 40px;
 }
 
 body {
@@ -710,5 +736,59 @@ body {
     .typography-specs {
         flex-direction: column;
         gap: 8px;
+    }
+}
+
+/* Стили для системы размеров */
+.size-system {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.size-item {
+    display: grid;
+    grid-template-columns: 80px 40px 1fr;
+    align-items: center;
+    gap: 16px;
+    min-height: 20px;
+}
+
+.size-label {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.size-value {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    text-align: right;
+}
+
+.size-visual {
+    height: 16px;
+    background-color: var(--color-red);
+    border-radius: 2px;
+    min-width: 0;
+}
+
+/* Адаптивность для системы размеров */
+@media (max-width: 768px) {
+    .size-system {
+        gap: 12px;
+    }
+    
+    .size-item {
+        grid-template-columns: 70px 35px 1fr;
+        gap: 12px;
     }
 }
