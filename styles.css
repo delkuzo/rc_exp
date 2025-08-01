@@ -173,18 +173,18 @@ body {
     padding: 0 2px;
     background: none;
     border: none;
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-header-1-font-family);
+    font-weight: var(--typography-header-1-font-weight);
+    font-size: var(--typography-header-1-font-size);
+    line-height: var(--typography-header-1-line-height);
+    letter-spacing: var(--typography-header-1-letter-spacing);
     color: var(--color-text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .nav-tab.active {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--typography-header-1-font-weight);
     position: relative;
 }
 
@@ -256,21 +256,21 @@ body {
 }
 
 .placeholder-content h2 {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-header-1-font-family);
+    font-weight: var(--typography-header-1-font-weight);
+    font-size: var(--typography-header-1-font-size);
+    line-height: var(--typography-header-1-line-height);
+    letter-spacing: var(--typography-header-1-letter-spacing);
     color: var(--color-text-primary);
     margin-bottom: 16px;
 }
 
 .placeholder-content p {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
     color: var(--color-text-secondary);
 }
 
@@ -280,11 +280,11 @@ body {
 }
 
 .documentation-content h2 {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-header-1-font-family);
+    font-weight: var(--typography-header-1-font-weight);
+    font-size: var(--typography-header-1-font-size);
+    line-height: var(--typography-header-1-line-height);
+    letter-spacing: var(--typography-header-1-letter-spacing);
     color: var(--color-text-primary);
     margin-bottom: 24px;
 }
@@ -294,11 +294,11 @@ body {
 }
 
 .doc-section h3 {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-header-1-font-family);
+    font-weight: var(--typography-header-1-font-weight);
+    font-size: var(--typography-header-1-font-size);
+    line-height: var(--typography-header-1-line-height);
+    letter-spacing: var(--typography-header-1-letter-spacing);
     color: var(--color-text-primary);
     margin-bottom: 12px;
 }
@@ -309,18 +309,18 @@ body {
 }
 
 .doc-list li {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-relaxed);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
     color: var(--color-text-secondary);
     margin-bottom: 8px;
     padding-left: 0;
 }
 
 .doc-list li strong {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--typography-body-font-weight);
     color: var(--color-text-primary);
 }
 
@@ -365,11 +365,11 @@ body {
 }
 
 .block-title {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-normal);
-    letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
     color: var(--color-text-primary);
 }
 
