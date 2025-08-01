@@ -5,14 +5,120 @@
     box-sizing: border-box;
 }
 
+/* Цветовая палитра - Light Theme */
+:root {
+    /* Основные цвета */
+    --color-primary: #324CF0;
+    --color-primary-hover: #7A82E5;
+    --color-primary-active: #004DA6;
+    
+    --color-secondary: #8822D0;
+    --color-secondary-hover: #F8604A;
+    --color-secondary-active: #E45844;
+    
+    /* Семантические цвета */
+    --color-success: #55A867;
+    --color-warning: #FFBF1A;
+    --color-error: #F8604A;
+    --color-info: #3884DB;
+    
+    /* Нейтральные цвета */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    
+    /* Фоновые цвета */
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #F2F2F2;
+    --color-bg-tertiary: rgba(0, 0, 0, 0.05);
+    --color-bg-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Текстовые цвета */
+    --color-text-primary: rgba(0, 0, 0, 0.9);
+    --color-text-secondary: rgba(0, 0, 0, 0.4);
+    --color-text-tertiary: rgba(0, 0, 0, 0.5);
+    --color-text-disabled: rgba(0, 0, 0, 0.7);
+    
+    /* Границы */
+    --color-border-primary: rgba(0, 0, 0, 0.15);
+    --color-border-secondary: rgba(0, 0, 0, 0.1);
+    --color-border-light: rgba(0, 0, 0, 0.08);
+    
+    /* Hover состояния */
+    --color-hover: rgba(0, 0, 0, 0.08);
+    --color-hover-light: rgba(255, 255, 255, 0.18);
+    
+    /* Контролы */
+    --color-control: rgba(0, 0, 0, 0.05);
+    --color-control-light: rgba(255, 255, 255, 0.15);
+    
+    /* Тени */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Цветовая палитра - Dark Theme */
+[data-theme="dark"] {
+    /* Основные цвета */
+    --color-primary: #7A82E5;
+    --color-primary-hover: #324CF0;
+    --color-primary-active: #3884DB;
+    
+    --color-secondary: #F8604A;
+    --color-secondary-hover: #E45844;
+    --color-secondary-active: #8822D0;
+    
+    /* Семантические цвета */
+    --color-success: #24904F;
+    --color-warning: #FFDB4D;
+    --color-error: #F8604A;
+    --color-info: #3884DB;
+    
+    /* Нейтральные цвета */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    
+    /* Фоновые цвета */
+    --color-bg-primary: #252525;
+    --color-bg-secondary: #181818;
+    --color-bg-tertiary: rgba(255, 255, 255, 0.15);
+    --color-bg-overlay: rgba(0, 0, 0, 0.7);
+    
+    /* Текстовые цвета */
+    --color-text-primary: rgba(255, 255, 255, 0.9);
+    --color-text-secondary: rgba(255, 255, 255, 0.5);
+    --color-text-tertiary: rgba(255, 255, 255, 0.4);
+    --color-text-disabled: rgba(255, 255, 255, 0.2);
+    
+    /* Границы */
+    --color-border-primary: rgba(255, 255, 255, 0.2);
+    --color-border-secondary: rgba(255, 255, 255, 0.1);
+    --color-border-light: rgba(255, 255, 255, 0.18);
+    
+    /* Hover состояния */
+    --color-hover: rgba(255, 255, 255, 0.18);
+    --color-hover-light: rgba(0, 0, 0, 0.08);
+    
+    /* Контролы */
+    --color-control: rgba(255, 255, 255, 0.15);
+    --color-control-light: rgba(0, 0, 0, 0.05);
+    
+    /* Тени */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+}
+
 body {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
-    background-color: #ffffff;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -67,7 +173,7 @@ body {
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -84,7 +190,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--color-text-primary);
     border-radius: 2px;
 }
 
@@ -92,7 +198,7 @@ body {
 .theme-switcher {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: var(--color-bg-secondary);
     border-radius: 40px;
     padding: 4px;
 }
@@ -307,5 +413,67 @@ body {
     
     .content-blocks {
         max-width: 100%;
+    }
+} 
+
+/* Стили для цветовой палитры */
+.color-palette {
+    padding: 20px 0;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 16px;
+    justify-items: center;
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.color-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.color-name {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-primary);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.color-value {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.2;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Адаптивность для цветовой палитры */
+@media (max-width: 768px) {
+    .color-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 12px;
+    }
+    
+    .color-circle {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .color-name {
+        font-size: 10px;
     }
 } 
