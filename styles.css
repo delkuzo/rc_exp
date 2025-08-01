@@ -62,10 +62,8 @@
     --color-control-light: rgba(255, 255, 255, 0.15);
     
     /* Тени */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-small: 0px 12px 24px 0px rgba(34, 34, 34, 0.3);
+    --shadow-regular: 0px 12px 24px 0px rgba(114, 110, 110, 0.24);
 }
 
 /* Цветовая палитра - Dark Theme */
@@ -98,6 +96,10 @@
     /* Текстовые цвета */
     --color-text-primary: rgba(255, 255, 255, 0.9);
     --color-text-secondary: rgba(255, 255, 255, 0.6);
+    
+    /* Тени */
+    --shadow-small: 0px 8px 16px 0px rgba(11, 11, 11, 0.7);
+    --shadow-regular: 0px 12px 24px 0px rgba(0, 0, 0, 0.4);
     --color-text-tertiary: rgba(255, 255, 255, 0.4);
     --color-text-disabled: rgba(255, 255, 255, 0.2);
     
@@ -500,7 +502,6 @@ body {
     width: 120px;
     height: 80px;
     background-color: var(--color-bg-primary);
-    border: 1px solid var(--color-border-primary);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -512,20 +513,12 @@ body {
     padding: 8px;
 }
 
-.shadow-box.shadow-sm {
-    box-shadow: var(--shadow-sm);
+.shadow-box.shadow-small {
+    box-shadow: var(--shadow-small);
 }
 
-.shadow-box.shadow-md {
-    box-shadow: var(--shadow-md);
-}
-
-.shadow-box.shadow-lg {
-    box-shadow: var(--shadow-lg);
-}
-
-.shadow-box.shadow-xl {
-    box-shadow: var(--shadow-xl);
+.shadow-box.shadow-regular {
+    box-shadow: var(--shadow-regular);
 }
 
 .shadow-name {
