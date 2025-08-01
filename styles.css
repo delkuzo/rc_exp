@@ -163,7 +163,7 @@ body {
 /* Верхняя панель */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 40px 40px 0;
     gap: 20px;
@@ -173,7 +173,7 @@ body {
 .navigation {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
 }
 
 .nav-list {
