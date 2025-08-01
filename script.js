@@ -17,31 +17,62 @@ const toggleBlock = (blockId) => {
 };
 
 // Функция для переключения темы
-const toggleTheme = (theme) => {
-    const lightBtn = document.querySelector('[data-theme="light"]');
-    const darkBtn = document.querySelector('[data-theme="dark"]');
+const toggleTheme = () => {
+    const currentTheme = document.body.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    console.log('Переключение темы с', currentTheme, 'на', newTheme);
+    
+    // Устанавливаем новую тему
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Обновляем иконку
+    updateThemeIcon(newTheme);
+    
+    console.log('Тема установлена:', newTheme);
+};
+
+// Функция для обновления иконки
+const updateThemeIcon = (theme) => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('.theme-icon');
     
     if (theme === 'light') {
-        lightBtn.classList.add('active');
-        darkBtn.classList.remove('active');
-        document.body.classList.remove('dark-theme');
+        // Иконка солнца для светлой темы
+        icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
     } else {
-        darkBtn.classList.add('active');
-        lightBtn.classList.remove('active');
-        document.body.classList.add('dark-theme');
+        // Иконка луны для темной темы
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
     }
 };
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    // Обработчики для переключения темы
-    const themeButtons = document.querySelectorAll('.theme-btn');
-    themeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const theme = btn.getAttribute('data-theme');
-            toggleTheme(theme);
+    console.log('DOM загружен, инициализация темы...');
+    
+    // Инициализация темы
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    console.log('Сохраненная тема:', savedTheme);
+    
+    // Устанавливаем тему
+    document.body.setAttribute('data-theme', savedTheme);
+    
+    // Обновляем иконку
+    updateThemeIcon(savedTheme);
+    
+    // Обработчик для переключения темы
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Клик по кнопке темы');
+            toggleTheme();
         });
-    });
+    } else {
+        console.error('Кнопка темы не найдена!');
+    }
     
     // Обработчики для навигации
     const navTabs = document.querySelectorAll('.nav-tab');

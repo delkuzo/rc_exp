@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+/* Универсальный переход для смены темы */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Исключаем тумблер из универсального перехода */
+.theme-btn {
+    transition: all 0.3s ease !important;
+}
+
 /* Цветовая палитра - Light Theme */
 :root {
     /* Основные цвета */
@@ -87,21 +97,21 @@
     
     /* Текстовые цвета */
     --color-text-primary: rgba(255, 255, 255, 0.9);
-    --color-text-secondary: rgba(255, 255, 255, 0.5);
+    --color-text-secondary: rgba(255, 255, 255, 0.6);
     --color-text-tertiary: rgba(255, 255, 255, 0.4);
     --color-text-disabled: rgba(255, 255, 255, 0.2);
     
     /* Границы */
     --color-border-primary: rgba(255, 255, 255, 0.2);
-    --color-border-secondary: rgba(255, 255, 255, 0.1);
+    --color-border-secondary: rgba(255, 255, 255, 0.15);
     --color-border-light: rgba(255, 255, 255, 0.18);
     
     /* Hover состояния */
-    --color-hover: rgba(255, 255, 255, 0.18);
+    --color-hover: rgba(255, 255, 255, 0.12);
     --color-hover-light: rgba(0, 0, 0, 0.08);
     
     /* Контролы */
-    --color-control: rgba(255, 255, 255, 0.15);
+    --color-control: rgba(255, 255, 255, 0.08);
     --color-control-light: rgba(0, 0, 0, 0.05);
     
     /* Тени */
@@ -121,6 +131,7 @@ body {
     background-color: var(--color-bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .container {
@@ -175,7 +186,7 @@ body {
     letter-spacing: var(--letter-spacing-tight);
     color: var(--color-text-primary);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-tab.active {
@@ -195,40 +206,34 @@ body {
 }
 
 /* Переключатель темы */
-.theme-switcher {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-bg-secondary);
-    border-radius: 40px;
-    padding: 4px;
-}
-
-.theme-btn {
+.theme-toggle-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    border-radius: 40px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-control);
+    border: 1px solid var(--color-border-secondary);
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: rgba(0, 0, 0, 0.9);
+    transition: all 0.3s ease;
+    color: var(--color-text-primary);
+    padding: 0;
 }
 
-.theme-btn.active {
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.theme-toggle-btn:hover {
+    background-color: var(--color-hover);
 }
 
-.theme-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.theme-toggle-btn:active {
+    transform: scale(0.95);
 }
 
-.icon {
+.theme-icon {
     width: 16px;
     height: 16px;
+    color: var(--color-text-primary);
+    transition: color 0.3s ease;
 }
 
 /* Основной контент */
@@ -262,7 +267,7 @@ body {
     font-size: var(--font-size-2xl);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
     margin-bottom: 16px;
 }
 
@@ -272,7 +277,7 @@ body {
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--color-text-secondary);
 }
 
 /* Документация */
@@ -286,7 +291,7 @@ body {
     font-size: var(--font-size-2xl);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
     margin-bottom: 24px;
 }
 
@@ -300,7 +305,7 @@ body {
     font-size: var(--font-size-lg);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
     margin-bottom: 12px;
 }
 
@@ -315,33 +320,33 @@ body {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-relaxed);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--color-text-secondary);
     margin-bottom: 8px;
     padding-left: 0;
 }
 
 .doc-list li strong {
     font-weight: var(--font-weight-medium);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
 }
 
 .doc-list a {
-    color: #F8604A;
+    color: var(--color-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .doc-list a:hover {
-    color: #e55542;
+    color: var(--color-secondary-hover);
     text-decoration: underline;
 }
 
 /* Блоки контента */
 .content-block {
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-border-primary);
     border-radius: 16px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, border-color 0.3s ease;
 }
 
 .content-block.collapsed .block-content {
@@ -362,7 +367,7 @@ body {
 }
 
 .block-header:hover {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: var(--color-hover);
 }
 
 .block-title {
@@ -371,13 +376,13 @@ body {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-tight);
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
 }
 
 .chevron-icon {
     width: 16px;
     height: 16px;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-primary);
     transition: transform 0.3s ease;
 }
 
@@ -476,4 +481,64 @@ body {
     .color-name {
         font-size: 10px;
     }
-} 
+}
+
+/* Стили для демонстрации теней */
+.shadow-demo {
+    padding: 20px 0;
+}
+
+.shadow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.shadow-box {
+    width: 120px;
+    height: 80px;
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    text-align: center;
+    padding: 8px;
+}
+
+.shadow-box.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-box.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-box.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.shadow-box.shadow-xl {
+    box-shadow: var(--shadow-xl);
+}
+
+.shadow-name {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.shadow-value {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
