@@ -162,6 +162,64 @@ body {
     color: rgba(0, 0, 0, 0.7);
 }
 
+/* Документация */
+.documentation-content {
+    padding: 20px;
+}
+
+.documentation-content h2 {
+    font-family: 'YS Text', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 24px;
+}
+
+.doc-section {
+    margin-bottom: 32px;
+}
+
+.doc-section h3 {
+    font-family: 'YS Text', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 12px;
+}
+
+.doc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.doc-list li {
+    font-family: 'YS Text', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 8px;
+    padding-left: 0;
+}
+
+.doc-list li strong {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.doc-list a {
+    color: #F8604A;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.doc-list a:hover {
+    color: #e55542;
+    text-decoration: underline;
+}
+
 /* Блоки контента */
 .content-block {
     border: 1px solid rgba(0, 0, 0, 0.15);
