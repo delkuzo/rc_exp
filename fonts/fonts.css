@@ -1,0 +1,108 @@
+/* ===== ШРИФТЫ YS TEXT ===== */
+
+/* YS Text - Regular (400) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS-Text-Regular.woff2') format('woff2'),
+         url('./YS-Text-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Medium (500) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS-Text-Medium.woff2') format('woff2'),
+         url('./YS-Text-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Bold (700) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS-Text-Bold.woff2') format('woff2'),
+         url('./YS-Text-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Light (300) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS-Text-Light.woff2') format('woff2'),
+         url('./YS-Text-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== CSS ПЕРЕМЕННЫЕ ДЛЯ ШРИФТОВ ===== */
+:root {
+    /* Основные шрифты */
+    --font-primary: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Веса шрифтов */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    
+    /* Размеры шрифтов */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+    --font-size-4xl: 48px;
+    
+    /* Высота строк */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.4;
+    --line-height-relaxed: 1.6;
+    
+    /* Межбуквенный интервал */
+    --letter-spacing-tight: -0.25%;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.5%;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ШРИФТОВ ===== */
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-tight);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== УТИЛИТЫ ДЛЯ ШРИФТОВ ===== */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+.font-light { font-weight: var(--font-weight-light); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+
+.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
+.tracking-normal { letter-spacing: var(--letter-spacing-normal); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); } 
