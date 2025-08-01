@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Experiment - UI Kit Development Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Верхняя панель с навигацией -->
+        <header class="header">
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <button class="nav-tab active" data-section="ui-kit">UI-kit</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-tab" data-section="experiments">Эксперименты</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-tab" data-section="interfaces">Интерфейсы</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-tab" data-section="documentation">Документация</button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Переключатель темы -->
+            <div class="theme-switcher">
+                <button class="theme-btn active" data-theme="light">
+                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="theme-btn" data-theme="dark">
+                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- UI Kit контент -->
+            <div class="content-section" id="ui-kit-content">
+                <div class="content-blocks">
+                    <!-- Цветовая палитра (свернутая) -->
+                    <div class="content-block collapsed" data-block="colors">
+                        <div class="block-header" onclick="toggleBlock('colors')">
+                            <h3 class="block-title">Цветовая палитра</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+
+                    <!-- Тени (свернутая) -->
+                    <div class="content-block collapsed" data-block="shadows">
+                        <div class="block-header" onclick="toggleBlock('shadows')">
+                            <h3 class="block-title">Тени</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+
+                    <!-- Типографика (свернутая) -->
+                    <div class="content-block collapsed" data-block="typography">
+                        <div class="block-header" onclick="toggleBlock('typography')">
+                            <h3 class="block-title">Типографика</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+
+                    <!-- Размеры (свернутая) -->
+                    <div class="content-block collapsed" data-block="sizes">
+                        <div class="block-header" onclick="toggleBlock('sizes')">
+                            <h3 class="block-title">Размеры</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+
+                    <!-- Контролы (свернутая) -->
+                    <div class="content-block collapsed" data-block="controls">
+                        <div class="block-header" onclick="toggleBlock('controls')">
+                            <h3 class="block-title">Контролы</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+
+                    <!-- Иконки (свернутая) -->
+                    <div class="content-block collapsed" data-block="icons">
+                        <div class="block-header" onclick="toggleBlock('icons')">
+                            <h3 class="block-title">Иконки</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <!-- Пустой контент для демонстрации -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Эксперименты контент -->
+            <div class="content-section hidden" id="experiments-content">
+                <div class="placeholder-content">
+                    <h2>Эксперименты</h2>
+                    <p>Здесь будут размещаться экспериментальные интерфейсные фрагменты и прототипы.</p>
+                </div>
+            </div>
+
+            <!-- Интерфейсы контент -->
+            <div class="content-section hidden" id="interfaces-content">
+                <div class="placeholder-content">
+                    <h2>Интерфейсы</h2>
+                    <p>Здесь будут размещаться готовые интерфейсы и макеты страниц.</p>
+                </div>
+            </div>
+
+            <!-- Документация контент -->
+            <div class="content-section hidden" id="documentation-content">
+                <div class="placeholder-content">
+                    <h2>Документация</h2>
+                    <p>Здесь будет размещаться документация проекта и руководства по использованию UI Kit.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
