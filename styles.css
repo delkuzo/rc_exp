@@ -1476,8 +1476,8 @@ body {
     transition: all 0.3s ease;
     border-radius: 32px;
     
-    /* Кнопка - используем токен */
-    background: var(--color-bg-primary);
+    /* Кнопка - всегда белая */
+    background: var(--color-white);
 }
 
 /* Размер 40px */
@@ -1745,6 +1745,154 @@ label, label:focus, label:active, label:hover {
     text-align: left; /* Выровнять по левому краю */
     margin-top: var(--size-s);
     padding: var(--size-xs);
+}
+
+/* ==================== INPUT COMPONENT ==================== */
+
+/* Layout для демо секции input */
+.input-demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-l);
+    margin-top: var(--size-l);
+    margin-bottom: var(--size-xxl);
+    clear: both;
+}
+
+/* Контейнер для двух состояний рядом */
+.input-states-row {
+    display: flex;
+    gap: var(--size-m);
+    align-items: center;
+}
+
+/* Базовый контейнер для input */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 240px; /* Ширина из Figma */
+    height: 40px; /* Высота из Figma */
+    padding: var(--size-s) var(--size-m); /* 8px 16px из Figma */
+    border-radius: 100px; /* Радиус из Figma */
+    border: 1px solid var(--color-border-primary); /* rgba(0, 0, 0, 0.15) */
+    background: var(--color-bg-primary);
+    transition: all 0.2s ease;
+    cursor: text;
+}
+
+/* Базовое поле ввода */
+.input-field {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--typography-body-font-family); /* YS Text */
+    font-weight: var(--typography-body-font-weight); /* 400 */
+    font-size: var(--typography-body-font-size); /* 14px */
+    line-height: var(--typography-body-line-height); /* 1.4 */
+    color: var(--color-text-primary); /* rgba(0, 0, 0, 0.9) */
+    height: 24px; /* Высота текста из Figma */
+}
+
+/* Плейсхолдер */
+.input-field::placeholder {
+    color: var(--color-text-secondary); /* rgba(0, 0, 0, 0.4) */
+}
+
+/* Состояние hover */
+.input-container:hover {
+    border-color: var(--color-text-primary); /* rgba(0, 0, 0, 0.9) */
+}
+
+.input-container:hover .input-field {
+    color: var(--color-text-primary);
+}
+
+.input-container:hover .input-field::placeholder {
+    color: var(--color-text-secondary);
+}
+
+/* Состояние focus/pressed */
+.input-container:focus-within {
+    border-color: var(--color-text-primary);
+}
+
+.input-field:focus {
+    color: var(--color-text-primary);
+}
+
+/* Состояние error */
+.input-container.error {
+    border-color: var(--color-red); /* #F8604A */
+}
+
+.input-container.error .input-field {
+    color: var(--color-text-primary);
+}
+
+/* Кнопка очистки */
+.input-clear-button {
+    display: none !important;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: var(--size-s); /* 8px gap из Figma */
+    color: var(--color-text-primary);
+    transition: all 0.2s ease;
+}
+
+.input-container.with-text .input-clear-button {
+    display: flex !important;
+}
+
+.input-clear-button:hover {
+    opacity: 0.7;
+}
+
+/* Иконка закрытия из системы иконок */
+.input-clear-button .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Демонстрационные состояния */
+.input-demo-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-xs);
+}
+
+.input-demo-label {
+    font-family: var(--typography-caption-2-font-family);
+    font-weight: var(--typography-caption-2-font-weight);
+    font-size: var(--typography-caption-2-font-size);
+    color: var(--color-text-secondary);
+}
+
+/* Адаптивность для input */
+@media (max-width: 768px) {
+    .input-container {
+        width: 200px;
+        height: 36px;
+        padding: var(--size-xs) var(--size-s);
+    }
+    
+    .input-field {
+        font-size: 13px;
+        height: 20px;
+    }
+    
+    .input-states-row {
+        flex-direction: column;
+        gap: var(--size-s);
+    }
 }
 
  

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RC Experiment - UI Kit Development Platform</title>
     <link rel="stylesheet" href="fonts/fonts.css">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=7">
     <script src="icons/icon-system-v3.js" defer></script>
 </head>
 <body>
@@ -546,6 +546,26 @@
                                     <div class="component-name">Radio Button</div>
                                 </div>
                             </div>
+                            
+                            <!-- Input компонент -->
+                            <div class="input-demo-section">
+                                <div class="input-states-row">
+                                    <!-- Базовое состояние -->
+                                    <div class="input-container" id="inputDemo">
+                                        <input type="text" class="input-field" placeholder="Поиск по разделам" id="inputField">
+                                        <button class="input-clear-button" type="button" aria-label="Очистить" id="inputClear">
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Error состояние -->
+                                    <div class="input-container error with-text" id="inputErrorDemo">
+                                        <input type="text" class="input-field" value="sa56sdfD1212" id="inputErrorField">
+                                        <button class="input-clear-button" type="button" aria-label="Очистить" id="inputErrorClear">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="component-name">Input</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -670,6 +690,6 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=7"></script>
 </body>
 </html> 

@@ -169,4 +169,86 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.content-block').forEach(block => {
         updateAriaExpanded(block);
     });
-}); 
+    
+    // Инициализация Input компонента
+    initSearchInputDemo();
+});
+
+// Функция для инициализации демо Input
+const initSearchInputDemo = async () => {
+    // Получаем иконку xmark асинхронно
+    const xmarkIcon = await window.connectIconV3('xmark', 12);
+    
+    // Инициализация базового input
+    const inputContainer = document.getElementById('inputDemo');
+    const inputField = document.getElementById('inputField');
+    const inputClear = document.getElementById('inputClear');
+    
+    if (inputContainer && inputField && inputClear) {
+        // Вставляем иконку в кнопку
+        inputClear.innerHTML = xmarkIcon;
+        initInputBehavior(inputContainer, inputField, inputClear);
+    }
+    
+    // Инициализация error input
+    const inputErrorContainer = document.getElementById('inputErrorDemo');
+    const inputErrorField = document.getElementById('inputErrorField');
+    const inputErrorClear = document.getElementById('inputErrorClear');
+    
+    if (inputErrorContainer && inputErrorField && inputErrorClear) {
+        // Вставляем иконку в кнопку
+        inputErrorClear.innerHTML = xmarkIcon;
+        initInputBehavior(inputErrorContainer, inputErrorField, inputErrorClear);
+    }
+};
+
+// Общая функция для инициализации поведения input
+const initInputBehavior = (container, field, clearButton) => {
+    // Функция для обновления состояния кнопки очистки
+    const updateClearButton = () => {
+        if (field.value.length > 0) {
+            container.classList.add('with-text');
+        } else {
+            container.classList.remove('with-text');
+        }
+    };
+    
+    // Проверяем начальное состояние при инициализации
+    updateClearButton();
+    
+    // Обработчик ввода текста
+    field.addEventListener('input', (e) => {
+        updateClearButton();
+    });
+    
+    // Обработчик кнопки очистки
+    clearButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        field.value = '';
+        updateClearButton();
+        field.focus();
+    });
+    
+    // Hover эффекты (только для не-error состояния)
+    if (!container.classList.contains('error')) {
+        container.addEventListener('mouseenter', () => {
+            container.style.borderColor = 'var(--color-text-primary)';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            container.style.borderColor = 'var(--color-border-primary)';
+        });
+        
+        // Focus эффекты
+        field.addEventListener('focus', () => {
+            container.style.borderColor = 'var(--color-text-primary)';
+        });
+        
+        field.addEventListener('blur', () => {
+            container.style.borderColor = 'var(--color-border-primary)';
+        });
+    }
+    
+    // Инициализация состояния
+    updateClearButton();
+}; 
