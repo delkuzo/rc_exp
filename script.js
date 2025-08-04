@@ -12,7 +12,7 @@ const toggleBlock = (blockId) => {
         // Если это блок иконок, загружаем иконки
         if (blockId === 'icons' && window.iconSystemV3) {
             setTimeout(async () => {
-                await window.iconSystemV3.renderIconDemo();
+                await loadIconsDemo();
             }, 100);
         }
     } else {
@@ -488,10 +488,238 @@ const createButtonFromRequest = async (request) => {
     return button;
 };
 
+// Функция для загрузки демо иконок
+const loadIconsDemo = async () => {
+    const iconsDemo = document.getElementById('icons-demo');
+    if (!iconsDemo || !window.iconSystemV3) return;
+    
+    try {
+        // Показываем загрузку
+        iconsDemo.innerHTML = '<div style="padding: 20px; text-align: center;">🔄 Загрузка иконок...</div>';
+        
+        // Получаем популярные иконки
+        const popularIcons = await window.iconSystemV3.getPopularIcons();
+        
+        if (popularIcons.length === 0) {
+            iconsDemo.innerHTML = '<div style="padding: 20px; text-align: center;">❌ Иконки не найдены</div>';
+            return;
+        }
+        
+        // Создаем сетку иконок
+        const iconGrid = document.createElement('div');
+        iconGrid.className = 'icons-grid';
+        iconGrid.style.cssText = `
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+            padding: 20px 0;
+        `;
+        
+        // Ограничиваем до первых 20 иконок для демо
+        const iconsToShow = popularIcons.slice(0, 20);
+        
+        for (const icon of iconsToShow) {
+            const iconItem = document.createElement('div');
+            iconItem.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 12px;
+                border: 1px solid var(--color-border-secondary);
+                border-radius: 8px;
+                background: var(--color-bg-primary);
+                transition: all 0.2s ease;
+                cursor: pointer;
+            `;
+            
+            // Добавляем hover эффект
+            iconItem.addEventListener('mouseenter', () => {
+                iconItem.style.borderColor = 'var(--color-border-primary)';
+                iconItem.style.transform = 'translateY(-2px)';
+            });
+            iconItem.addEventListener('mouseleave', () => {
+                iconItem.style.borderColor = 'var(--color-border-secondary)';
+                iconItem.style.transform = 'translateY(0)';
+            });
+            
+            // Создаем иконку
+            const iconSvg = await window.iconSystemV3.renderIcon(icon.name, 24);
+            const iconDisplay = document.createElement('div');
+            iconDisplay.innerHTML = iconSvg;
+            iconDisplay.style.cssText = `
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 8px;
+                color: var(--color-text-primary);
+            `;
+            
+            // Название иконки
+            const iconName = document.createElement('div');
+            iconName.textContent = icon.displayName;
+            iconName.style.cssText = `
+                font-size: 10px;
+                color: var(--color-text-secondary);
+                text-align: center;
+                font-weight: 500;
+            `;
+            
+            iconItem.appendChild(iconDisplay);
+            iconItem.appendChild(iconName);
+            
+            // Клик для копирования имени иконки
+            iconItem.addEventListener('click', () => {
+                navigator.clipboard.writeText(icon.name).then(() => {
+                    iconName.textContent = 'Скопировано!';
+                    setTimeout(() => {
+                        iconName.textContent = icon.displayName;
+                    }, 1000);
+                });
+            });
+            
+            iconGrid.appendChild(iconItem);
+        }
+        
+        // Добавляем заголовок и инструкцию
+        const demoContent = `
+            <div style="margin-bottom: 16px;">
+                <h4 style="margin: 0 0 8px 0; color: var(--color-text-primary);">Популярные иконки (${iconsToShow.length} из ${popularIcons.length})</h4>
+                <p style="margin: 0; font-size: 12px; color: var(--color-text-secondary);">Кликните на иконку, чтобы скопировать её название</p>
+            </div>
+        `;
+        
+        iconsDemo.innerHTML = demoContent;
+        iconsDemo.appendChild(iconGrid);
+        
+        console.log(`✅ Загружено ${iconsToShow.length} иконок в демо`);
+        
+    } catch (error) {
+        console.error('Ошибка загрузки иконок:', error);
+        iconsDemo.innerHTML = '<div style="padding: 20px; text-align: center;">❌ Ошибка загрузки иконок</div>';
+    }
+};
+
+// Функция для создания простого конструктора кнопок  
+const createButtonBuilder = () => {
+    const builder = document.createElement('div');
+    builder.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 300px;
+        background: var(--color-bg-primary);
+        border: 1px solid var(--color-border-primary);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: var(--shadow-regular);
+        z-index: 1000;
+        font-family: inherit;
+    `;
+    
+    builder.innerHTML = `
+        <div style="margin-bottom: 16px;">
+            <h4 style="margin: 0 0 8px 0; color: var(--color-text-primary);">🔧 Конструктор кнопок</h4>
+            <button onclick="this.parentElement.parentElement.remove()" style="float: right; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--color-text-secondary);">×</button>
+        </div>
+        
+        <div style="margin-bottom: 12px;">
+            <label style="display: block; margin-bottom: 4px; font-size: 12px; color: var(--color-text-secondary);">Текст кнопки:</label>
+            <input type="text" id="button-text" value="Моя кнопка" style="width: 100%; padding: 8px; border: 1px solid var(--color-border-primary); border-radius: 6px; background: var(--color-bg-primary); color: var(--color-text-primary);">
+        </div>
+        
+        <div style="margin-bottom: 12px;">
+            <label style="display: block; margin-bottom: 4px; font-size: 12px; color: var(--color-text-secondary);">Иконка (название):</label>
+            <input type="text" id="button-icon" placeholder="star, heart, plus..." style="width: 100%; padding: 8px; border: 1px solid var(--color-border-primary); border-radius: 6px; background: var(--color-bg-primary); color: var(--color-text-primary);">
+        </div>
+        
+        <div style="margin-bottom: 12px;">
+            <label style="display: block; margin-bottom: 4px; font-size: 12px; color: var(--color-text-secondary);">Размер:</label>
+            <select id="button-size" style="width: 100%; padding: 8px; border: 1px solid var(--color-border-primary); border-radius: 6px; background: var(--color-bg-primary); color: var(--color-text-primary);">
+                <option value="32">32px</option>
+                <option value="40" selected>40px</option>
+            </select>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+            <label style="display: block; margin-bottom: 4px; font-size: 12px; color: var(--color-text-secondary);">Стиль:</label>
+            <select id="button-style" style="width: 100%; padding: 8px; border: 1px solid var(--color-border-primary); border-radius: 6px; background: var(--color-bg-primary); color: var(--color-text-primary);">
+                <option value="action" selected>Action (главная)</option>
+                <option value="fill">Fill (вторичная)</option>
+                <option value="outline">Outline (обводка)</option>
+                <option value="blank">Blank (прозрачная)</option>
+            </select>
+        </div>
+        
+        <button onclick="createPreviewButton()" style="width: 100%; padding: 10px; background: var(--color-blue); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">
+            Создать кнопку
+        </button>
+        
+        <div id="button-preview" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border-secondary);"></div>
+    `;
+    
+    document.body.appendChild(builder);
+};
+
+// Функция предпросмотра кнопки
+const createPreviewButton = async () => {
+    const preview = document.getElementById('button-preview');
+    const text = document.getElementById('button-text').value;
+    const icon = document.getElementById('button-icon').value;
+    const size = parseInt(document.getElementById('button-size').value);
+    const style = document.getElementById('button-style').value;
+    
+    preview.innerHTML = '<div style="color: var(--color-text-secondary);">🔄 Создание...</div>';
+    
+    try {
+        const button = await createButtonWithIcon(icon || null, text || null, size, style);
+        preview.innerHTML = '';
+        preview.appendChild(button);
+        
+        // Добавляем код для копирования
+        const code = `
+// Создание кнопки
+const button = await createButtonWithIcon('${icon}', '${text}', ${size}, '${style}');
+document.body.appendChild(button);
+        `.trim();
+        
+        const codeBlock = document.createElement('div');
+        codeBlock.style.cssText = `
+            margin-top: 12px;
+            padding: 8px;
+            background: var(--color-bg-secondary);
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 11px;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+        `;
+        codeBlock.textContent = code;
+        codeBlock.title = 'Кликните, чтобы скопировать код';
+        
+        codeBlock.addEventListener('click', () => {
+            navigator.clipboard.writeText(code);
+            codeBlock.textContent = 'Код скопирован!';
+            setTimeout(() => {
+                codeBlock.textContent = code;
+            }, 1500);
+        });
+        
+        preview.appendChild(codeBlock);
+        
+    } catch (error) {
+        preview.innerHTML = '<div style="color: var(--color-red);">❌ Ошибка создания кнопки</div>';
+    }
+};
+
 // Экспортируем функции в глобальную область
 window.createButtonWithIcon = createButtonWithIcon;
 window.createButtonFromRequest = createButtonFromRequest;
 window.parseButtonRequest = parseButtonRequest;
+window.loadIconsDemo = loadIconsDemo;
+window.createButtonBuilder = createButtonBuilder;
+window.createPreviewButton = createPreviewButton;
 
 // Инициализация иконок в кнопках
 document.addEventListener('DOMContentLoaded', () => {
