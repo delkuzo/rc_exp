@@ -13,20 +13,12 @@
         <!-- Верхняя панель с навигацией -->
         <header class="header">
             <nav class="navigation">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <button class="nav-tab active" data-section="ui-kit">UI-kit</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-tab" data-section="experiments">Эксперименты</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-tab" data-section="interfaces">Интерфейсы</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-tab" data-section="documentation">Документация</button>
-                    </li>
-                </ul>
+                <div class="tabs-container">
+                    <button class="tab-item active" data-section="ui-kit">UI-kit</button>
+                    <button class="tab-item" data-section="experiments">Эксперименты</button>
+                    <button class="tab-item" data-section="interfaces">Интерфейсы</button>
+                    <button class="tab-item" data-section="documentation">Документация</button>
+                </div>
                 
                 <!-- Переключатель темы -->
                 <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
@@ -489,7 +481,13 @@
                             </svg>
                         </div>
                         <div class="block-content">
-                            <!-- Пустой контент для демонстрации -->
+                            <!-- Компонент Tabs -->
+                            <div class="tabs-container">
+                                <button class="tab-item">Опция 1</button>
+                                <button class="tab-item active">Опция 2</button>
+                                <button class="tab-item">Опция 3</button>
+                            </div>
+                            <div class="component-name">Tabs</div>
                         </div>
                     </div>
 

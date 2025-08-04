@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Обработчики для навигации
-    const navTabs = document.querySelectorAll('.nav-tab');
+    const navTabs = document.querySelectorAll('.tab-item[data-section]');
     navTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Убираем активный класс у всех вкладок
@@ -93,6 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Переключаем контент
             const section = tab.getAttribute('data-section');
             switchContent(section);
+        });
+    });
+    
+    // Обработчики для вкладок в UI Kit (без data-section)
+    const uiKitTabs = document.querySelectorAll('.tab-item:not([data-section])');
+    uiKitTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Убираем активный класс у всех вкладок в этой группе
+            const container = tab.closest('.tabs-container');
+            if (container) {
+                container.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+            }
+            // Добавляем активный класс к текущей вкладке
+            tab.classList.add('active');
         });
     });
     

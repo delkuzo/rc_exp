@@ -180,54 +180,9 @@ body {
     gap: 24px;
 }
 
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-}
 
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 0 0;
-    height: 40px;
-}
 
-.nav-tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 0 2px;
-    background: none;
-    border: none;
-    font-family: var(--typography-header-1-font-family);
-    font-weight: var(--typography-header-1-font-weight);
-    font-size: var(--typography-header-1-font-size);
-    line-height: var(--typography-header-1-line-height);
-    letter-spacing: var(--typography-header-1-letter-spacing);
-    color: var(--color-text-primary);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
 
-.nav-tab.active {
-    font-weight: var(--typography-header-1-font-weight);
-    position: relative;
-}
-
-.nav-tab.active::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--color-text-primary);
-    border-radius: 2px;
-}
 
 /* Переключатель темы */
 .theme-toggle-btn {
@@ -491,8 +446,8 @@ body {
         gap: 16px;
     }
     
-    .nav-list {
-        gap: 16px;
+    .tabs-container {
+        gap: var(--size-s);
     }
     
     .main-content {
@@ -1384,3 +1339,68 @@ body {
         font-size: 8px;
     }
 }
+
+/* Компонент Tabs */
+.tabs-container {
+    display: flex;
+    gap: var(--size-l);
+}
+
+.tab-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--size-s) 0 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.25%;
+    color: var(--color-text-secondary); /* Hint - для неактивных вкладок */
+    min-height: 40px;
+    width: auto;
+}
+
+.tab-item:hover {
+    color: var(--color-text-primary); /* Foreground - для hover состояния */
+}
+
+.tab-item.active {
+    color: var(--color-text-primary); /* Foreground - для активных вкладок */
+    font-weight: 500;
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-text-primary);
+    border-radius: 1px;
+}
+
+.tab-item:focus {
+    outline: none;
+}
+
+/* Название компонента */
+.component-name {
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    color: var(--color-text-secondary); /* Hint - для названия компонента */
+    text-align: center;
+    margin-top: var(--size-s);
+    padding: var(--size-xs);
+}
+
+ 
