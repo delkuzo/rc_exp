@@ -81,7 +81,7 @@
         <p>Откройте консоль (F12) для просмотра отладочных сообщений</p>
     </div>
 
-    <script src="icons/icon-system.js"></script>
+    <script src="icons/icon-system-v3.js"></script>
     <script>
         // Ждем загрузки системы иконок
         document.addEventListener('DOMContentLoaded', async () => {
@@ -92,7 +92,7 @@
             
             // Ждем инициализации системы иконок
             setTimeout(async () => {
-                const iconSystem = window.iconSystem;
+                const iconSystem = window.iconSystemV3;
                 
                 if (!iconSystem) {
                     statusDiv.innerHTML = '<div class="status error">❌ Система иконок не загружена</div>';
@@ -102,7 +102,7 @@
                 // Ждем еще немного для полной загрузки
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 
-                const icons = iconSystem.getPopularIcons();
+                const icons = await iconSystem.getPopularIcons();
                 const loadedCount = iconSystem.icons.size;
                 
                 statusDiv.innerHTML = `
@@ -114,14 +114,18 @@
                 `;
                 
                 // Отображаем иконки
-                iconGrid.innerHTML = icons.map(icon => `
-                    <div class="icon-item">
-                        <div class="icon-display">
-                            ${iconSystem.renderIcon(icon.name, 24)}
+                const iconPromises = icons.map(async icon => {
+                    const iconHtml = await iconSystem.renderIcon(icon.name, 24);
+                    return `
+                        <div class="icon-item">
+                            <div class="icon-display">
+                                ${iconHtml}
+                            </div>
+                            <div class="icon-name">${icon.displayName}</div>
                         </div>
-                        <div class="icon-name">${icon.displayName}</div>
-                    </div>
-                `).join('');
+                    `;
+                });
+                iconGrid.innerHTML = (await Promise.all(iconPromises)).join('');
                 
                 console.log('🎉 Тест системы иконок завершен!');
                 console.log('Доступные иконки:', Array.from(iconSystem.icons.keys()));
