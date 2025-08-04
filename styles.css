@@ -1344,6 +1344,7 @@ body {
 .tabs-container {
     display: flex;
     gap: var(--size-l);
+    margin-top: var(--size-l); /* Первый компонент в секции должен иметь отступ от заголовка */
 }
 
 .tab-item {
@@ -1433,8 +1434,8 @@ body {
     flex-direction: row;
     gap: var(--size-l);
     justify-content: flex-start; /* Выровнять по левому краю */
-    margin-top: var(--size-l);
-    margin-bottom: var(--size-l);
+    margin-top: 0; /* Компонент идет сразу после предыдущего component-name */
+    margin-bottom: 0; /* Отступ теперь управляется через component-name */
 }
 
 .toggle-wrapper {
@@ -1599,9 +1600,9 @@ label, label:focus, label:active, label:hover {
 .control-demo-section {
     display: flex;
     flex-direction: column;
-    gap: var(--size-l);
-    margin-top: var(--size-l);
-    margin-bottom: var(--size-xxl); /* Увеличиваем отступ снизу */
+    gap: 0; /* Убираем gap - отступы контролируются только через component-name */
+    margin-top: 0; /* Компонент идет сразу после предыдущего component-name */
+    margin-bottom: 0; /* Отступ теперь управляется через component-name */
     clear: both;
 }
 
@@ -1743,7 +1744,8 @@ label, label:focus, label:active, label:hover {
     font-size: var(--typography-body-font-size);
     color: var(--color-text-secondary); /* Hint - для названия компонента */
     text-align: left; /* Выровнять по левому краю */
-    margin-top: var(--size-s);
+    margin-top: var(--size-m); /* 16px отступ от компонента до названия */
+    margin-bottom: var(--size-xl); /* 32px отступ от названия до следующего компонента */
     padding: var(--size-xs);
 }
 
@@ -1753,9 +1755,9 @@ label, label:focus, label:active, label:hover {
 .input-demo-section {
     display: flex;
     flex-direction: column;
-    gap: var(--size-l);
-    margin-top: var(--size-l);
-    margin-bottom: var(--size-xxl);
+    gap: 0; /* Убираем gap - отступы контролируются только через component-name */
+    margin-top: 0; /* Компонент идет сразу после предыдущего component-name */
+    margin-bottom: 0; /* Отступ теперь управляется через component-name */
     clear: both;
 }
 
