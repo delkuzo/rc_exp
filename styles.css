@@ -2003,4 +2003,312 @@ label, label:focus, label:active, label:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
- 
+/* ===== СИСТЕМА КНОПОК ===== */
+
+/* Базовые стили кнопок */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: none;
+    border-radius: 32px;
+    font-family: 'YS Text', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Размеры кнопок */
+.btn--size-32 {
+    height: 32px;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.btn--size-40 {
+    height: 40px;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Иконки в кнопках */
+.btn--icon-start {
+    padding-left: 12px;
+}
+
+.btn--size-40.btn--icon-start {
+    padding-left: 16px;
+}
+
+.btn--icon-end {
+    padding-right: 12px;
+}
+
+.btn--size-40.btn--icon-end {
+    padding-right: 20px;
+}
+
+.btn--icon-only {
+    width: 32px;
+    padding: 8px;
+    gap: 4px;
+}
+
+.btn--size-40.btn--icon-only {
+    width: 40px;
+    padding: 12px;
+}
+
+/* Стили кнопок - Action (главная) */
+.btn--style-action {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-on-accent);
+}
+
+.btn--style-action:hover {
+    background-color: var(--color-accent-primary-hover);
+    color: var(--color-text-on-accent);
+}
+
+.btn--style-action:active {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-on-accent);
+}
+
+/* Стили кнопок - Fill (вторичная) */
+.btn--style-fill {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
+}
+
+.btn--style-fill:hover {
+    background-color: var(--color-surface-secondary-hover);
+    color: var(--color-text-primary);
+}
+
+.btn--style-fill:active {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
+}
+
+/* Стили кнопок - Outline (третичная) */
+.btn--style-outline {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-primary);
+}
+
+.btn--style-outline:hover {
+    background-color: var(--color-surface-secondary-hover);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-primary);
+}
+
+.btn--style-outline:active {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-primary);
+}
+
+/* Стили кнопок - Blank (четверичная) */
+.btn--style-blank {
+    background-color: transparent;
+    color: var(--color-text-primary);
+}
+
+.btn--style-blank:hover {
+    background-color: var(--color-surface-secondary-hover);
+    color: var(--color-text-primary);
+}
+
+.btn--style-blank:active {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
+}
+
+/* Состояние Disabled для всех кнопок */
+.btn:disabled,
+.btn--disabled {
+    background-color: var(--color-surface-disabled) !important;
+    color: var(--color-text-disabled) !important;
+    border-color: transparent !important;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/* Иконки в кнопках */
+.btn__icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.btn--size-40 .btn__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.btn__icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+/* Фокус для доступности */
+.btn:focus {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+}
+
+.btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Темная тема */
+[data-theme="dark"] .btn--style-action {
+    background-color: var(--color-accent-primary-dark);
+    color: var(--color-text-on-accent-dark);
+}
+
+[data-theme="dark"] .btn--style-action:hover {
+    background-color: var(--color-accent-primary-hover-dark);
+    color: var(--color-text-on-accent-dark);
+}
+
+[data-theme="dark"] .btn--style-action:active {
+    background-color: var(--color-accent-primary-dark);
+    color: var(--color-text-on-accent-dark);
+}
+
+[data-theme="dark"] .btn--style-fill {
+    background-color: var(--color-surface-secondary-dark);
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-fill:hover {
+    background-color: var(--color-surface-secondary-hover-dark);
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-fill:active {
+    background-color: var(--color-surface-secondary-dark);
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-outline {
+    background-color: transparent;
+    color: var(--color-text-primary-dark);
+    border: 1px solid var(--color-border-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-outline:hover {
+    background-color: var(--color-surface-secondary-hover-dark);
+    color: var(--color-text-primary-dark);
+    border: 1px solid var(--color-border-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-outline:active {
+    background-color: var(--color-surface-secondary-dark);
+    color: var(--color-text-primary-dark);
+    border: 1px solid var(--color-border-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-blank {
+    background-color: transparent;
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-blank:hover {
+    background-color: var(--color-surface-secondary-hover-dark);
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn--style-blank:active {
+    background-color: var(--color-surface-secondary-dark);
+    color: var(--color-text-primary-dark);
+}
+
+[data-theme="dark"] .btn:disabled,
+[data-theme="dark"] .btn--disabled {
+    background-color: var(--color-surface-disabled-dark) !important;
+    color: var(--color-text-disabled-dark) !important;
+    border-color: transparent !important;
+}
+
+/* Демонстрационные контейнеры для кнопок */
+.buttons-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.buttons-section {
+    background: var(--color-surface-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.buttons-section h3 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.buttons-grid:last-child {
+    margin-bottom: 0;
+}
+
+.button-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--color-border-secondary);
+    border-radius: 8px;
+    background: var(--color-surface-secondary);
+}
+
+.button-example__label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .buttons-demo {
+        grid-template-columns: 1fr;
+    }
+    
+    .buttons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+    }
+    
+    .button-example {
+        padding: 8px;
+    }
+    
+    .button-example__label {
+        font-size: 10px;
+    }
+} 
