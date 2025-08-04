@@ -293,7 +293,7 @@ const initSwitcherButton = () => {
 
 // Функция для работы с иконками в кнопках
 const initializeButtonIcons = async () => {
-    // Ждем загрузки icon system
+    // Проверяем доступность icon system
     if (!window.iconSystemV3) {
         setTimeout(initializeButtonIcons, 100);
         return;
@@ -493,8 +493,8 @@ window.createButtonWithIcon = createButtonWithIcon;
 window.createButtonFromRequest = createButtonFromRequest;
 window.parseButtonRequest = parseButtonRequest;
 
-// Добавляем инициализацию иконок в кнопках
+// Инициализация иконок в кнопках
 document.addEventListener('DOMContentLoaded', () => {
-    // Инициализируем иконки в кнопках
-    setTimeout(initializeButtonIcons, 500);
+    // Запускаем инициализацию иконок с небольшой задержкой
+    setTimeout(initializeButtonIcons, 200);
 }); 
