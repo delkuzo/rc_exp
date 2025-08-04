@@ -1670,6 +1670,72 @@ label, label:focus, label:active, label:hover {
     box-shadow: 0 0 0 2px var(--color-link);
 }
 
+/* Radio Button стили */
+.radio-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.radio-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    outline: none;
+}
+
+.radio-circle {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-primary);
+    transition: all 0.2s ease;
+}
+
+/* Hover состояние */
+.radio-container:hover .radio-circle {
+    background: var(--color-hover);
+}
+
+/* Checked состояние */
+.radio-input:checked + .radio-circle {
+    background: var(--color-red);
+    border-color: var(--color-red);
+}
+
+/* Внутренний круг */
+.radio-circle::after {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.radio-input:checked + .radio-circle::after {
+    display: block;
+}
+
+/* Active состояние */
+.radio-container:active .radio-circle {
+    transform: scale(0.95);
+}
+
+/* Focus состояние для accessibility */
+.radio-input:focus + .radio-circle {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-link);
+}
+
 /* Название компонента */
 .component-name {
     font-family: var(--typography-body-font-family);
