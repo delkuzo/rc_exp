@@ -3,40 +3,148 @@
 /* YS Text - Regular (400) */
 @font-face {
     font-family: 'YS Text';
-    src: url('./YS-Text-Regular.woff2') format('woff2'),
-         url('./YS-Text-Regular.woff') format('woff');
+    src: url('./YS Text-Regular.woff2') format('woff2'),
+         url('./YS Text-Regular.woff') format('woff'),
+         url('./YSText-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Regular Italic (400) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Regular Italic.woff2') format('woff2'),
+         url('./YS Text-Regular Italic.woff') format('woff'),
+         url('./YSText-RegularItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
     font-display: swap;
 }
 
 /* YS Text - Medium (500) */
 @font-face {
     font-family: 'YS Text';
-    src: url('./YS-Text-Medium.woff2') format('woff2'),
-         url('./YS-Text-Medium.woff') format('woff');
+    src: url('./YS Text-Medium.woff2') format('woff2'),
+         url('./YS Text-Medium.woff') format('woff'),
+         url('./YSText-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Medium Italic (500) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Medium Italic.woff2') format('woff2'),
+         url('./YS Text-Medium Italic.woff') format('woff'),
+         url('./YSText-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
     font-display: swap;
 }
 
 /* YS Text - Bold (700) */
 @font-face {
     font-family: 'YS Text';
-    src: url('./YS-Text-Bold.woff2') format('woff2'),
-         url('./YS-Text-Bold.woff') format('woff');
+    src: url('./YS Text-Bold.woff2') format('woff2'),
+         url('./YS Text-Bold.woff') format('woff'),
+         url('./YSText-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Bold Italic (700) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Bold Italic.woff2') format('woff2'),
+         url('./YS Text-Bold Italic.woff') format('woff'),
+         url('./YSText-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
     font-display: swap;
 }
 
 /* YS Text - Light (300) */
 @font-face {
     font-family: 'YS Text';
-    src: url('./YS-Text-Light.woff2') format('woff2'),
-         url('./YS-Text-Light.woff') format('woff');
+    src: url('./YS Text-Light.woff2') format('woff2'),
+         url('./YS Text-Light.woff') format('woff'),
+         url('./YSText-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Light Italic (300) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Light Italic.woff2') format('woff2'),
+         url('./YS Text-Light Italic.woff') format('woff'),
+         url('./YSText-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* YS Text - Thin (100) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Thin.woff2') format('woff2'),
+         url('./YS Text-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Thin Italic (100) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Thin Italic.woff2') format('woff2'),
+         url('./YS Text-Thin Italic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* YS Text - Black (900) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Black.woff2') format('woff2'),
+         url('./YS Text-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Black Italic (900) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Black Italic.woff2') format('woff2'),
+         url('./YS Text-Black Italic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* YS Text - Heavy (800) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Heavy.woff2') format('woff2'),
+         url('./YS Text-Heavy.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* YS Text - Heavy Italic (800) */
+@font-face {
+    font-family: 'YS Text';
+    src: url('./YS Text-Heavy Italic.woff2') format('woff2'),
+         url('./YS Text-Heavy Italic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
     font-display: swap;
 }
 
@@ -47,10 +155,13 @@
     --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
     /* Веса шрифтов */
+    --font-weight-thin: 100;
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+    --font-weight-black: 900;
     
     /* Размеры шрифтов */
     --font-size-xs: 12px;
@@ -94,10 +205,13 @@ body {
 .text-3xl { font-size: var(--font-size-3xl); }
 .text-4xl { font-size: var(--font-size-4xl); }
 
+.font-thin { font-weight: var(--font-weight-thin); }
 .font-light { font-weight: var(--font-weight-light); }
 .font-regular { font-weight: var(--font-weight-regular); }
 .font-medium { font-weight: var(--font-weight-medium); }
 .font-bold { font-weight: var(--font-weight-bold); }
+.font-heavy { font-weight: var(--font-weight-heavy); }
+.font-black { font-weight: var(--font-weight-black); }
 
 .leading-tight { line-height: var(--line-height-tight); }
 .leading-normal { line-height: var(--line-height-normal); }

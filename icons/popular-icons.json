@@ -1,0 +1,206 @@
+[
+  {
+    "name": "calendar",
+    "displayName": "Календарь",
+    "description": "Иконка календаря",
+    "category": "time"
+  },
+  {
+    "name": "camera",
+    "displayName": "Камера",
+    "description": "Иконка камеры",
+    "category": "media"
+  },
+  {
+    "name": "check",
+    "displayName": "Галочка",
+    "description": "Иконка подтверждения",
+    "category": "status"
+  },
+  {
+    "name": "circle-exclamation",
+    "displayName": "Предупреждение",
+    "description": "Иконка предупреждения",
+    "category": "status"
+  },
+  {
+    "name": "circle-info",
+    "displayName": "Информация",
+    "description": "Иконка информации",
+    "category": "help"
+  },
+  {
+    "name": "circle-question",
+    "displayName": "Вопрос",
+    "description": "Иконка вопроса",
+    "category": "help"
+  },
+  {
+    "name": "clock",
+    "displayName": "Часы",
+    "description": "Иконка времени",
+    "category": "time"
+  },
+  {
+    "name": "credit-card",
+    "displayName": "Банковская карта",
+    "description": "Иконка банковской карты",
+    "category": "payment"
+  },
+  {
+    "name": "delete",
+    "displayName": "Удалить",
+    "description": "Иконка удаления",
+    "category": "action"
+  },
+  {
+    "name": "diamond-exclamation",
+    "displayName": "Важное предупреждение",
+    "description": "Иконка важного предупреждения",
+    "category": "status"
+  },
+  {
+    "name": "exclamation-shape",
+    "displayName": "Восклицание",
+    "description": "Иконка восклицания",
+    "category": "status"
+  },
+  {
+    "name": "eye",
+    "displayName": "Глаз",
+    "description": "Иконка просмотра",
+    "category": "action"
+  },
+  {
+    "name": "eye-slash",
+    "displayName": "Скрыть",
+    "description": "Иконка скрытия",
+    "category": "action"
+  },
+  {
+    "name": "file",
+    "displayName": "Файл",
+    "description": "Иконка файла",
+    "category": "file"
+  },
+  {
+    "name": "file-exclamation",
+    "displayName": "Файл с ошибкой",
+    "description": "Иконка файла с ошибкой",
+    "category": "file"
+  },
+  {
+    "name": "file-question",
+    "displayName": "Файл с вопросом",
+    "description": "Иконка файла с вопросом",
+    "category": "file"
+  },
+  {
+    "name": "fingerprint",
+    "displayName": "Отпечаток пальца",
+    "description": "Иконка отпечатка пальца",
+    "category": "security"
+  },
+  {
+    "name": "folder",
+    "displayName": "Папка",
+    "description": "Иконка папки",
+    "category": "file"
+  },
+  {
+    "name": "folder-exclamation",
+    "displayName": "Папка с ошибкой",
+    "description": "Иконка папки с ошибкой",
+    "category": "file"
+  },
+  {
+    "name": "headphones",
+    "displayName": "Наушники",
+    "description": "Иконка наушников",
+    "category": "media"
+  },
+  {
+    "name": "heart",
+    "displayName": "Сердце",
+    "description": "Иконка сердца/лайка",
+    "category": "social"
+  },
+  {
+    "name": "layout-list",
+    "displayName": "Список",
+    "description": "Иконка списка",
+    "category": "layout"
+  },
+  {
+    "name": "list-check",
+    "displayName": "Список с галочками",
+    "description": "Иконка списка с галочками",
+    "category": "layout"
+  },
+  {
+    "name": "list-check-lock",
+    "displayName": "Защищенный список",
+    "description": "Иконка защищенного списка",
+    "category": "layout"
+  },
+  {
+    "name": "list-ol",
+    "displayName": "Нумерованный список",
+    "description": "Иконка нумерованного списка",
+    "category": "layout"
+  },
+  {
+    "name": "lock",
+    "displayName": "Замок",
+    "description": "Иконка блокировки",
+    "category": "security"
+  },
+  {
+    "name": "minus",
+    "displayName": "Минус",
+    "description": "Иконка удаления",
+    "category": "action"
+  },
+  {
+    "name": "pause",
+    "displayName": "Пауза",
+    "description": "Иконка паузы",
+    "category": "media"
+  },
+  {
+    "name": "play",
+    "displayName": "Воспроизвести",
+    "description": "Иконка воспроизведения",
+    "category": "media"
+  },
+  {
+    "name": "plus",
+    "displayName": "Плюс",
+    "description": "Иконка добавления",
+    "category": "action"
+  },
+  {
+    "name": "star",
+    "displayName": "Звезда",
+    "description": "Иконка звезды",
+    "category": "rating"
+  },
+  {
+    "name": "stop",
+    "displayName": "Стоп",
+    "description": "Иконка остановки",
+    "category": "media"
+  },
+  {
+    "name": "video",
+    "displayName": "Видео",
+    "description": "Иконка видео",
+    "category": "media"
+  },
+  {
+    "name": "volume",
+    "displayName": "Громкость",
+    "description": "Иконка громкости",
+    "category": "media"
+  }
+] 

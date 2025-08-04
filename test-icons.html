@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест системы иконок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .icon-display {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .icon-name {
+            font-size: 12px;
+            text-align: center;
+            color: #333;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Тест системы иконок</h1>
+        
+        <div id="status"></div>
+        
+        <h2>Доступные иконки:</h2>
+        <div id="icon-grid" class="icon-grid">
+            <!-- Иконки будут загружены через JavaScript -->
+        </div>
+        
+        <h2>Консоль браузера:</h2>
+        <p>Откройте консоль (F12) для просмотра отладочных сообщений</p>
+    </div>
+
+    <script src="icons/icon-system.js"></script>
+    <script>
+        // Ждем загрузки системы иконок
+        document.addEventListener('DOMContentLoaded', async () => {
+            const statusDiv = document.getElementById('status');
+            const iconGrid = document.getElementById('icon-grid');
+            
+            statusDiv.innerHTML = '<div class="status">🔄 Загрузка иконок...</div>';
+            
+            // Ждем инициализации системы иконок
+            setTimeout(async () => {
+                const iconSystem = window.iconSystem;
+                
+                if (!iconSystem) {
+                    statusDiv.innerHTML = '<div class="status error">❌ Система иконок не загружена</div>';
+                    return;
+                }
+                
+                // Ждем еще немного для полной загрузки
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const icons = iconSystem.getPopularIcons();
+                const loadedCount = iconSystem.icons.size;
+                
+                statusDiv.innerHTML = `
+                    <div class="status success">
+                        ✅ Система иконок загружена<br>
+                        📊 Загружено SVG: ${loadedCount}<br>
+                        📋 Популярных иконок: ${icons.length}
+                    </div>
+                `;
+                
+                // Отображаем иконки
+                iconGrid.innerHTML = icons.map(icon => `
+                    <div class="icon-item">
+                        <div class="icon-display">
+                            ${iconSystem.renderIcon(icon.name, 24)}
+                        </div>
+                        <div class="icon-name">${icon.displayName}</div>
+                    </div>
+                `).join('');
+                
+                console.log('🎉 Тест системы иконок завершен!');
+                console.log('Доступные иконки:', Array.from(iconSystem.icons.keys()));
+                
+            }, 500);
+        });
+    </script>
+</body>
+</html> 

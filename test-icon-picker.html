@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест компонента выбора иконок</title>
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="icons/icon-system-v3.js" defer></script>
+    <script src="icons/icon-picker.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 Тест компонента выбора иконок</h1>
+            <p>Демонстрация функциональности выбора иконок из полного каталога</p>
+        </header>
+
+        <main class="main-content">
+            <div class="content-section">
+                <div class="content-blocks">
+                    <div class="content-block expanded">
+                        <div class="block-header">
+                            <h3 class="block-title">Выбор иконок</h3>
+                        </div>
+                        <div class="block-content">
+                            <div class="demo-section">
+                                <h4>Способы использования</h4>
+                                
+                                <div class="demo-buttons">
+                                    <button class="btn-primary" onclick="testBasicPicker()">
+                                        🎯 Базовый выбор
+                                    </button>
+                                    
+                                    <button class="btn-primary" onclick="testCustomPicker()">
+                                        ⚙️ Кастомный выбор
+                                    </button>
+                                    
+                                    <button class="btn-primary" onclick="testAsyncPicker()">
+                                        🔄 Асинхронный выбор
+                                    </button>
+                                </div>
+                                
+                                <div class="demo-results">
+                                    <h4>Результаты выбора</h4>
+                                    <div id="selected-icons">
+                                        <p class="placeholder-text">Выберите иконку, чтобы увидеть результат</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block expanded">
+                        <div class="block-header">
+                            <h3 class="block-title">Примеры кода</h3>
+                        </div>
+                        <div class="block-content">
+                            <div class="code-examples">
+                                <div class="code-example">
+                                    <h5>Базовое использование</h5>
+                                    <pre><code>// Простой выбор иконки
+const icon = await window.selectIcon();
+console.log('Выбрана иконка:', icon);</code></pre>
+                                </div>
+                                
+                                <div class="code-example">
+                                    <h5>Кастомный picker</h5>
+                                    <pre><code>// С кастомными настройками
+const icon = await window.showIconPicker({
+    placeholder: 'Выберите иконку для кнопки...',
+    maxResults: 100,
+    showCategories: true
+});</code></pre>
+                                </div>
+                                
+                                <div class="code-example">
+                                    <h5>Использование в компоненте</h5>
+                                    <pre><code>// В эксперименте или интерфейсе
+const picker = new IconPicker('container-id', {
+    onSelect: (icon) => {
+        // Обработка выбранной иконки
+        updateButtonIcon(icon.name);
+    }
+});</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block expanded">
+                        <div class="block-header">
+                            <h3 class="block-title">Возможности</h3>
+                        </div>
+                        <div class="block-content">
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🔍</div>
+                                    <h5>Поиск по названию</h5>
+                                    <p>Быстрый поиск иконок по названию или ключевым словам</p>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <div class="feature-icon">📂</div>
+                                    <h5>Категории</h5>
+                                    <p>Фильтрация по категориям для удобного поиска</p>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎨</div>
+                                    <h5>Высокое качество</h5>
+                                    <p>Все иконки из репозитория Gravity UI с отличным качеством</p>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <div class="feature-icon">⚡</div>
+                                    <h5>Быстрая загрузка</h5>
+                                    <p>Асинхронная загрузка с кэшированием для быстрой работы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Тест базового выбора
+        async function testBasicPicker() {
+            try {
+                const icon = await window.selectIcon('Выберите иконку...');
+                if (icon) {
+                    displaySelectedIcon(icon, 'Базовый выбор');
+                }
+            } catch (error) {
+                console.error('Ошибка выбора иконки:', error);
+            }
+        }
+
+        // Тест кастомного выбора
+        async function testCustomPicker() {
+            try {
+                const icon = await window.showIconPicker({
+                    placeholder: 'Выберите иконку для кнопки...',
+                    maxResults: 100,
+                    showCategories: true,
+                    showSearch: true
+                });
+                
+                if (icon) {
+                    displaySelectedIcon(icon, 'Кастомный выбор');
+                }
+            } catch (error) {
+                console.error('Ошибка выбора иконки:', error);
+            }
+        }
+
+        // Тест асинхронного выбора
+        async function testAsyncPicker() {
+            try {
+                console.log('Начинаем выбор иконки...');
+                
+                const icon = await window.selectIcon('Выберите иконку для эксперимента...');
+                
+                console.log('Иконка выбрана:', icon);
+                
+                if (icon) {
+                    displaySelectedIcon(icon, 'Асинхронный выбор');
+                    
+                    // Демонстрация использования в коде
+                    const iconHtml = await window.iconSystemV3.renderIcon(icon.name, 32);
+                    console.log('HTML иконки:', iconHtml);
+                }
+            } catch (error) {
+                console.error('Ошибка выбора иконки:', error);
+            }
+        }
+
+        // Отображение выбранной иконки
+        async function displaySelectedIcon(icon, source) {
+            const container = document.getElementById('selected-icons');
+            
+            try {
+                const iconHtml = await window.iconSystemV3.renderIcon(icon.name, 48);
+                
+                const resultHtml = `
+                    <div class="selected-icon-result">
+                        <div class="result-header">
+                            <span class="result-source">${source}</span>
+                            <span class="result-time">${new Date().toLocaleTimeString()}</span>
+                        </div>
+                        <div class="result-content">
+                            <div class="result-icon">
+                                ${iconHtml}
+                            </div>
+                            <div class="result-info">
+                                <div class="result-name">${icon.displayName}</div>
+                                <div class="result-code">${icon.name}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.innerHTML = resultHtml + container.innerHTML;
+                
+                // Ограничиваем количество результатов
+                const results = container.querySelectorAll('.selected-icon-result');
+                if (results.length > 5) {
+                    results[results.length - 1].remove();
+                }
+                
+            } catch (error) {
+                console.error('Ошибка отображения иконки:', error);
+                container.innerHTML = `
+                    <div class="selected-icon-result error">
+                        <div class="result-header">
+                            <span class="result-source">${source}</span>
+                            <span class="result-time">${new Date().toLocaleTimeString()}</span>
+                        </div>
+                        <div class="result-content">
+                            <div class="result-error">Ошибка загрузки иконки: ${icon.name}</div>
+                        </div>
+                    </div>
+                ` + container.innerHTML;
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🎨 Тест компонента выбора иконок загружен');
+        });
+    </script>
+
+    <style>
+        .demo-section {
+            padding: 20px 0;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .demo-results {
+            margin-top: 30px;
+        }
+        
+        .placeholder-text {
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+        
+        .selected-icon-result {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+        
+        .result-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .result-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 6px;
+        }
+        
+        .result-info {
+            flex: 1;
+        }
+        
+        .result-name {
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .result-code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+        
+        .result-error {
+            color: #dc3545;
+            font-style: italic;
+        }
+        
+        .code-examples {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .code-example {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        
+        .code-example h5 {
+            margin: 0 0 12px 0;
+            color: var(--color-text-primary);
+        }
+        
+        .code-example pre {
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 6px;
+            padding: 12px;
+            overflow-x: auto;
+            margin: 0;
+        }
+        
+        .code-example code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            color: var(--color-text-primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .feature-item h5 {
+            margin: 0 0 8px 0;
+            color: var(--color-text-primary);
+        }
+        
+        .feature-item p {
+            margin: 0;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-buttons {
+                flex-direction: column;
+            }
+            
+            .result-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 

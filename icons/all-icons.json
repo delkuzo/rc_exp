@@ -1,0 +1,6232 @@
+[
+  {
+    "name": "abbr-api",
+    "displayName": "Abbr Api",
+    "description": "Иконка abbr-api",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "abbr-ml",
+    "displayName": "Abbr Ml",
+    "description": "Иконка abbr-ml",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "abbr-ql",
+    "displayName": "Abbr Ql",
+    "description": "Иконка abbr-ql",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "abbr-sql",
+    "displayName": "Abbr Sql",
+    "description": "Иконка abbr-sql",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "abbr-zip",
+    "displayName": "Abbr Zip",
+    "description": "Иконка abbr-zip",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "antenna-signal",
+    "displayName": "Antenna Signal",
+    "description": "Иконка antenna-signal",
+    "category": "network",
+    "keywords": []
+  },
+  {
+    "name": "aperture",
+    "displayName": "Aperture",
+    "description": "Иконка aperture",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "archive",
+    "displayName": "Archive",
+    "description": "Иконка archive",
+    "category": "other",
+    "keywords": [
+      "tray",
+      "box",
+      "drawer"
+    ]
+  },
+  {
+    "name": "arrow-chevron-down",
+    "displayName": "Arrow Chevron Down",
+    "description": "Иконка arrow-chevron-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-chevron-left",
+    "displayName": "Arrow Chevron Left",
+    "description": "Иконка arrow-chevron-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-chevron-right",
+    "displayName": "Arrow Chevron Right",
+    "description": "Иконка arrow-chevron-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-chevron-up",
+    "displayName": "Arrow Chevron Up",
+    "description": "Иконка arrow-chevron-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-down",
+    "displayName": "Arrow Down",
+    "description": "Иконка arrow-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-down-from-line",
+    "displayName": "Arrow Down From Line",
+    "description": "Иконка arrow-down-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-down-to-line",
+    "displayName": "Arrow Down To Line",
+    "description": "Иконка arrow-down-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-down-to-square",
+    "displayName": "Arrow Down To Square",
+    "description": "Иконка arrow-down-to-square",
+    "category": "navigation",
+    "keywords": [
+      "import",
+      "move"
+    ]
+  },
+  {
+    "name": "arrow-left",
+    "displayName": "Arrow Left",
+    "description": "Иконка arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-left-from-line",
+    "displayName": "Arrow Left From Line",
+    "description": "Иконка arrow-left-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-left-to-line",
+    "displayName": "Arrow Left To Line",
+    "description": "Иконка arrow-left-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-right",
+    "displayName": "Arrow Right",
+    "description": "Иконка arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-right-arrow-left",
+    "displayName": "Arrow Right Arrow Left",
+    "description": "Иконка arrow-right-arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-right-from-line",
+    "displayName": "Arrow Right From Line",
+    "description": "Иконка arrow-right-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-right-from-square",
+    "displayName": "Arrow Right From Square",
+    "description": "Иконка arrow-right-from-square",
+    "category": "navigation",
+    "keywords": [
+      "exit",
+      "move",
+      "logout"
+    ]
+  },
+  {
+    "name": "arrow-right-to-line",
+    "displayName": "Arrow Right To Line",
+    "description": "Иконка arrow-right-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-right-to-square",
+    "displayName": "Arrow Right To Square",
+    "description": "Иконка arrow-right-to-square",
+    "category": "navigation",
+    "keywords": [
+      "enter",
+      "move",
+      "login"
+    ]
+  },
+  {
+    "name": "arrow-rotate-left",
+    "displayName": "Arrow Rotate Left",
+    "description": "Иконка arrow-rotate-left",
+    "category": "navigation",
+    "keywords": [
+      "refresh"
+    ]
+  },
+  {
+    "name": "arrow-rotate-right",
+    "displayName": "Arrow Rotate Right",
+    "description": "Иконка arrow-rotate-right",
+    "category": "navigation",
+    "keywords": [
+      "refresh"
+    ]
+  },
+  {
+    "name": "arrow-shape-down",
+    "displayName": "Arrow Shape Down",
+    "description": "Иконка arrow-shape-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-down-from-line",
+    "displayName": "Arrow Shape Down From Line",
+    "description": "Иконка arrow-shape-down-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-down-to-line",
+    "displayName": "Arrow Shape Down To Line",
+    "description": "Иконка arrow-shape-down-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-left",
+    "displayName": "Arrow Shape Left",
+    "description": "Иконка arrow-shape-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-left-from-line",
+    "displayName": "Arrow Shape Left From Line",
+    "description": "Иконка arrow-shape-left-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-left-to-line",
+    "displayName": "Arrow Shape Left To Line",
+    "description": "Иконка arrow-shape-left-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-right",
+    "displayName": "Arrow Shape Right",
+    "description": "Иконка arrow-shape-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-right-from-line",
+    "displayName": "Arrow Shape Right From Line",
+    "description": "Иконка arrow-shape-right-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-right-to-line",
+    "displayName": "Arrow Shape Right To Line",
+    "description": "Иконка arrow-shape-right-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-turn-up-left",
+    "displayName": "Arrow Shape Turn Up Left",
+    "description": "Иконка arrow-shape-turn-up-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-turn-up-right",
+    "displayName": "Arrow Shape Turn Up Right",
+    "description": "Иконка arrow-shape-turn-up-right",
+    "category": "navigation",
+    "keywords": [
+      "share"
+    ]
+  },
+  {
+    "name": "arrow-shape-up",
+    "displayName": "Arrow Shape Up",
+    "description": "Иконка arrow-shape-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-up-from-line",
+    "displayName": "Arrow Shape Up From Line",
+    "description": "Иконка arrow-shape-up-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-shape-up-to-line",
+    "displayName": "Arrow Shape Up To Line",
+    "description": "Иконка arrow-shape-up-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-up",
+    "displayName": "Arrow Up",
+    "description": "Иконка arrow-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-up-arrow-down",
+    "displayName": "Arrow Up Arrow Down",
+    "description": "Иконка arrow-up-arrow-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-up-from-line",
+    "displayName": "Arrow Up From Line",
+    "description": "Иконка arrow-up-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-up-from-square",
+    "displayName": "Arrow Up From Square",
+    "description": "Иконка arrow-up-from-square",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "move",
+      "share"
+    ]
+  },
+  {
+    "name": "arrow-up-from-square-slash",
+    "displayName": "Arrow Up From Square Slash",
+    "description": "Иконка arrow-up-from-square-slash",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "move",
+      "share"
+    ]
+  },
+  {
+    "name": "arrow-up-right-from-square",
+    "displayName": "Arrow Up Right From Square",
+    "description": "Иконка arrow-up-right-from-square",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "external",
+      "new",
+      "outer",
+      "link",
+      "share",
+      "window"
+    ]
+  },
+  {
+    "name": "arrow-up-to-line",
+    "displayName": "Arrow Up To Line",
+    "description": "Иконка arrow-up-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-ccw-down",
+    "displayName": "Arrow Uturn Ccw Down",
+    "description": "Иконка arrow-uturn-ccw-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-ccw-left",
+    "displayName": "Arrow Uturn Ccw Left",
+    "description": "Иконка arrow-uturn-ccw-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-ccw-right",
+    "displayName": "Arrow Uturn Ccw Right",
+    "description": "Иконка arrow-uturn-ccw-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-cw-down",
+    "displayName": "Arrow Uturn Cw Down",
+    "description": "Иконка arrow-uturn-cw-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-cw-left",
+    "displayName": "Arrow Uturn Cw Left",
+    "description": "Иконка arrow-uturn-cw-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrow-uturn-cw-right",
+    "displayName": "Arrow Uturn Cw Right",
+    "description": "Иконка arrow-uturn-cw-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-3-rotate-left",
+    "displayName": "Arrows 3 Rotate Left",
+    "description": "Иконка arrows-3-rotate-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-3-rotate-left-letter-a",
+    "displayName": "Arrows 3 Rotate Left Letter A",
+    "description": "Иконка arrows-3-rotate-left-letter-a",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-3-rotate-right",
+    "displayName": "Arrows 3 Rotate Right",
+    "description": "Иконка arrows-3-rotate-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-expand",
+    "displayName": "Arrows Expand",
+    "description": "Иконка arrows-expand",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "move",
+      "share"
+    ]
+  },
+  {
+    "name": "arrows-expand-horizontal",
+    "displayName": "Arrows Expand Horizontal",
+    "description": "Иконка arrows-expand-horizontal",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "move",
+      "share"
+    ]
+  },
+  {
+    "name": "arrows-expand-vertical",
+    "displayName": "Arrows Expand Vertical",
+    "description": "Иконка arrows-expand-vertical",
+    "category": "navigation",
+    "keywords": [
+      "export",
+      "move",
+      "share"
+    ]
+  },
+  {
+    "name": "arrows-opposite-to-dots",
+    "displayName": "Arrows Opposite To Dots",
+    "description": "Иконка arrows-opposite-to-dots",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-rotate-left",
+    "displayName": "Arrows Rotate Left",
+    "description": "Иконка arrows-rotate-left",
+    "category": "navigation",
+    "keywords": [
+      "refresh"
+    ]
+  },
+  {
+    "name": "arrows-rotate-left-slash",
+    "displayName": "Arrows Rotate Left Slash",
+    "description": "Иконка arrows-rotate-left-slash",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "arrows-rotate-right",
+    "displayName": "Arrows Rotate Right",
+    "description": "Иконка arrows-rotate-right",
+    "category": "navigation",
+    "keywords": [
+      "refresh"
+    ]
+  },
+  {
+    "name": "arrows-rotate-right-slash",
+    "displayName": "Arrows Rotate Right Slash",
+    "description": "Иконка arrows-rotate-right-slash",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "at",
+    "displayName": "At",
+    "description": "Иконка at",
+    "category": "other",
+    "keywords": [
+      "mail"
+    ]
+  },
+  {
+    "name": "backward-step",
+    "displayName": "Backward Step",
+    "description": "Иконка backward-step",
+    "category": "other",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "backward-step",
+    "displayName": "Backward Step",
+    "description": "Иконка backward-step",
+    "category": "other",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "ban",
+    "displayName": "Ban",
+    "description": "Иконка ban",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bars",
+    "displayName": "Bars",
+    "description": "Иконка bars",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "burger",
+      "menu"
+    ]
+  },
+  {
+    "name": "bars-ascending-align-center",
+    "displayName": "Bars Ascending Align Center",
+    "description": "Иконка bars-ascending-align-center",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-ascending-align-left",
+    "displayName": "Bars Ascending Align Left",
+    "description": "Иконка bars-ascending-align-left",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-ascending-align-left-arrow-down",
+    "displayName": "Bars Ascending Align Left Arrow Down",
+    "description": "Иконка bars-ascending-align-left-arrow-down",
+    "category": "navigation",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-ascending-align-left-arrow-up",
+    "displayName": "Bars Ascending Align Left Arrow Up",
+    "description": "Иконка bars-ascending-align-left-arrow-up",
+    "category": "navigation",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-ascending-align-right",
+    "displayName": "Bars Ascending Align Right",
+    "description": "Иконка bars-ascending-align-right",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-descending-align-center",
+    "displayName": "Bars Descending Align Center",
+    "description": "Иконка bars-descending-align-center",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-descending-align-left",
+    "displayName": "Bars Descending Align Left",
+    "description": "Иконка bars-descending-align-left",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-descending-align-left-arrow-down",
+    "displayName": "Bars Descending Align Left Arrow Down",
+    "description": "Иконка bars-descending-align-left-arrow-down",
+    "category": "navigation",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-descending-align-left-arrow-up",
+    "displayName": "Bars Descending Align Left Arrow Up",
+    "description": "Иконка bars-descending-align-left-arrow-up",
+    "category": "navigation",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-descending-align-right",
+    "displayName": "Bars Descending Align Right",
+    "description": "Иконка bars-descending-align-right",
+    "category": "other",
+    "keywords": [
+      "lines",
+      "sort",
+      "filter"
+    ]
+  },
+  {
+    "name": "bars-play",
+    "displayName": "Bars Play",
+    "description": "Иконка bars-play",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "bars-unaligned",
+    "displayName": "Bars Unaligned",
+    "description": "Иконка bars-unaligned",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bell",
+    "displayName": "Bell",
+    "description": "Иконка bell",
+    "category": "other",
+    "keywords": [
+      "notify",
+      "notification"
+    ]
+  },
+  {
+    "name": "bell",
+    "displayName": "Bell",
+    "description": "Иконка bell",
+    "category": "other",
+    "keywords": [
+      "notify",
+      "notification"
+    ]
+  },
+  {
+    "name": "bell-dot",
+    "displayName": "Bell Dot",
+    "description": "Иконка bell-dot",
+    "category": "other",
+    "keywords": [
+      "notify",
+      "notification"
+    ]
+  },
+  {
+    "name": "bell-slash",
+    "displayName": "Bell Slash",
+    "description": "Иконка bell-slash",
+    "category": "other",
+    "keywords": [
+      "notify",
+      "notification",
+      "mute"
+    ]
+  },
+  {
+    "name": "binoculars",
+    "displayName": "Binoculars",
+    "description": "Иконка binoculars",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bold",
+    "displayName": "Bold",
+    "description": "Иконка bold",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "book",
+    "displayName": "Book",
+    "description": "Иконка book",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "book-open",
+    "displayName": "Book Open",
+    "description": "Иконка book-open",
+    "category": "other",
+    "keywords": [
+      "document",
+      "manual"
+    ]
+  },
+  {
+    "name": "bookmark",
+    "displayName": "Bookmark",
+    "description": "Иконка bookmark",
+    "category": "other",
+    "keywords": [
+      "favourites"
+    ]
+  },
+  {
+    "name": "bookmark",
+    "displayName": "Bookmark",
+    "description": "Иконка bookmark",
+    "category": "other",
+    "keywords": [
+      "favourites"
+    ]
+  },
+  {
+    "name": "box",
+    "displayName": "Box",
+    "description": "Иконка box",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "boxes-3",
+    "displayName": "Boxes 3",
+    "description": "Иконка boxes-3",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "branches-down",
+    "displayName": "Branches Down",
+    "description": "Иконка branches-down",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "branches-right",
+    "displayName": "Branches Right",
+    "description": "Иконка branches-right",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "branches-right-arrow-right",
+    "displayName": "Branches Right Arrow Right",
+    "description": "Иконка branches-right-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "briefcase",
+    "displayName": "Briefcase",
+    "description": "Иконка briefcase",
+    "category": "other",
+    "keywords": [
+      "bag"
+    ]
+  },
+  {
+    "name": "broadcast-signal",
+    "displayName": "Broadcast Signal",
+    "description": "Иконка broadcast-signal",
+    "category": "network",
+    "keywords": []
+  },
+  {
+    "name": "broom-motion",
+    "displayName": "Broom Motion",
+    "description": "Иконка broom-motion",
+    "category": "other",
+    "keywords": [
+      "clean",
+      "delete"
+    ]
+  },
+  {
+    "name": "brush",
+    "displayName": "Brush",
+    "description": "Иконка brush",
+    "category": "other",
+    "keywords": [
+      "paint",
+      "color"
+    ]
+  },
+  {
+    "name": "bucket",
+    "displayName": "Bucket",
+    "description": "Иконка bucket",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bucket-paint",
+    "displayName": "Bucket Paint",
+    "description": "Иконка bucket-paint",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bug",
+    "displayName": "Bug",
+    "description": "Иконка bug",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "bulb",
+    "displayName": "Bulb",
+    "description": "Иконка bulb",
+    "category": "other",
+    "keywords": [
+      "lamp",
+      "light"
+    ]
+  },
+  {
+    "name": "calculator",
+    "displayName": "Calculator",
+    "description": "Иконка calculator",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "calendar",
+    "displayName": "Calendar",
+    "description": "Иконка calendar",
+    "category": "time",
+    "keywords": [
+      "date",
+      "event"
+    ]
+  },
+  {
+    "name": "camera",
+    "displayName": "Camera",
+    "description": "Иконка camera",
+    "category": "media",
+    "keywords": [
+      "photo"
+    ]
+  },
+  {
+    "name": "car",
+    "displayName": "Car",
+    "description": "Иконка car",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "card-club",
+    "displayName": "Card Club",
+    "description": "Иконка card-club",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "card-diamond",
+    "displayName": "Card Diamond",
+    "description": "Иконка card-diamond",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "card-heart",
+    "displayName": "Card Heart",
+    "description": "Иконка card-heart",
+    "category": "social",
+    "keywords": []
+  },
+  {
+    "name": "card-spade",
+    "displayName": "Card Spade",
+    "description": "Иконка card-spade",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "caret-down",
+    "displayName": "Caret Down",
+    "description": "Иконка caret-down",
+    "category": "other",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "caret-left",
+    "displayName": "Caret Left",
+    "description": "Иконка caret-left",
+    "category": "other",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "caret-right",
+    "displayName": "Caret Right",
+    "description": "Иконка caret-right",
+    "category": "other",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "caret-up",
+    "displayName": "Caret Up",
+    "description": "Иконка caret-up",
+    "category": "other",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "carets-expand-vertical",
+    "displayName": "Carets Expand Vertical",
+    "description": "Иконка carets-expand-vertical",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "chart-area-stacked",
+    "displayName": "Chart Area Stacked",
+    "description": "Иконка chart-area-stacked",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-area-stacked-normalized",
+    "displayName": "Chart Area Stacked Normalized",
+    "description": "Иконка chart-area-stacked-normalized",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "chart-bar",
+    "displayName": "Chart Bar",
+    "description": "Иконка chart-bar",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-bar-stacked",
+    "displayName": "Chart Bar Stacked",
+    "description": "Иконка chart-bar-stacked",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-column",
+    "displayName": "Chart Column",
+    "description": "Иконка chart-column",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-column-stacked",
+    "displayName": "Chart Column Stacked",
+    "description": "Иконка chart-column-stacked",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-donut",
+    "displayName": "Chart Donut",
+    "description": "Иконка chart-donut",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-line",
+    "displayName": "Chart Line",
+    "description": "Иконка chart-line",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-line-label",
+    "displayName": "Chart Line Label",
+    "description": "Иконка chart-line-label",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "chart-mixed",
+    "displayName": "Chart Mixed",
+    "description": "Иконка chart-mixed",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "chart-pie",
+    "displayName": "Chart Pie",
+    "description": "Иконка chart-pie",
+    "category": "other",
+    "keywords": [
+      "diagram",
+      "graph",
+      "plot"
+    ]
+  },
+  {
+    "name": "chart-treemap",
+    "displayName": "Chart Treemap",
+    "description": "Иконка chart-treemap",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "check",
+    "displayName": "Check",
+    "description": "Иконка check",
+    "category": "status",
+    "keywords": [
+      "done"
+    ]
+  },
+  {
+    "name": "check-shape",
+    "displayName": "Check Shape",
+    "description": "Иконка check-shape",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "check-shape",
+    "displayName": "Check Shape",
+    "description": "Иконка check-shape",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "cherry",
+    "displayName": "Cherry",
+    "description": "Иконка cherry",
+    "category": "other",
+    "keywords": [
+      "fruit"
+    ]
+  },
+  {
+    "name": "chevron-down",
+    "displayName": "Chevron Down",
+    "description": "Иконка chevron-down",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "chevron-down-wide",
+    "displayName": "Chevron Down Wide",
+    "description": "Иконка chevron-down-wide",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevron-left",
+    "displayName": "Chevron Left",
+    "description": "Иконка chevron-left",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "chevron-right",
+    "displayName": "Chevron Right",
+    "description": "Иконка chevron-right",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "chevron-up",
+    "displayName": "Chevron Up",
+    "description": "Иконка chevron-up",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "chevron-up-wide",
+    "displayName": "Chevron Up Wide",
+    "description": "Иконка chevron-up-wide",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-collapse-from-lines",
+    "displayName": "Chevrons Collapse From Lines",
+    "description": "Иконка chevrons-collapse-from-lines",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-collapse-horizontal",
+    "displayName": "Chevrons Collapse Horizontal",
+    "description": "Иконка chevrons-collapse-horizontal",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "roll",
+      "up"
+    ]
+  },
+  {
+    "name": "chevrons-collapse-to-line",
+    "displayName": "Chevrons Collapse To Line",
+    "description": "Иконка chevrons-collapse-to-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-collapse-up-right",
+    "displayName": "Chevrons Collapse Up Right",
+    "description": "Иконка chevrons-collapse-up-right",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "full",
+      "screen",
+      "wrap"
+    ]
+  },
+  {
+    "name": "chevrons-collapse-vertical",
+    "displayName": "Chevrons Collapse Vertical",
+    "description": "Иконка chevrons-collapse-vertical",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "roll",
+      "up"
+    ]
+  },
+  {
+    "name": "chevrons-down",
+    "displayName": "Chevrons Down",
+    "description": "Иконка chevrons-down",
+    "category": "navigation",
+    "keywords": [
+      "arrows"
+    ]
+  },
+  {
+    "name": "chevrons-down-wide",
+    "displayName": "Chevrons Down Wide",
+    "description": "Иконка chevrons-down-wide",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-expand-from-line",
+    "displayName": "Chevrons Expand From Line",
+    "description": "Иконка chevrons-expand-from-line",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-expand-horizontal",
+    "displayName": "Chevrons Expand Horizontal",
+    "description": "Иконка chevrons-expand-horizontal",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "unwrap"
+    ]
+  },
+  {
+    "name": "chevrons-expand-to-lines",
+    "displayName": "Chevrons Expand To Lines",
+    "description": "Иконка chevrons-expand-to-lines",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "chevrons-expand-up-right",
+    "displayName": "Chevrons Expand Up Right",
+    "description": "Иконка chevrons-expand-up-right",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "full",
+      "screen",
+      "unwrap"
+    ]
+  },
+  {
+    "name": "chevrons-expand-vertical",
+    "displayName": "Chevrons Expand Vertical",
+    "description": "Иконка chevrons-expand-vertical",
+    "category": "navigation",
+    "keywords": [
+      "arrows",
+      "unwrap"
+    ]
+  },
+  {
+    "name": "chevrons-left",
+    "displayName": "Chevrons Left",
+    "description": "Иконка chevrons-left",
+    "category": "navigation",
+    "keywords": [
+      "arrows"
+    ]
+  },
+  {
+    "name": "chevrons-right",
+    "displayName": "Chevrons Right",
+    "description": "Иконка chevrons-right",
+    "category": "navigation",
+    "keywords": [
+      "arrows"
+    ]
+  },
+  {
+    "name": "chevrons-up",
+    "displayName": "Chevrons Up",
+    "description": "Иконка chevrons-up",
+    "category": "navigation",
+    "keywords": [
+      "arrows"
+    ]
+  },
+  {
+    "name": "chevrons-up-wide",
+    "displayName": "Chevrons Up Wide",
+    "description": "Иконка chevrons-up-wide",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle",
+    "displayName": "Circle",
+    "description": "Иконка circle",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle",
+    "displayName": "Circle",
+    "description": "Иконка circle",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-down",
+    "displayName": "Circle Arrow Down",
+    "description": "Иконка circle-arrow-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-down",
+    "displayName": "Circle Arrow Down",
+    "description": "Иконка circle-arrow-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-left",
+    "displayName": "Circle Arrow Left",
+    "description": "Иконка circle-arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-left",
+    "displayName": "Circle Arrow Left",
+    "description": "Иконка circle-arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-right",
+    "displayName": "Circle Arrow Right",
+    "description": "Иконка circle-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-right",
+    "displayName": "Circle Arrow Right",
+    "description": "Иконка circle-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-up",
+    "displayName": "Circle Arrow Up",
+    "description": "Иконка circle-arrow-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-arrow-up",
+    "displayName": "Circle Arrow Up",
+    "description": "Иконка circle-arrow-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "circle-check",
+    "displayName": "Circle Check",
+    "description": "Иконка circle-check",
+    "category": "status",
+    "keywords": [
+      "done"
+    ]
+  },
+  {
+    "name": "circle-check",
+    "displayName": "Circle Check",
+    "description": "Иконка circle-check",
+    "category": "status",
+    "keywords": [
+      "done"
+    ]
+  },
+  {
+    "name": "circle-chevron-down",
+    "displayName": "Circle Chevron Down",
+    "description": "Иконка circle-chevron-down",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-down",
+    "displayName": "Circle Chevron Down",
+    "description": "Иконка circle-chevron-down",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-left",
+    "displayName": "Circle Chevron Left",
+    "description": "Иконка circle-chevron-left",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-left",
+    "displayName": "Circle Chevron Left",
+    "description": "Иконка circle-chevron-left",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-right",
+    "displayName": "Circle Chevron Right",
+    "description": "Иконка circle-chevron-right",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-right",
+    "displayName": "Circle Chevron Right",
+    "description": "Иконка circle-chevron-right",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-up",
+    "displayName": "Circle Chevron Up",
+    "description": "Иконка circle-chevron-up",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevron-up",
+    "displayName": "Circle Chevron Up",
+    "description": "Иконка circle-chevron-up",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevrons-down",
+    "displayName": "Circle Chevrons Down",
+    "description": "Иконка circle-chevrons-down",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevrons-left",
+    "displayName": "Circle Chevrons Left",
+    "description": "Иконка circle-chevrons-left",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevrons-right",
+    "displayName": "Circle Chevrons Right",
+    "description": "Иконка circle-chevrons-right",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-chevrons-up",
+    "displayName": "Circle Chevrons Up",
+    "description": "Иконка circle-chevrons-up",
+    "category": "navigation",
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "circle-dashed",
+    "displayName": "Circle Dashed",
+    "description": "Иконка circle-dashed",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-dollar",
+    "displayName": "Circle Dollar",
+    "description": "Иконка circle-dollar",
+    "category": "payment",
+    "keywords": []
+  },
+  {
+    "name": "circle-exclamation",
+    "displayName": "Circle Exclamation",
+    "description": "Иконка circle-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "circle-exclamation",
+    "displayName": "Circle Exclamation",
+    "description": "Иконка circle-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "circle-info",
+    "displayName": "Circle Info",
+    "description": "Иконка circle-info",
+    "category": "help",
+    "keywords": [
+      "information"
+    ]
+  },
+  {
+    "name": "circle-info",
+    "displayName": "Circle Info",
+    "description": "Иконка circle-info",
+    "category": "help",
+    "keywords": [
+      "information"
+    ]
+  },
+  {
+    "name": "circle-letter-a",
+    "displayName": "Circle Letter A",
+    "description": "Иконка circle-letter-a",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-b",
+    "displayName": "Circle Letter B",
+    "description": "Иконка circle-letter-b",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-c",
+    "displayName": "Circle Letter C",
+    "description": "Иконка circle-letter-c",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-d",
+    "displayName": "Circle Letter D",
+    "description": "Иконка circle-letter-d",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-e",
+    "displayName": "Circle Letter E",
+    "description": "Иконка circle-letter-e",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-f",
+    "displayName": "Circle Letter F",
+    "description": "Иконка circle-letter-f",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-g",
+    "displayName": "Circle Letter G",
+    "description": "Иконка circle-letter-g",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-h",
+    "displayName": "Circle Letter H",
+    "description": "Иконка circle-letter-h",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-i",
+    "displayName": "Circle Letter I",
+    "description": "Иконка circle-letter-i",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-j",
+    "displayName": "Circle Letter J",
+    "description": "Иконка circle-letter-j",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-k",
+    "displayName": "Circle Letter K",
+    "description": "Иконка circle-letter-k",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-l",
+    "displayName": "Circle Letter L",
+    "description": "Иконка circle-letter-l",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-m",
+    "displayName": "Circle Letter M",
+    "description": "Иконка circle-letter-m",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-n",
+    "displayName": "Circle Letter N",
+    "description": "Иконка circle-letter-n",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-o",
+    "displayName": "Circle Letter O",
+    "description": "Иконка circle-letter-o",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-p",
+    "displayName": "Circle Letter P",
+    "description": "Иконка circle-letter-p",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-q",
+    "displayName": "Circle Letter Q",
+    "description": "Иконка circle-letter-q",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-r",
+    "displayName": "Circle Letter R",
+    "description": "Иконка circle-letter-r",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-s",
+    "displayName": "Circle Letter S",
+    "description": "Иконка circle-letter-s",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-t",
+    "displayName": "Circle Letter T",
+    "description": "Иконка circle-letter-t",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-u",
+    "displayName": "Circle Letter U",
+    "description": "Иконка circle-letter-u",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-v",
+    "displayName": "Circle Letter V",
+    "description": "Иконка circle-letter-v",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-w",
+    "displayName": "Circle Letter W",
+    "description": "Иконка circle-letter-w",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-x",
+    "displayName": "Circle Letter X",
+    "description": "Иконка circle-letter-x",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-y",
+    "displayName": "Circle Letter Y",
+    "description": "Иконка circle-letter-y",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-letter-z",
+    "displayName": "Circle Letter Z",
+    "description": "Иконка circle-letter-z",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-link",
+    "displayName": "Circle Link",
+    "description": "Иконка circle-link",
+    "category": "other",
+    "keywords": [
+      "chain"
+    ]
+  },
+  {
+    "name": "circle-minus",
+    "displayName": "Circle Minus",
+    "description": "Иконка circle-minus",
+    "category": "other",
+    "keywords": [
+      "remove",
+      "delete"
+    ]
+  },
+  {
+    "name": "circle-minus",
+    "displayName": "Circle Minus",
+    "description": "Иконка circle-minus",
+    "category": "other",
+    "keywords": [
+      "remove",
+      "delete"
+    ]
+  },
+  {
+    "name": "circle-number-0",
+    "displayName": "Circle Number 0",
+    "description": "Иконка circle-number-0",
+    "category": "other",
+    "keywords": [
+      "zero"
+    ]
+  },
+  {
+    "name": "circle-number-1",
+    "displayName": "Circle Number 1",
+    "description": "Иконка circle-number-1",
+    "category": "other",
+    "keywords": [
+      "one"
+    ]
+  },
+  {
+    "name": "circle-number-2",
+    "displayName": "Circle Number 2",
+    "description": "Иконка circle-number-2",
+    "category": "other",
+    "keywords": [
+      "two"
+    ]
+  },
+  {
+    "name": "circle-number-3",
+    "displayName": "Circle Number 3",
+    "description": "Иконка circle-number-3",
+    "category": "other",
+    "keywords": [
+      "three"
+    ]
+  },
+  {
+    "name": "circle-number-4",
+    "displayName": "Circle Number 4",
+    "description": "Иконка circle-number-4",
+    "category": "other",
+    "keywords": [
+      "four"
+    ]
+  },
+  {
+    "name": "circle-number-5",
+    "displayName": "Circle Number 5",
+    "description": "Иконка circle-number-5",
+    "category": "other",
+    "keywords": [
+      "five"
+    ]
+  },
+  {
+    "name": "circle-number-6",
+    "displayName": "Circle Number 6",
+    "description": "Иконка circle-number-6",
+    "category": "other",
+    "keywords": [
+      "six"
+    ]
+  },
+  {
+    "name": "circle-number-7",
+    "displayName": "Circle Number 7",
+    "description": "Иконка circle-number-7",
+    "category": "other",
+    "keywords": [
+      "seven"
+    ]
+  },
+  {
+    "name": "circle-number-8",
+    "displayName": "Circle Number 8",
+    "description": "Иконка circle-number-8",
+    "category": "other",
+    "keywords": [
+      "eight"
+    ]
+  },
+  {
+    "name": "circle-number-9",
+    "displayName": "Circle Number 9",
+    "description": "Иконка circle-number-9",
+    "category": "other",
+    "keywords": [
+      "nine"
+    ]
+  },
+  {
+    "name": "circle-pause",
+    "displayName": "Circle Pause",
+    "description": "Иконка circle-pause",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "circle-pause",
+    "displayName": "Circle Pause",
+    "description": "Иконка circle-pause",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "circle-play",
+    "displayName": "Circle Play",
+    "description": "Иконка circle-play",
+    "category": "media",
+    "keywords": [
+      "start",
+      "video"
+    ]
+  },
+  {
+    "name": "circle-play",
+    "displayName": "Circle Play",
+    "description": "Иконка circle-play",
+    "category": "media",
+    "keywords": [
+      "start",
+      "video"
+    ]
+  },
+  {
+    "name": "circle-plus",
+    "displayName": "Circle Plus",
+    "description": "Иконка circle-plus",
+    "category": "action",
+    "keywords": [
+      "add",
+      "new"
+    ]
+  },
+  {
+    "name": "circle-plus",
+    "displayName": "Circle Plus",
+    "description": "Иконка circle-plus",
+    "category": "action",
+    "keywords": [
+      "add",
+      "new"
+    ]
+  },
+  {
+    "name": "circle-question",
+    "displayName": "Circle Question",
+    "description": "Иконка circle-question",
+    "category": "help",
+    "keywords": []
+  },
+  {
+    "name": "circle-question",
+    "displayName": "Circle Question",
+    "description": "Иконка circle-question",
+    "category": "help",
+    "keywords": []
+  },
+  {
+    "name": "circle-question-dot",
+    "displayName": "Circle Question Dot",
+    "description": "Иконка circle-question-dot",
+    "category": "help",
+    "keywords": []
+  },
+  {
+    "name": "circle-ruble",
+    "displayName": "Circle Ruble",
+    "description": "Иконка circle-ruble",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circle-stop",
+    "displayName": "Circle Stop",
+    "description": "Иконка circle-stop",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "circle-stop",
+    "displayName": "Circle Stop",
+    "description": "Иконка circle-stop",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "circle-xmark",
+    "displayName": "Circle Xmark",
+    "description": "Иконка circle-xmark",
+    "category": "action",
+    "keywords": [
+      "close",
+      "delete",
+      "remove"
+    ]
+  },
+  {
+    "name": "circle-xmark",
+    "displayName": "Circle Xmark",
+    "description": "Иконка circle-xmark",
+    "category": "action",
+    "keywords": [
+      "close",
+      "delete",
+      "remove"
+    ]
+  },
+  {
+    "name": "circles-3-plus",
+    "displayName": "Circles 3 Plus",
+    "description": "Иконка circles-3-plus",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "circles-4-diamond",
+    "displayName": "Circles 4 Diamond",
+    "description": "Иконка circles-4-diamond",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circles-4-square",
+    "displayName": "Circles 4 Square",
+    "description": "Иконка circles-4-square",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circles-5-random",
+    "displayName": "Circles 5 Random",
+    "description": "Иконка circles-5-random",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circles-concentric",
+    "displayName": "Circles Concentric",
+    "description": "Иконка circles-concentric",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "circles-intersection",
+    "displayName": "Circles Intersection",
+    "description": "Иконка circles-intersection",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "clock",
+    "displayName": "Clock",
+    "description": "Иконка clock",
+    "category": "security",
+    "keywords": [
+      "time",
+      "wait"
+    ]
+  },
+  {
+    "name": "clock",
+    "displayName": "Clock",
+    "description": "Иконка clock",
+    "category": "security",
+    "keywords": [
+      "time",
+      "wait"
+    ]
+  },
+  {
+    "name": "clock-arrow-rotate-left",
+    "displayName": "Clock Arrow Rotate Left",
+    "description": "Иконка clock-arrow-rotate-left",
+    "category": "navigation",
+    "keywords": [
+      "history",
+      "time",
+      "machine",
+      "wait"
+    ]
+  },
+  {
+    "name": "cloud",
+    "displayName": "Cloud",
+    "description": "Иконка cloud",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "cloud-arrow-up-in",
+    "displayName": "Cloud Arrow Up In",
+    "description": "Иконка cloud-arrow-up-in",
+    "category": "navigation",
+    "keywords": [
+      "import",
+      "move"
+    ]
+  },
+  {
+    "name": "cloud-check",
+    "displayName": "Cloud Check",
+    "description": "Иконка cloud-check",
+    "category": "status",
+    "keywords": [
+      "save",
+      "done"
+    ]
+  },
+  {
+    "name": "cloud-gear",
+    "displayName": "Cloud Gear",
+    "description": "Иконка cloud-gear",
+    "category": "system",
+    "keywords": []
+  },
+  {
+    "name": "cloud-nut-hex",
+    "displayName": "Cloud Nut Hex",
+    "description": "Иконка cloud-nut-hex",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "cloud-slash",
+    "displayName": "Cloud Slash",
+    "description": "Иконка cloud-slash",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "clouds",
+    "displayName": "Clouds",
+    "description": "Иконка clouds",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code",
+    "displayName": "Code",
+    "description": "Иконка code",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-commit",
+    "displayName": "Code Commit",
+    "description": "Иконка code-commit",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-commit-horizontal",
+    "displayName": "Code Commit Horizontal",
+    "description": "Иконка code-commit-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-commits",
+    "displayName": "Code Commits",
+    "description": "Иконка code-commits",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-compare",
+    "displayName": "Code Compare",
+    "description": "Иконка code-compare",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-fork",
+    "displayName": "Code Fork",
+    "description": "Иконка code-fork",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-merge",
+    "displayName": "Code Merge",
+    "description": "Иконка code-merge",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-pull-request",
+    "displayName": "Code Pull Request",
+    "description": "Иконка code-pull-request",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "code-pull-request-arrow-left",
+    "displayName": "Code Pull Request Arrow Left",
+    "description": "Иконка code-pull-request-arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "code-pull-request-arrow-right",
+    "displayName": "Code Pull Request Arrow Right",
+    "description": "Иконка code-pull-request-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "code-pull-request-check",
+    "displayName": "Code Pull Request Check",
+    "description": "Иконка code-pull-request-check",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "code-pull-request-xmark",
+    "displayName": "Code Pull Request Xmark",
+    "description": "Иконка code-pull-request-xmark",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "code-trunk",
+    "displayName": "Code Trunk",
+    "description": "Иконка code-trunk",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "comment",
+    "displayName": "Comment",
+    "description": "Иконка comment",
+    "category": "other",
+    "keywords": [
+      "message",
+      "bubble"
+    ]
+  },
+  {
+    "name": "comment",
+    "displayName": "Comment",
+    "description": "Иконка comment",
+    "category": "other",
+    "keywords": [
+      "message",
+      "bubble"
+    ]
+  },
+  {
+    "name": "comment-dot",
+    "displayName": "Comment Dot",
+    "description": "Иконка comment-dot",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "comment-plus",
+    "displayName": "Comment Plus",
+    "description": "Иконка comment-plus",
+    "category": "action",
+    "keywords": [
+      "message",
+      "bubble"
+    ]
+  },
+  {
+    "name": "comment-slash",
+    "displayName": "Comment Slash",
+    "description": "Иконка comment-slash",
+    "category": "other",
+    "keywords": [
+      "message",
+      "bubble",
+      "mute"
+    ]
+  },
+  {
+    "name": "comments",
+    "displayName": "Comments",
+    "description": "Иконка comments",
+    "category": "other",
+    "keywords": [
+      "dialog",
+      "messages",
+      "bubbles"
+    ]
+  },
+  {
+    "name": "compass",
+    "displayName": "Compass",
+    "description": "Иконка compass",
+    "category": "other",
+    "keywords": [
+      "direction",
+      "navigation"
+    ]
+  },
+  {
+    "name": "copy",
+    "displayName": "Copy",
+    "description": "Иконка copy",
+    "category": "other",
+    "keywords": [
+      "duplicate"
+    ]
+  },
+  {
+    "name": "copy-arrow-right",
+    "displayName": "Copy Arrow Right",
+    "description": "Иконка copy-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "copy-check",
+    "displayName": "Copy Check",
+    "description": "Иконка copy-check",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "copy-check-xmark",
+    "displayName": "Copy Check Xmark",
+    "description": "Иконка copy-check-xmark",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "copy-chevron-right",
+    "displayName": "Copy Chevron Right",
+    "description": "Иконка copy-chevron-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "copy-minus",
+    "displayName": "Copy Minus",
+    "description": "Иконка copy-minus",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "copy-picture",
+    "displayName": "Copy Picture",
+    "description": "Иконка copy-picture",
+    "category": "other",
+    "keywords": [
+      "image",
+      "photo"
+    ]
+  },
+  {
+    "name": "copy-plus",
+    "displayName": "Copy Plus",
+    "description": "Иконка copy-plus",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "copy-transparent",
+    "displayName": "Copy Transparent",
+    "description": "Иконка copy-transparent",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "copy-xmark",
+    "displayName": "Copy Xmark",
+    "description": "Иконка copy-xmark",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "cpu",
+    "displayName": "Cpu",
+    "description": "Иконка cpu",
+    "category": "other",
+    "keywords": [
+      "processor"
+    ]
+  },
+  {
+    "name": "cpus",
+    "displayName": "Cpus",
+    "description": "Иконка cpus",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "credit-card",
+    "displayName": "Credit Card",
+    "description": "Иконка credit-card",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "crop",
+    "displayName": "Crop",
+    "description": "Иконка crop",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "crown-diamond",
+    "displayName": "Crown Diamond",
+    "description": "Иконка crown-diamond",
+    "category": "other",
+    "keywords": [
+      "king",
+      "queen"
+    ]
+  },
+  {
+    "name": "cube",
+    "displayName": "Cube",
+    "description": "Иконка cube",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "cubes-3",
+    "displayName": "Cubes 3",
+    "description": "Иконка cubes-3",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "cubes-3-overlap",
+    "displayName": "Cubes 3 Overlap",
+    "description": "Иконка cubes-3-overlap",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "cup",
+    "displayName": "Cup",
+    "description": "Иконка cup",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "curly-brackets",
+    "displayName": "Curly Brackets",
+    "description": "Иконка curly-brackets",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "curly-brackets-function",
+    "displayName": "Curly Brackets Function",
+    "description": "Иконка curly-brackets-function",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "curly-brackets-lock",
+    "displayName": "Curly Brackets Lock",
+    "description": "Иконка curly-brackets-lock",
+    "category": "security",
+    "keywords": []
+  },
+  {
+    "name": "database",
+    "displayName": "Database",
+    "description": "Иконка database",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "database",
+    "displayName": "Database",
+    "description": "Иконка database",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "database-arrow-right",
+    "displayName": "Database Arrow Right",
+    "description": "Иконка database-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "database-magnifier",
+    "displayName": "Database Magnifier",
+    "description": "Иконка database-magnifier",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "databases",
+    "displayName": "Databases",
+    "description": "Иконка databases",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "databases",
+    "displayName": "Databases",
+    "description": "Иконка databases",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "delete",
+    "displayName": "Delete",
+    "description": "Иконка delete",
+    "category": "action",
+    "keywords": [
+      "backspace"
+    ]
+  },
+  {
+    "name": "diamond",
+    "displayName": "Diamond",
+    "description": "Иконка diamond",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "diamond",
+    "displayName": "Diamond",
+    "description": "Иконка diamond",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "diamond-exclamation",
+    "displayName": "Diamond Exclamation",
+    "description": "Иконка diamond-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "dice-1",
+    "displayName": "Dice 1",
+    "description": "Иконка dice-1",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "dice-2",
+    "displayName": "Dice 2",
+    "description": "Иконка dice-2",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "dice-3",
+    "displayName": "Dice 3",
+    "description": "Иконка dice-3",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "dice-4",
+    "displayName": "Dice 4",
+    "description": "Иконка dice-4",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "dice-5",
+    "displayName": "Dice 5",
+    "description": "Иконка dice-5",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "dice-6",
+    "displayName": "Dice 6",
+    "description": "Иконка dice-6",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "display",
+    "displayName": "Display",
+    "description": "Иконка display",
+    "category": "media",
+    "keywords": [
+      "monitor",
+      "screen"
+    ]
+  },
+  {
+    "name": "display-pulse",
+    "displayName": "Display Pulse",
+    "description": "Иконка display-pulse",
+    "category": "media",
+    "keywords": [
+      "monitor",
+      "screen",
+      "monitoring"
+    ]
+  },
+  {
+    "name": "dots-9",
+    "displayName": "Dots 9",
+    "description": "Иконка dots-9",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "droplet",
+    "displayName": "Droplet",
+    "description": "Иконка droplet",
+    "category": "other",
+    "keywords": [
+      "water"
+    ]
+  },
+  {
+    "name": "ear",
+    "displayName": "Ear",
+    "description": "Иконка ear",
+    "category": "other",
+    "keywords": [
+      "hear"
+    ]
+  },
+  {
+    "name": "ellipsis",
+    "displayName": "Ellipsis",
+    "description": "Иконка ellipsis",
+    "category": "other",
+    "keywords": [
+      "more",
+      "kebab"
+    ]
+  },
+  {
+    "name": "ellipsis-vertical",
+    "displayName": "Ellipsis Vertical",
+    "description": "Иконка ellipsis-vertical",
+    "category": "other",
+    "keywords": [
+      "more",
+      "kebab"
+    ]
+  },
+  {
+    "name": "envelope",
+    "displayName": "Envelope",
+    "description": "Иконка envelope",
+    "category": "other",
+    "keywords": [
+      "mail"
+    ]
+  },
+  {
+    "name": "envelope-open",
+    "displayName": "Envelope Open",
+    "description": "Иконка envelope-open",
+    "category": "other",
+    "keywords": [
+      "mail"
+    ]
+  },
+  {
+    "name": "envelope-open-xmark",
+    "displayName": "Envelope Open Xmark",
+    "description": "Иконка envelope-open-xmark",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "equal",
+    "displayName": "Equal",
+    "description": "Иконка equal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "eraser",
+    "displayName": "Eraser",
+    "description": "Иконка eraser",
+    "category": "other",
+    "keywords": [
+      "clean",
+      "delete"
+    ]
+  },
+  {
+    "name": "exclamation-shape",
+    "displayName": "Exclamation Shape",
+    "description": "Иконка exclamation-shape",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "exclamation-shape",
+    "displayName": "Exclamation Shape",
+    "description": "Иконка exclamation-shape",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "eye",
+    "displayName": "Eye",
+    "description": "Иконка eye",
+    "category": "action",
+    "keywords": [
+      "view",
+      "visibility",
+      "transparency"
+    ]
+  },
+  {
+    "name": "eye-dashed",
+    "displayName": "Eye Dashed",
+    "description": "Иконка eye-dashed",
+    "category": "action",
+    "keywords": [
+      "view",
+      "visibility",
+      "transparency"
+    ]
+  },
+  {
+    "name": "eye-slash",
+    "displayName": "Eye Slash",
+    "description": "Иконка eye-slash",
+    "category": "action",
+    "keywords": [
+      "view",
+      "visibility",
+      "transparency"
+    ]
+  },
+  {
+    "name": "eyes-look-left",
+    "displayName": "Eyes Look Left",
+    "description": "Иконка eyes-look-left",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "eyes-look-right",
+    "displayName": "Eyes Look Right",
+    "description": "Иконка eyes-look-right",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "face-alien",
+    "displayName": "Face Alien",
+    "description": "Иконка face-alien",
+    "category": "other",
+    "keywords": [
+      "ufo"
+    ]
+  },
+  {
+    "name": "face-angry",
+    "displayName": "Face Angry",
+    "description": "Иконка face-angry",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-fun",
+    "displayName": "Face Fun",
+    "description": "Иконка face-fun",
+    "category": "other",
+    "keywords": [
+      "happy"
+    ]
+  },
+  {
+    "name": "face-neutral",
+    "displayName": "Face Neutral",
+    "description": "Иконка face-neutral",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-neutral-dashed",
+    "displayName": "Face Neutral Dashed",
+    "description": "Иконка face-neutral-dashed",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-robot",
+    "displayName": "Face Robot",
+    "description": "Иконка face-robot",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-sad",
+    "displayName": "Face Sad",
+    "description": "Иконка face-sad",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-smile",
+    "displayName": "Face Smile",
+    "description": "Иконка face-smile",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "face-surprise",
+    "displayName": "Face Surprise",
+    "description": "Иконка face-surprise",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "factory",
+    "displayName": "Factory",
+    "description": "Иконка factory",
+    "category": "other",
+    "keywords": [
+      "building"
+    ]
+  },
+  {
+    "name": "file",
+    "displayName": "File",
+    "description": "Иконка file",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-arrow-down",
+    "displayName": "File Arrow Down",
+    "description": "Иконка file-arrow-down",
+    "category": "navigation",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-arrow-left",
+    "displayName": "File Arrow Left",
+    "description": "Иконка file-arrow-left",
+    "category": "navigation",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-arrow-right",
+    "displayName": "File Arrow Right",
+    "description": "Иконка file-arrow-right",
+    "category": "navigation",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-arrow-right-out",
+    "displayName": "File Arrow Right Out",
+    "description": "Иконка file-arrow-right-out",
+    "category": "navigation",
+    "keywords": [
+      "move"
+    ]
+  },
+  {
+    "name": "file-arrow-up",
+    "displayName": "File Arrow Up",
+    "description": "Иконка file-arrow-up",
+    "category": "navigation",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-check",
+    "displayName": "File Check",
+    "description": "Иконка file-check",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-code",
+    "displayName": "File Code",
+    "description": "Иконка file-code",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "file-dollar",
+    "displayName": "File Dollar",
+    "description": "Иконка file-dollar",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "file-exclamation",
+    "displayName": "File Exclamation",
+    "description": "Иконка file-exclamation",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-letter-p",
+    "displayName": "File Letter P",
+    "description": "Иконка file-letter-p",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-letter-w",
+    "displayName": "File Letter W",
+    "description": "Иконка file-letter-w",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-letter-x",
+    "displayName": "File Letter X",
+    "description": "Иконка file-letter-x",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-magnifier",
+    "displayName": "File Magnifier",
+    "description": "Иконка file-magnifier",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-minus",
+    "displayName": "File Minus",
+    "description": "Иконка file-minus",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-plus",
+    "displayName": "File Plus",
+    "description": "Иконка file-plus",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-question",
+    "displayName": "File Question",
+    "description": "Иконка file-question",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-ruble",
+    "displayName": "File Ruble",
+    "description": "Иконка file-ruble",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "file-text",
+    "displayName": "File Text",
+    "description": "Иконка file-text",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-xmark",
+    "displayName": "File Xmark",
+    "description": "Иконка file-xmark",
+    "category": "file",
+    "keywords": [
+      "document",
+      "paper",
+      "page"
+    ]
+  },
+  {
+    "name": "file-zipper",
+    "displayName": "File Zipper",
+    "description": "Иконка file-zipper",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "files",
+    "displayName": "Files",
+    "description": "Иконка files",
+    "category": "file",
+    "keywords": [
+      "documents",
+      "papers",
+      "pages",
+      "copy"
+    ]
+  },
+  {
+    "name": "filmstrip",
+    "displayName": "Filmstrip",
+    "description": "Иконка filmstrip",
+    "category": "other",
+    "keywords": [
+      "board",
+      "game"
+    ]
+  },
+  {
+    "name": "fingerprint",
+    "displayName": "Fingerprint",
+    "description": "Иконка fingerprint",
+    "category": "action",
+    "keywords": [
+      "scan",
+      "touch"
+    ]
+  },
+  {
+    "name": "flag",
+    "displayName": "Flag",
+    "description": "Иконка flag",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "flame",
+    "displayName": "Flame",
+    "description": "Иконка flame",
+    "category": "other",
+    "keywords": [
+      "fire"
+    ]
+  },
+  {
+    "name": "flask",
+    "displayName": "Flask",
+    "description": "Иконка flask",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "floppy-disk",
+    "displayName": "Floppy Disk",
+    "description": "Иконка floppy-disk",
+    "category": "other",
+    "keywords": [
+      "save"
+    ]
+  },
+  {
+    "name": "folder",
+    "displayName": "Folder",
+    "description": "Иконка folder",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder",
+    "displayName": "Folder",
+    "description": "Иконка folder",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-arrow-down",
+    "displayName": "Folder Arrow Down",
+    "description": "Иконка folder-arrow-down",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "folder-arrow-left",
+    "displayName": "Folder Arrow Left",
+    "description": "Иконка folder-arrow-left",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "folder-arrow-right",
+    "displayName": "Folder Arrow Right",
+    "description": "Иконка folder-arrow-right",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "folder-arrow-up",
+    "displayName": "Folder Arrow Up",
+    "description": "Иконка folder-arrow-up",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "folder-arrow-up-in",
+    "displayName": "Folder Arrow Up In",
+    "description": "Иконка folder-arrow-up-in",
+    "category": "navigation",
+    "keywords": [
+      "import",
+      "move"
+    ]
+  },
+  {
+    "name": "folder-check",
+    "displayName": "Folder Check",
+    "description": "Иконка folder-check",
+    "category": "file",
+    "keywords": [
+      "done"
+    ]
+  },
+  {
+    "name": "folder-code",
+    "displayName": "Folder Code",
+    "description": "Иконка folder-code",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-exclamation",
+    "displayName": "Folder Exclamation",
+    "description": "Иконка folder-exclamation",
+    "category": "file",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "folder-flows",
+    "displayName": "Folder Flows",
+    "description": "Иконка folder-flows",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-house",
+    "displayName": "Folder House",
+    "description": "Иконка folder-house",
+    "category": "file",
+    "keywords": [
+      "house"
+    ]
+  },
+  {
+    "name": "folder-keyhole",
+    "displayName": "Folder Keyhole",
+    "description": "Иконка folder-keyhole",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-lock",
+    "displayName": "Folder Lock",
+    "description": "Иконка folder-lock",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-magnifier",
+    "displayName": "Folder Magnifier",
+    "description": "Иконка folder-magnifier",
+    "category": "file",
+    "keywords": [
+      "search"
+    ]
+  },
+  {
+    "name": "folder-open",
+    "displayName": "Folder Open",
+    "description": "Иконка folder-open",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-open",
+    "displayName": "Folder Open",
+    "description": "Иконка folder-open",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folder-plus",
+    "displayName": "Folder Plus",
+    "description": "Иконка folder-plus",
+    "category": "file",
+    "keywords": [
+      "add",
+      "new"
+    ]
+  },
+  {
+    "name": "folder-tree",
+    "displayName": "Folder Tree",
+    "description": "Иконка folder-tree",
+    "category": "file",
+    "keywords": []
+  },
+  {
+    "name": "folders",
+    "displayName": "Folders",
+    "description": "Иконка folders",
+    "category": "file",
+    "keywords": [
+      "copy",
+      "group"
+    ]
+  },
+  {
+    "name": "font",
+    "displayName": "Font",
+    "description": "Иконка font",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "font-case",
+    "displayName": "Font Case",
+    "description": "Иконка font-case",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format",
+      "uppercase",
+      "size"
+    ]
+  },
+  {
+    "name": "font-cursor",
+    "displayName": "Font Cursor",
+    "description": "Иконка font-cursor",
+    "category": "other",
+    "keywords": [
+      "edit",
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "forward-step",
+    "displayName": "Forward Step",
+    "description": "Иконка forward-step",
+    "category": "other",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "forward-step",
+    "displayName": "Forward Step",
+    "description": "Иконка forward-step",
+    "category": "other",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "frame",
+    "displayName": "Frame",
+    "description": "Иконка frame",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "frames",
+    "displayName": "Frames",
+    "description": "Иконка frames",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "function",
+    "displayName": "Function",
+    "description": "Иконка function",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "funnel",
+    "displayName": "Funnel",
+    "description": "Иконка funnel",
+    "category": "other",
+    "keywords": [
+      "filter"
+    ]
+  },
+  {
+    "name": "funnel-xmark",
+    "displayName": "Funnel Xmark",
+    "description": "Иконка funnel-xmark",
+    "category": "action",
+    "keywords": [
+      "filter",
+      "close"
+    ]
+  },
+  {
+    "name": "gear",
+    "displayName": "Gear",
+    "description": "Иконка gear",
+    "category": "system",
+    "keywords": [
+      "setting",
+      "custom",
+      "tuning",
+      "cog"
+    ]
+  },
+  {
+    "name": "gear-branches",
+    "displayName": "Gear Branches",
+    "description": "Иконка gear-branches",
+    "category": "system",
+    "keywords": []
+  },
+  {
+    "name": "gear-dot",
+    "displayName": "Gear Dot",
+    "description": "Иконка gear-dot",
+    "category": "system",
+    "keywords": [
+      "setting",
+      "custom",
+      "tuning",
+      "cog",
+      "notify",
+      "notification"
+    ]
+  },
+  {
+    "name": "gear-play",
+    "displayName": "Gear Play",
+    "description": "Иконка gear-play",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "geo",
+    "displayName": "Geo",
+    "description": "Иконка geo",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "geo",
+    "displayName": "Geo",
+    "description": "Иконка geo",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "geo-dots",
+    "displayName": "Geo Dots",
+    "description": "Иконка geo-dots",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "geo-pin",
+    "displayName": "Geo Pin",
+    "description": "Иконка geo-pin",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "geo-polygons",
+    "displayName": "Geo Polygons",
+    "description": "Иконка geo-polygons",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "ghost",
+    "displayName": "Ghost",
+    "description": "Иконка ghost",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "gift",
+    "displayName": "Gift",
+    "description": "Иконка gift",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "globe",
+    "displayName": "Globe",
+    "description": "Иконка globe",
+    "category": "other",
+    "keywords": [
+      "planet",
+      "world",
+      "language"
+    ]
+  },
+  {
+    "name": "gpu",
+    "displayName": "Gpu",
+    "description": "Иконка gpu",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "graduation-cap",
+    "displayName": "Graduation Cap",
+    "description": "Иконка graduation-cap",
+    "category": "other",
+    "keywords": [
+      "learn",
+      "study",
+      "education",
+      "hat"
+    ]
+  },
+  {
+    "name": "graph-node",
+    "displayName": "Graph Node",
+    "description": "Иконка graph-node",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "grip",
+    "displayName": "Grip",
+    "description": "Иконка grip",
+    "category": "other",
+    "keywords": [
+      "move"
+    ]
+  },
+  {
+    "name": "grip-horizontal",
+    "displayName": "Grip Horizontal",
+    "description": "Иконка grip-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "hammer",
+    "displayName": "Hammer",
+    "description": "Иконка hammer",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "hand",
+    "displayName": "Hand",
+    "description": "Иконка hand",
+    "category": "other",
+    "keywords": [
+      "hello",
+      "hi"
+    ]
+  },
+  {
+    "name": "hand-ok",
+    "displayName": "Hand Ok",
+    "description": "Иконка hand-ok",
+    "category": "other",
+    "keywords": [
+      "okay"
+    ]
+  },
+  {
+    "name": "hand-point-down",
+    "displayName": "Hand Point Down",
+    "description": "Иконка hand-point-down",
+    "category": "other",
+    "keywords": [
+      "touch",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "hand-point-left",
+    "displayName": "Hand Point Left",
+    "description": "Иконка hand-point-left",
+    "category": "other",
+    "keywords": [
+      "touch",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "hand-point-right",
+    "displayName": "Hand Point Right",
+    "description": "Иконка hand-point-right",
+    "category": "other",
+    "keywords": [
+      "touch",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "hand-point-up",
+    "displayName": "Hand Point Up",
+    "description": "Иконка hand-point-up",
+    "category": "other",
+    "keywords": [
+      "touch",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "hand-stop",
+    "displayName": "Hand Stop",
+    "description": "Иконка hand-stop",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "handset",
+    "displayName": "Handset",
+    "description": "Иконка handset",
+    "category": "other",
+    "keywords": [
+      "phone"
+    ]
+  },
+  {
+    "name": "handset-arrow-in",
+    "displayName": "Handset Arrow In",
+    "description": "Иконка handset-arrow-in",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "handset-arrow-out",
+    "displayName": "Handset Arrow Out",
+    "description": "Иконка handset-arrow-out",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "hard-drive",
+    "displayName": "Hard Drive",
+    "description": "Иконка hard-drive",
+    "category": "other",
+    "keywords": [
+      "disk",
+      "hdd"
+    ]
+  },
+  {
+    "name": "hashtag",
+    "displayName": "Hashtag",
+    "description": "Иконка hashtag",
+    "category": "other",
+    "keywords": [
+      "number",
+      "pound",
+      "sign"
+    ]
+  },
+  {
+    "name": "heading",
+    "displayName": "Heading",
+    "description": "Иконка heading",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "heading-1",
+    "displayName": "Heading 1",
+    "description": "Иконка heading-1",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "heading-2",
+    "displayName": "Heading 2",
+    "description": "Иконка heading-2",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "heading-3",
+    "displayName": "Heading 3",
+    "description": "Иконка heading-3",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "heading-4",
+    "displayName": "Heading 4",
+    "description": "Иконка heading-4",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "heading-5",
+    "displayName": "Heading 5",
+    "description": "Иконка heading-5",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "heading-6",
+    "displayName": "Heading 6",
+    "description": "Иконка heading-6",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "headphones",
+    "displayName": "Headphones",
+    "description": "Иконка headphones",
+    "category": "communication",
+    "keywords": []
+  },
+  {
+    "name": "heart",
+    "displayName": "Heart",
+    "description": "Иконка heart",
+    "category": "social",
+    "keywords": [
+      "like"
+    ]
+  },
+  {
+    "name": "heart",
+    "displayName": "Heart",
+    "description": "Иконка heart",
+    "category": "social",
+    "keywords": [
+      "like"
+    ]
+  },
+  {
+    "name": "heart-crack",
+    "displayName": "Heart Crack",
+    "description": "Иконка heart-crack",
+    "category": "social",
+    "keywords": []
+  },
+  {
+    "name": "heart-pulse",
+    "displayName": "Heart Pulse",
+    "description": "Иконка heart-pulse",
+    "category": "social",
+    "keywords": []
+  },
+  {
+    "name": "hierarchy",
+    "displayName": "Hierarchy",
+    "description": "Иконка hierarchy",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "house",
+    "displayName": "House",
+    "description": "Иконка house",
+    "category": "other",
+    "keywords": [
+      "home",
+      "building"
+    ]
+  },
+  {
+    "name": "house",
+    "displayName": "House",
+    "description": "Иконка house",
+    "category": "other",
+    "keywords": [
+      "home",
+      "building"
+    ]
+  },
+  {
+    "name": "italic",
+    "displayName": "Italic",
+    "description": "Иконка italic",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "key",
+    "displayName": "Key",
+    "description": "Иконка key",
+    "category": "other",
+    "keywords": [
+      "security",
+      "safe"
+    ]
+  },
+  {
+    "name": "keyboard",
+    "displayName": "Keyboard",
+    "description": "Иконка keyboard",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "layers",
+    "displayName": "Layers",
+    "description": "Иконка layers",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "layers-3-diagonal",
+    "displayName": "Layers 3 Diagonal",
+    "description": "Иконка layers-3-diagonal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "layers-vertical",
+    "displayName": "Layers Vertical",
+    "description": "Иконка layers-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "layout-cells",
+    "displayName": "Layout Cells",
+    "description": "Иконка layout-cells",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "grid"
+    ]
+  },
+  {
+    "name": "layout-cells-large",
+    "displayName": "Layout Cells Large",
+    "description": "Иконка layout-cells-large",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "grid"
+    ]
+  },
+  {
+    "name": "layout-columns",
+    "displayName": "Layout Columns",
+    "description": "Иконка layout-columns",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-columns-3",
+    "displayName": "Layout Columns 3",
+    "description": "Иконка layout-columns-3",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-footer",
+    "displayName": "Layout Footer",
+    "description": "Иконка layout-footer",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-header",
+    "displayName": "Layout Header",
+    "description": "Иконка layout-header",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-header-cells",
+    "displayName": "Layout Header Cells",
+    "description": "Иконка layout-header-cells",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "grid"
+    ]
+  },
+  {
+    "name": "layout-header-cells-large",
+    "displayName": "Layout Header Cells Large",
+    "description": "Иконка layout-header-cells-large",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "grid"
+    ]
+  },
+  {
+    "name": "layout-header-cells-large",
+    "displayName": "Layout Header Cells Large",
+    "description": "Иконка layout-header-cells-large",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "grid"
+    ]
+  },
+  {
+    "name": "layout-header-cells-large-letter-d",
+    "displayName": "Layout Header Cells Large Letter D",
+    "description": "Иконка layout-header-cells-large-letter-d",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-header-cells-large-thunderbolt",
+    "displayName": "Layout Header Cells Large Thunderbolt",
+    "description": "Иконка layout-header-cells-large-thunderbolt",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-header-columns",
+    "displayName": "Layout Header Columns",
+    "description": "Иконка layout-header-columns",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-header-cursor",
+    "displayName": "Layout Header Cursor",
+    "description": "Иконка layout-header-cursor",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-header-side-content",
+    "displayName": "Layout Header Side Content",
+    "description": "Иконка layout-header-side-content",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-list",
+    "displayName": "Layout List",
+    "description": "Иконка layout-list",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-rows",
+    "displayName": "Layout Rows",
+    "description": "Иконка layout-rows",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-rows-3",
+    "displayName": "Layout Rows 3",
+    "description": "Иконка layout-rows-3",
+    "category": "layout",
+    "keywords": [
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-side-content-left",
+    "displayName": "Layout Side Content Left",
+    "description": "Иконка layout-side-content-left",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-side-content-right",
+    "displayName": "Layout Side Content Right",
+    "description": "Иконка layout-side-content-right",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  },
+  {
+    "name": "layout-split-columns",
+    "displayName": "Layout Split Columns",
+    "description": "Иконка layout-split-columns",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-split-columns-3",
+    "displayName": "Layout Split Columns 3",
+    "description": "Иконка layout-split-columns-3",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-split-rows",
+    "displayName": "Layout Split Rows",
+    "description": "Иконка layout-split-rows",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-split-side-content-left",
+    "displayName": "Layout Split Side Content Left",
+    "description": "Иконка layout-split-side-content-left",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-split-side-content-right",
+    "displayName": "Layout Split Side Content Right",
+    "description": "Иконка layout-split-side-content-right",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "layout-tabs",
+    "displayName": "Layout Tabs",
+    "description": "Иконка layout-tabs",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "letter-a-underline",
+    "displayName": "Letter A Underline",
+    "description": "Иконка letter-a-underline",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "letter-group",
+    "displayName": "Letter Group",
+    "description": "Иконка letter-group",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "letter-m",
+    "displayName": "Letter M",
+    "description": "Иконка letter-m",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "life-ring",
+    "displayName": "Life Ring",
+    "description": "Иконка life-ring",
+    "category": "other",
+    "keywords": [
+      "support",
+      "safe",
+      "help"
+    ]
+  },
+  {
+    "name": "link",
+    "displayName": "Link",
+    "description": "Иконка link",
+    "category": "other",
+    "keywords": [
+      "chain"
+    ]
+  },
+  {
+    "name": "link-slash",
+    "displayName": "Link Slash",
+    "description": "Иконка link-slash",
+    "category": "other",
+    "keywords": [
+      "chain",
+      "unlink"
+    ]
+  },
+  {
+    "name": "list-check",
+    "displayName": "List Check",
+    "description": "Иконка list-check",
+    "category": "status",
+    "keywords": [
+      "check"
+    ]
+  },
+  {
+    "name": "list-check-lock",
+    "displayName": "List Check Lock",
+    "description": "Иконка list-check-lock",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "list-ol",
+    "displayName": "List Ol",
+    "description": "Иконка list-ol",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "list-timeline",
+    "displayName": "List Timeline",
+    "description": "Иконка list-timeline",
+    "category": "time",
+    "keywords": []
+  },
+  {
+    "name": "list-ul",
+    "displayName": "List Ul",
+    "description": "Иконка list-ul",
+    "category": "layout",
+    "keywords": [
+      "dot"
+    ]
+  },
+  {
+    "name": "location-arrow",
+    "displayName": "Location Arrow",
+    "description": "Иконка location-arrow",
+    "category": "navigation",
+    "keywords": [
+      "navigation"
+    ]
+  },
+  {
+    "name": "location-arrow",
+    "displayName": "Location Arrow",
+    "description": "Иконка location-arrow",
+    "category": "navigation",
+    "keywords": [
+      "navigation"
+    ]
+  },
+  {
+    "name": "lock",
+    "displayName": "Lock",
+    "description": "Иконка lock",
+    "category": "security",
+    "keywords": [
+      "security",
+      "safe"
+    ]
+  },
+  {
+    "name": "lock-open",
+    "displayName": "Lock Open",
+    "description": "Иконка lock-open",
+    "category": "security",
+    "keywords": [
+      "security",
+      "safe"
+    ]
+  },
+  {
+    "name": "logo-acrobat",
+    "displayName": "Logo Acrobat",
+    "description": "Иконка logo-acrobat",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-android",
+    "displayName": "Logo Android",
+    "description": "Иконка logo-android",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-docker",
+    "displayName": "Logo Docker",
+    "description": "Иконка logo-docker",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-draw-io",
+    "displayName": "Logo Draw Io",
+    "description": "Иконка logo-draw-io",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-facebook",
+    "displayName": "Logo Facebook",
+    "description": "Иконка logo-facebook",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-gitlab",
+    "displayName": "Logo Gitlab",
+    "description": "Иконка logo-gitlab",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-linux",
+    "displayName": "Logo Linux",
+    "description": "Иконка logo-linux",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "logo-macos",
+    "displayName": "Logo Macos",
+    "description": "Иконка logo-macos",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-markdown",
+    "displayName": "Logo Markdown",
+    "description": "Иконка logo-markdown",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-mermaid",
+    "displayName": "Logo Mermaid",
+    "description": "Иконка logo-mermaid",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-notion",
+    "displayName": "Logo Notion",
+    "description": "Иконка logo-notion",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-osi",
+    "displayName": "Logo Osi",
+    "description": "Иконка logo-osi",
+    "category": "other",
+    "keywords": [
+      "open",
+      "source"
+    ]
+  },
+  {
+    "name": "logo-python",
+    "displayName": "Logo Python",
+    "description": "Иконка logo-python",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-stack-overflow",
+    "displayName": "Logo Stack Overflow",
+    "description": "Иконка logo-stack-overflow",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-telegram",
+    "displayName": "Logo Telegram",
+    "description": "Иконка logo-telegram",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-ubuntu",
+    "displayName": "Logo Ubuntu",
+    "description": "Иконка logo-ubuntu",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-windows",
+    "displayName": "Logo Windows",
+    "description": "Иконка logo-windows",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "logo-yandex",
+    "displayName": "Logo Yandex",
+    "description": "Иконка logo-yandex",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "logo-yandex-cloud",
+    "displayName": "Logo Yandex Cloud",
+    "description": "Иконка logo-yandex-cloud",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "logo-yandex-messenger",
+    "displayName": "Logo Yandex Messenger",
+    "description": "Иконка logo-yandex-messenger",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "logo-yandex-tracker",
+    "displayName": "Logo Yandex Tracker",
+    "description": "Иконка logo-yandex-tracker",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "magic-wand",
+    "displayName": "Magic Wand",
+    "description": "Иконка magic-wand",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "magnet",
+    "displayName": "Magnet",
+    "description": "Иконка magnet",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "magnifier",
+    "displayName": "Magnifier",
+    "description": "Иконка magnifier",
+    "category": "other",
+    "keywords": [
+      "search"
+    ]
+  },
+  {
+    "name": "magnifier-minus",
+    "displayName": "Magnifier Minus",
+    "description": "Иконка magnifier-minus",
+    "category": "other",
+    "keywords": [
+      "zoom",
+      "out"
+    ]
+  },
+  {
+    "name": "magnifier-plus",
+    "displayName": "Magnifier Plus",
+    "description": "Иконка magnifier-plus",
+    "category": "action",
+    "keywords": [
+      "zoom",
+      "in"
+    ]
+  },
+  {
+    "name": "map-pin",
+    "displayName": "Map Pin",
+    "description": "Иконка map-pin",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "map-pin-minus",
+    "displayName": "Map Pin Minus",
+    "description": "Иконка map-pin-minus",
+    "category": "navigation",
+    "keywords": []
+  },
+  {
+    "name": "map-pin-plus",
+    "displayName": "Map Pin Plus",
+    "description": "Иконка map-pin-plus",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "math-intersection-shape",
+    "displayName": "Math Intersection Shape",
+    "description": "Иконка math-intersection-shape",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "math-operations",
+    "displayName": "Math Operations",
+    "description": "Иконка math-operations",
+    "category": "other",
+    "keywords": [
+      "minus",
+      "plus"
+    ]
+  },
+  {
+    "name": "math-union-shape",
+    "displayName": "Math Union Shape",
+    "description": "Иконка math-union-shape",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "medal",
+    "displayName": "Medal",
+    "description": "Иконка medal",
+    "category": "other",
+    "keywords": [
+      "prize"
+    ]
+  },
+  {
+    "name": "megaphone",
+    "displayName": "Megaphone",
+    "description": "Иконка megaphone",
+    "category": "communication",
+    "keywords": [
+      "ping"
+    ]
+  },
+  {
+    "name": "microphone",
+    "displayName": "Microphone",
+    "description": "Иконка microphone",
+    "category": "communication",
+    "keywords": [
+      "speaker",
+      "voice"
+    ]
+  },
+  {
+    "name": "microphone-slash",
+    "displayName": "Microphone Slash",
+    "description": "Иконка microphone-slash",
+    "category": "communication",
+    "keywords": [
+      "mute",
+      "speaker",
+      "voice"
+    ]
+  },
+  {
+    "name": "minus",
+    "displayName": "Minus",
+    "description": "Иконка minus",
+    "category": "other",
+    "keywords": [
+      "remove",
+      "delete"
+    ]
+  },
+  {
+    "name": "minus-shape",
+    "displayName": "Minus Shape",
+    "description": "Иконка minus-shape",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "minus-shape",
+    "displayName": "Minus Shape",
+    "description": "Иконка minus-shape",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "molecule",
+    "displayName": "Molecule",
+    "description": "Иконка molecule",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "moon",
+    "displayName": "Moon",
+    "description": "Иконка moon",
+    "category": "other",
+    "keywords": [
+      "night"
+    ]
+  },
+  {
+    "name": "mug",
+    "displayName": "Mug",
+    "description": "Иконка mug",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "music-note",
+    "displayName": "Music Note",
+    "description": "Иконка music-note",
+    "category": "media",
+    "keywords": [
+      "music"
+    ]
+  },
+  {
+    "name": "nodes-down",
+    "displayName": "Nodes Down",
+    "description": "Иконка nodes-down",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "nodes-left",
+    "displayName": "Nodes Left",
+    "description": "Иконка nodes-left",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "nodes-right",
+    "displayName": "Nodes Right",
+    "description": "Иконка nodes-right",
+    "category": "other",
+    "keywords": [
+      "share"
+    ]
+  },
+  {
+    "name": "nodes-up",
+    "displayName": "Nodes Up",
+    "description": "Иконка nodes-up",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "nut-hex",
+    "displayName": "Nut Hex",
+    "description": "Иконка nut-hex",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "object-align-bottom",
+    "displayName": "Object Align Bottom",
+    "description": "Иконка object-align-bottom",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-center-horizontal",
+    "displayName": "Object Align Center Horizontal",
+    "description": "Иконка object-align-center-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-center-vertical",
+    "displayName": "Object Align Center Vertical",
+    "description": "Иконка object-align-center-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-justify-horizontal",
+    "displayName": "Object Align Justify Horizontal",
+    "description": "Иконка object-align-justify-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-justify-vertical",
+    "displayName": "Object Align Justify Vertical",
+    "description": "Иконка object-align-justify-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-left",
+    "displayName": "Object Align Left",
+    "description": "Иконка object-align-left",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-right",
+    "displayName": "Object Align Right",
+    "description": "Иконка object-align-right",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "object-align-top",
+    "displayName": "Object Align Top",
+    "description": "Иконка object-align-top",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-bottom",
+    "displayName": "Objects Align Bottom",
+    "description": "Иконка objects-align-bottom",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-center-horizontal",
+    "displayName": "Objects Align Center Horizontal",
+    "description": "Иконка objects-align-center-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-center-vertical",
+    "displayName": "Objects Align Center Vertical",
+    "description": "Иконка objects-align-center-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-justify-horizontal",
+    "displayName": "Objects Align Justify Horizontal",
+    "description": "Иконка objects-align-justify-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-justify-vertical",
+    "displayName": "Objects Align Justify Vertical",
+    "description": "Иконка objects-align-justify-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-left",
+    "displayName": "Objects Align Left",
+    "description": "Иконка objects-align-left",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-right",
+    "displayName": "Objects Align Right",
+    "description": "Иконка objects-align-right",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "objects-align-top",
+    "displayName": "Objects Align Top",
+    "description": "Иконка objects-align-top",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "octagon-xmark",
+    "displayName": "Octagon Xmark",
+    "description": "Иконка octagon-xmark",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "office-badge",
+    "displayName": "Office Badge",
+    "description": "Иконка office-badge",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "palette",
+    "displayName": "Palette",
+    "description": "Иконка palette",
+    "category": "other",
+    "keywords": [
+      "color"
+    ]
+  },
+  {
+    "name": "paper-plane",
+    "displayName": "Paper Plane",
+    "description": "Иконка paper-plane",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "paperclip",
+    "displayName": "Paperclip",
+    "description": "Иконка paperclip",
+    "category": "other",
+    "keywords": [
+      "attach"
+    ]
+  },
+  {
+    "name": "passport",
+    "displayName": "Passport",
+    "description": "Иконка passport",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "pause",
+    "displayName": "Pause",
+    "description": "Иконка pause",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "pause",
+    "displayName": "Pause",
+    "description": "Иконка pause",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "pencil",
+    "displayName": "Pencil",
+    "description": "Иконка pencil",
+    "category": "action",
+    "keywords": [
+      "edit",
+      "write"
+    ]
+  },
+  {
+    "name": "pencil-to-line",
+    "displayName": "Pencil To Line",
+    "description": "Иконка pencil-to-line",
+    "category": "action",
+    "keywords": [
+      "edit",
+      "write"
+    ]
+  },
+  {
+    "name": "pencil-to-square",
+    "displayName": "Pencil To Square",
+    "description": "Иконка pencil-to-square",
+    "category": "action",
+    "keywords": [
+      "edit",
+      "write"
+    ]
+  },
+  {
+    "name": "percent",
+    "displayName": "Percent",
+    "description": "Иконка percent",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "person",
+    "displayName": "Person",
+    "description": "Иконка person",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user"
+    ]
+  },
+  {
+    "name": "person",
+    "displayName": "Person",
+    "description": "Иконка person",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user"
+    ]
+  },
+  {
+    "name": "person-gear",
+    "displayName": "Person Gear",
+    "description": "Иконка person-gear",
+    "category": "user",
+    "keywords": []
+  },
+  {
+    "name": "person-magnifier",
+    "displayName": "Person Magnifier",
+    "description": "Иконка person-magnifier",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user",
+      "search"
+    ]
+  },
+  {
+    "name": "person-nut-hex",
+    "displayName": "Person Nut Hex",
+    "description": "Иконка person-nut-hex",
+    "category": "user",
+    "keywords": []
+  },
+  {
+    "name": "person-pencil",
+    "displayName": "Person Pencil",
+    "description": "Иконка person-pencil",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user",
+      "edit"
+    ]
+  },
+  {
+    "name": "person-planet-earth",
+    "displayName": "Person Planet Earth",
+    "description": "Иконка person-planet-earth",
+    "category": "user",
+    "keywords": []
+  },
+  {
+    "name": "person-plus",
+    "displayName": "Person Plus",
+    "description": "Иконка person-plus",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user",
+      "add"
+    ]
+  },
+  {
+    "name": "person-speaker",
+    "displayName": "Person Speaker",
+    "description": "Иконка person-speaker",
+    "category": "user",
+    "keywords": []
+  },
+  {
+    "name": "person-worker",
+    "displayName": "Person Worker",
+    "description": "Иконка person-worker",
+    "category": "user",
+    "keywords": [
+      "person",
+      "profile",
+      "man",
+      "work",
+      "duty"
+    ]
+  },
+  {
+    "name": "person-xmark",
+    "displayName": "Person Xmark",
+    "description": "Иконка person-xmark",
+    "category": "user",
+    "keywords": [
+      "profile",
+      "human",
+      "user",
+      "delete"
+    ]
+  },
+  {
+    "name": "persons",
+    "displayName": "Persons",
+    "description": "Иконка persons",
+    "category": "user",
+    "keywords": [
+      "group",
+      "team",
+      "people",
+      "users"
+    ]
+  },
+  {
+    "name": "persons-lock",
+    "displayName": "Persons Lock",
+    "description": "Иконка persons-lock",
+    "category": "user",
+    "keywords": [
+      "federation"
+    ]
+  },
+  {
+    "name": "picture",
+    "displayName": "Picture",
+    "description": "Иконка picture",
+    "category": "other",
+    "keywords": [
+      "image",
+      "photo"
+    ]
+  },
+  {
+    "name": "pill",
+    "displayName": "Pill",
+    "description": "Иконка pill",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "pin",
+    "displayName": "Pin",
+    "description": "Иконка pin",
+    "category": "navigation",
+    "keywords": [
+      "attach",
+      "fix"
+    ]
+  },
+  {
+    "name": "pin",
+    "displayName": "Pin",
+    "description": "Иконка pin",
+    "category": "navigation",
+    "keywords": [
+      "attach",
+      "fix"
+    ]
+  },
+  {
+    "name": "pin-slash",
+    "displayName": "Pin Slash",
+    "description": "Иконка pin-slash",
+    "category": "navigation",
+    "keywords": [
+      "unpin",
+      "detach",
+      "unfix"
+    ]
+  },
+  {
+    "name": "pin-slash",
+    "displayName": "Pin Slash",
+    "description": "Иконка pin-slash",
+    "category": "navigation",
+    "keywords": [
+      "unpin",
+      "detach",
+      "unfix"
+    ]
+  },
+  {
+    "name": "pipeline",
+    "displayName": "Pipeline",
+    "description": "Иконка pipeline",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "planet-earth",
+    "displayName": "Planet Earth",
+    "description": "Иконка planet-earth",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "play",
+    "displayName": "Play",
+    "description": "Иконка play",
+    "category": "media",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "play",
+    "displayName": "Play",
+    "description": "Иконка play",
+    "category": "media",
+    "keywords": [
+      "video"
+    ]
+  },
+  {
+    "name": "plug-connection",
+    "displayName": "Plug Connection",
+    "description": "Иконка plug-connection",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "plug-wire",
+    "displayName": "Plug Wire",
+    "description": "Иконка plug-wire",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "plus",
+    "displayName": "Plus",
+    "description": "Иконка plus",
+    "category": "action",
+    "keywords": [
+      "add",
+      "new"
+    ]
+  },
+  {
+    "name": "plus-shape",
+    "displayName": "Plus Shape",
+    "description": "Иконка plus-shape",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "plus-shape",
+    "displayName": "Plus Shape",
+    "description": "Иконка plus-shape",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "power",
+    "displayName": "Power",
+    "description": "Иконка power",
+    "category": "system",
+    "keywords": []
+  },
+  {
+    "name": "printer",
+    "displayName": "Printer",
+    "description": "Иконка printer",
+    "category": "action",
+    "keywords": [
+      "print"
+    ]
+  },
+  {
+    "name": "pulse",
+    "displayName": "Pulse",
+    "description": "Иконка pulse",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "puzzle",
+    "displayName": "Puzzle",
+    "description": "Иконка puzzle",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "qr-code",
+    "displayName": "Qr Code",
+    "description": "Иконка qr-code",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "quote-close",
+    "displayName": "Quote Close",
+    "description": "Иконка quote-close",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "quote-open",
+    "displayName": "Quote Open",
+    "description": "Иконка quote-open",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "receipt",
+    "displayName": "Receipt",
+    "description": "Иконка receipt",
+    "category": "other",
+    "keywords": [
+      "check"
+    ]
+  },
+  {
+    "name": "rectangle-pulse",
+    "displayName": "Rectangle Pulse",
+    "description": "Иконка rectangle-pulse",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "rectangles-4",
+    "displayName": "Rectangles 4",
+    "description": "Иконка rectangles-4",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "rocket",
+    "displayName": "Rocket",
+    "description": "Иконка rocket",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "round-brackets",
+    "displayName": "Round Brackets",
+    "description": "Иконка round-brackets",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "route",
+    "displayName": "Route",
+    "description": "Иконка route",
+    "category": "other",
+    "keywords": [
+      "path",
+      "track",
+      "road"
+    ]
+  },
+  {
+    "name": "sack",
+    "displayName": "Sack",
+    "description": "Иконка sack",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "scales-balanced",
+    "displayName": "Scales Balanced",
+    "description": "Иконка scales-balanced",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "scales-unbalanced",
+    "displayName": "Scales Unbalanced",
+    "description": "Иконка scales-unbalanced",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "scissors",
+    "displayName": "Scissors",
+    "description": "Иконка scissors",
+    "category": "other",
+    "keywords": [
+      "cut"
+    ]
+  },
+  {
+    "name": "seal-check",
+    "displayName": "Seal Check",
+    "description": "Иконка seal-check",
+    "category": "status",
+    "keywords": [
+      "certificate"
+    ]
+  },
+  {
+    "name": "seal-percent",
+    "displayName": "Seal Percent",
+    "description": "Иконка seal-percent",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "server",
+    "displayName": "Server",
+    "description": "Иконка server",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "shapes-3",
+    "displayName": "Shapes 3",
+    "description": "Иконка shapes-3",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "shapes-4",
+    "displayName": "Shapes 4",
+    "description": "Иконка shapes-4",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "shield",
+    "displayName": "Shield",
+    "description": "Иконка shield",
+    "category": "other",
+    "keywords": [
+      "security",
+      "safe"
+    ]
+  },
+  {
+    "name": "shield-check",
+    "displayName": "Shield Check",
+    "description": "Иконка shield-check",
+    "category": "status",
+    "keywords": [
+      "security",
+      "safe",
+      "done"
+    ]
+  },
+  {
+    "name": "shield-exclamation",
+    "displayName": "Shield Exclamation",
+    "description": "Иконка shield-exclamation",
+    "category": "status",
+    "keywords": [
+      "security",
+      "safe",
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "shield-keyhole",
+    "displayName": "Shield Keyhole",
+    "description": "Иконка shield-keyhole",
+    "category": "other",
+    "keywords": [
+      "security",
+      "safe"
+    ]
+  },
+  {
+    "name": "shopping-bag",
+    "displayName": "Shopping Bag",
+    "description": "Иконка shopping-bag",
+    "category": "navigation",
+    "keywords": [
+      "basket",
+      "food"
+    ]
+  },
+  {
+    "name": "shopping-basket",
+    "displayName": "Shopping Basket",
+    "description": "Иконка shopping-basket",
+    "category": "navigation",
+    "keywords": [
+      "bag",
+      "food"
+    ]
+  },
+  {
+    "name": "shopping-cart",
+    "displayName": "Shopping Cart",
+    "description": "Иконка shopping-cart",
+    "category": "navigation",
+    "keywords": [
+      "basket",
+      "food"
+    ]
+  },
+  {
+    "name": "shuffle",
+    "displayName": "Shuffle",
+    "description": "Иконка shuffle",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "signal",
+    "displayName": "Signal",
+    "description": "Иконка signal",
+    "category": "network",
+    "keywords": []
+  },
+  {
+    "name": "skull",
+    "displayName": "Skull",
+    "description": "Иконка skull",
+    "category": "other",
+    "keywords": [
+      "face",
+      "bone"
+    ]
+  },
+  {
+    "name": "sliders",
+    "displayName": "Sliders",
+    "description": "Иконка sliders",
+    "category": "other",
+    "keywords": [
+      "setting",
+      "customization",
+      "tuning"
+    ]
+  },
+  {
+    "name": "sliders-vertical",
+    "displayName": "Sliders Vertical",
+    "description": "Иконка sliders-vertical",
+    "category": "other",
+    "keywords": [
+      "setting",
+      "customization",
+      "tuning"
+    ]
+  },
+  {
+    "name": "smartphone",
+    "displayName": "Smartphone",
+    "description": "Иконка smartphone",
+    "category": "communication",
+    "keywords": [
+      "telephone"
+    ]
+  },
+  {
+    "name": "snail",
+    "displayName": "Snail",
+    "description": "Иконка snail",
+    "category": "other",
+    "keywords": [
+      "slow"
+    ]
+  },
+  {
+    "name": "snowflake",
+    "displayName": "Snowflake",
+    "description": "Иконка snowflake",
+    "category": "other",
+    "keywords": [
+      "cold",
+      "winter",
+      ""
+    ]
+  },
+  {
+    "name": "sparkles",
+    "displayName": "Sparkles",
+    "description": "Иконка sparkles",
+    "category": "other",
+    "keywords": [
+      "magic",
+      "ai"
+    ]
+  },
+  {
+    "name": "sparkles",
+    "displayName": "Sparkles",
+    "description": "Иконка sparkles",
+    "category": "other",
+    "keywords": [
+      "magic",
+      "ai"
+    ]
+  },
+  {
+    "name": "sphere",
+    "displayName": "Sphere",
+    "description": "Иконка sphere",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square",
+    "displayName": "Square",
+    "description": "Иконка square",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square",
+    "displayName": "Square",
+    "description": "Иконка square",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-article",
+    "displayName": "Square Article",
+    "description": "Иконка square-article",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-bars",
+    "displayName": "Square Bars",
+    "description": "Иконка square-bars",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-bars-vertical",
+    "displayName": "Square Bars Vertical",
+    "description": "Иконка square-bars-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-brackets",
+    "displayName": "Square Brackets",
+    "description": "Иконка square-brackets",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-brackets-bars-vertical",
+    "displayName": "Square Brackets Bars Vertical",
+    "description": "Иконка square-brackets-bars-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-brackets-letter-a",
+    "displayName": "Square Brackets Letter A",
+    "description": "Иконка square-brackets-letter-a",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-chart-bar",
+    "displayName": "Square Chart Bar",
+    "description": "Иконка square-chart-bar",
+    "category": "other",
+    "keywords": [
+      "poll"
+    ]
+  },
+  {
+    "name": "square-chart-column",
+    "displayName": "Square Chart Column",
+    "description": "Иконка square-chart-column",
+    "category": "other",
+    "keywords": [
+      "poll"
+    ]
+  },
+  {
+    "name": "square-check",
+    "displayName": "Square Check",
+    "description": "Иконка square-check",
+    "category": "status",
+    "keywords": [
+      "done"
+    ]
+  },
+  {
+    "name": "square-dashed",
+    "displayName": "Square Dashed",
+    "description": "Иконка square-dashed",
+    "category": "other",
+    "keywords": [
+      "scan",
+      "focus",
+      "fullscreen"
+    ]
+  },
+  {
+    "name": "square-dashed-circle",
+    "displayName": "Square Dashed Circle",
+    "description": "Иконка square-dashed-circle",
+    "category": "other",
+    "keywords": [
+      "scan",
+      "focus",
+      "object"
+    ]
+  },
+  {
+    "name": "square-dashed-letter-a",
+    "displayName": "Square Dashed Letter A",
+    "description": "Иконка square-dashed-letter-a",
+    "category": "other",
+    "keywords": [
+      "scan",
+      "focus",
+      "text"
+    ]
+  },
+  {
+    "name": "square-dashed-letter-t",
+    "displayName": "Square Dashed Letter T",
+    "description": "Иконка square-dashed-letter-t",
+    "category": "other",
+    "keywords": [
+      "scan",
+      "focus",
+      "text"
+    ]
+  },
+  {
+    "name": "square-dashed-text",
+    "displayName": "Square Dashed Text",
+    "description": "Иконка square-dashed-text",
+    "category": "action",
+    "keywords": [
+      "scan",
+      "focus"
+    ]
+  },
+  {
+    "name": "square-dot",
+    "displayName": "Square Dot",
+    "description": "Иконка square-dot",
+    "category": "other",
+    "keywords": [
+      "notify",
+      "notification"
+    ]
+  },
+  {
+    "name": "square-exclamation",
+    "displayName": "Square Exclamation",
+    "description": "Иконка square-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "square-hashtag",
+    "displayName": "Square Hashtag",
+    "description": "Иконка square-hashtag",
+    "category": "other",
+    "keywords": [
+      "number",
+      "pound",
+      "sign"
+    ]
+  },
+  {
+    "name": "square-letter-p",
+    "displayName": "Square Letter P",
+    "description": "Иконка square-letter-p",
+    "category": "other",
+    "keywords": [
+      "parking"
+    ]
+  },
+  {
+    "name": "square-letter-t",
+    "displayName": "Square Letter T",
+    "description": "Иконка square-letter-t",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-line-horizontal",
+    "displayName": "Square Line Horizontal",
+    "description": "Иконка square-line-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-line-vertical",
+    "displayName": "Square Line Vertical",
+    "description": "Иконка square-line-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "square-list-ul",
+    "displayName": "Square List Ul",
+    "description": "Иконка square-list-ul",
+    "category": "layout",
+    "keywords": []
+  },
+  {
+    "name": "square-minus",
+    "displayName": "Square Minus",
+    "description": "Иконка square-minus",
+    "category": "other",
+    "keywords": [
+      "remove",
+      "delete"
+    ]
+  },
+  {
+    "name": "square-plus",
+    "displayName": "Square Plus",
+    "description": "Иконка square-plus",
+    "category": "action",
+    "keywords": [
+      "add",
+      "new"
+    ]
+  },
+  {
+    "name": "square-xmark",
+    "displayName": "Square Xmark",
+    "description": "Иконка square-xmark",
+    "category": "action",
+    "keywords": [
+      "close",
+      "delete",
+      "remove"
+    ]
+  },
+  {
+    "name": "star",
+    "displayName": "Star",
+    "description": "Иконка star",
+    "category": "rating",
+    "keywords": [
+      "favourites"
+    ]
+  },
+  {
+    "name": "star",
+    "displayName": "Star",
+    "description": "Иконка star",
+    "category": "rating",
+    "keywords": [
+      "favourites"
+    ]
+  },
+  {
+    "name": "stethoscope",
+    "displayName": "Stethoscope",
+    "description": "Иконка stethoscope",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "sticker",
+    "displayName": "Sticker",
+    "description": "Иконка sticker",
+    "category": "status",
+    "keywords": [
+      "paper"
+    ]
+  },
+  {
+    "name": "stop",
+    "displayName": "Stop",
+    "description": "Иконка stop",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "stop",
+    "displayName": "Stop",
+    "description": "Иконка stop",
+    "category": "media",
+    "keywords": []
+  },
+  {
+    "name": "stopwatch",
+    "displayName": "Stopwatch",
+    "description": "Иконка stopwatch",
+    "category": "media",
+    "keywords": [
+      "wait"
+    ]
+  },
+  {
+    "name": "strikethrough",
+    "displayName": "Strikethrough",
+    "description": "Иконка strikethrough",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "suitcase",
+    "displayName": "Suitcase",
+    "description": "Иконка suitcase",
+    "category": "other",
+    "keywords": [
+      "bag"
+    ]
+  },
+  {
+    "name": "sun",
+    "displayName": "Sun",
+    "description": "Иконка sun",
+    "category": "other",
+    "keywords": [
+      "day"
+    ]
+  },
+  {
+    "name": "t-shirt",
+    "displayName": "T Shirt",
+    "description": "Иконка t-shirt",
+    "category": "other",
+    "keywords": [
+      "clothes"
+    ]
+  },
+  {
+    "name": "tag",
+    "displayName": "Tag",
+    "description": "Иконка tag",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "tag-dollar",
+    "displayName": "Tag Dollar",
+    "description": "Иконка tag-dollar",
+    "category": "payment",
+    "keywords": []
+  },
+  {
+    "name": "tag-ruble",
+    "displayName": "Tag Ruble",
+    "description": "Иконка tag-ruble",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "tags",
+    "displayName": "Tags",
+    "description": "Иконка tags",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "target",
+    "displayName": "Target",
+    "description": "Иконка target",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "target-dart",
+    "displayName": "Target Dart",
+    "description": "Иконка target-dart",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "terminal",
+    "displayName": "Terminal",
+    "description": "Иконка terminal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "terminal-line",
+    "displayName": "Terminal Line",
+    "description": "Иконка terminal-line",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "text",
+    "displayName": "Text",
+    "description": "Иконка text",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-align-center",
+    "displayName": "Text Align Center",
+    "description": "Иконка text-align-center",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-align-justify",
+    "displayName": "Text Align Justify",
+    "description": "Иконка text-align-justify",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-align-left",
+    "displayName": "Text Align Left",
+    "description": "Иконка text-align-left",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-align-right",
+    "displayName": "Text Align Right",
+    "description": "Иконка text-align-right",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-indent",
+    "displayName": "Text Indent",
+    "description": "Иконка text-indent",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "text-outdent",
+    "displayName": "Text Outdent",
+    "description": "Иконка text-outdent",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "thumbs-down",
+    "displayName": "Thumbs Down",
+    "description": "Иконка thumbs-down",
+    "category": "other",
+    "keywords": [
+      "dislike",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "thumbs-down",
+    "displayName": "Thumbs Down",
+    "description": "Иконка thumbs-down",
+    "category": "other",
+    "keywords": [
+      "dislike",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "thumbs-up",
+    "displayName": "Thumbs Up",
+    "description": "Иконка thumbs-up",
+    "category": "other",
+    "keywords": [
+      "like",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "thumbs-up",
+    "displayName": "Thumbs Up",
+    "description": "Иконка thumbs-up",
+    "category": "other",
+    "keywords": [
+      "like",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "thumbs-up-2",
+    "displayName": "Thumbs Up 2",
+    "description": "Иконка thumbs-up-2",
+    "category": "other",
+    "keywords": [
+      "like",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "name": "thunderbolt",
+    "displayName": "Thunderbolt",
+    "description": "Иконка thunderbolt",
+    "category": "other",
+    "keywords": [
+      "flash",
+      "lightning",
+      "electricity"
+    ]
+  },
+  {
+    "name": "thunderbolt",
+    "displayName": "Thunderbolt",
+    "description": "Иконка thunderbolt",
+    "category": "other",
+    "keywords": [
+      "flash",
+      "lightning",
+      "electricity"
+    ]
+  },
+  {
+    "name": "ticket",
+    "displayName": "Ticket",
+    "description": "Иконка ticket",
+    "category": "status",
+    "keywords": []
+  },
+  {
+    "name": "timeline",
+    "displayName": "Timeline",
+    "description": "Иконка timeline",
+    "category": "time",
+    "keywords": []
+  },
+  {
+    "name": "timestamps",
+    "displayName": "Timestamps",
+    "description": "Иконка timestamps",
+    "category": "time",
+    "keywords": []
+  },
+  {
+    "name": "toggle-off",
+    "displayName": "Toggle Off",
+    "description": "Иконка toggle-off",
+    "category": "other",
+    "keywords": [
+      "switch"
+    ]
+  },
+  {
+    "name": "toggle-on",
+    "displayName": "Toggle On",
+    "description": "Иконка toggle-on",
+    "category": "other",
+    "keywords": [
+      "switch"
+    ]
+  },
+  {
+    "name": "traffic-light",
+    "displayName": "Traffic Light",
+    "description": "Иконка traffic-light",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "trapezoid-left-line-horizontal",
+    "displayName": "Trapezoid Left Line Horizontal",
+    "description": "Иконка trapezoid-left-line-horizontal",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "trapezoid-up-line-vertical",
+    "displayName": "Trapezoid Up Line Vertical",
+    "description": "Иконка trapezoid-up-line-vertical",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "trash-bin",
+    "displayName": "Trash Bin",
+    "description": "Иконка trash-bin",
+    "category": "action",
+    "keywords": [
+      "delete",
+      "remove",
+      "trash",
+      "can",
+      "recycle",
+      "bin"
+    ]
+  },
+  {
+    "name": "tray",
+    "displayName": "Tray",
+    "description": "Иконка tray",
+    "category": "other",
+    "keywords": [
+      "archive",
+      "box",
+      "drawer"
+    ]
+  },
+  {
+    "name": "triangle-down",
+    "displayName": "Triangle Down",
+    "description": "Иконка triangle-down",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-down",
+    "displayName": "Triangle Down",
+    "description": "Иконка triangle-down",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-exclamation",
+    "displayName": "Triangle Exclamation",
+    "description": "Иконка triangle-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "triangle-exclamation",
+    "displayName": "Triangle Exclamation",
+    "description": "Иконка triangle-exclamation",
+    "category": "status",
+    "keywords": [
+      "attention",
+      "warning"
+    ]
+  },
+  {
+    "name": "triangle-left",
+    "displayName": "Triangle Left",
+    "description": "Иконка triangle-left",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-left",
+    "displayName": "Triangle Left",
+    "description": "Иконка triangle-left",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-right",
+    "displayName": "Triangle Right",
+    "description": "Иконка triangle-right",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-right",
+    "displayName": "Triangle Right",
+    "description": "Иконка triangle-right",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-thunderbolt",
+    "displayName": "Triangle Thunderbolt",
+    "description": "Иконка triangle-thunderbolt",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-up",
+    "displayName": "Triangle Up",
+    "description": "Иконка triangle-up",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "triangle-up",
+    "displayName": "Triangle Up",
+    "description": "Иконка triangle-up",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "trolley",
+    "displayName": "Trolley",
+    "description": "Иконка trolley",
+    "category": "other",
+    "keywords": [
+      "cart",
+      "box"
+    ]
+  },
+  {
+    "name": "tv",
+    "displayName": "Tv",
+    "description": "Иконка tv",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "tv-retro",
+    "displayName": "Tv Retro",
+    "description": "Иконка tv-retro",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "umbrella",
+    "displayName": "Umbrella",
+    "description": "Иконка umbrella",
+    "category": "other",
+    "keywords": [
+      "rain"
+    ]
+  },
+  {
+    "name": "underline",
+    "displayName": "Underline",
+    "description": "Иконка underline",
+    "category": "other",
+    "keywords": [
+      "text",
+      "style",
+      "font",
+      "format"
+    ]
+  },
+  {
+    "name": "vault",
+    "displayName": "Vault",
+    "description": "Иконка vault",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "vector-circle",
+    "displayName": "Vector Circle",
+    "description": "Иконка vector-circle",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "vector-square",
+    "displayName": "Vector Square",
+    "description": "Иконка vector-square",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "video",
+    "displayName": "Video",
+    "description": "Иконка video",
+    "category": "media",
+    "keywords": [
+      "camera"
+    ]
+  },
+  {
+    "name": "volume",
+    "displayName": "Volume",
+    "description": "Иконка volume",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio"
+    ]
+  },
+  {
+    "name": "volume",
+    "displayName": "Volume",
+    "description": "Иконка volume",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio"
+    ]
+  },
+  {
+    "name": "volume-low",
+    "displayName": "Volume Low",
+    "description": "Иконка volume-low",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio"
+    ]
+  },
+  {
+    "name": "volume-low",
+    "displayName": "Volume Low",
+    "description": "Иконка volume-low",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio"
+    ]
+  },
+  {
+    "name": "volume-off",
+    "displayName": "Volume Off",
+    "description": "Иконка volume-off",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio",
+      "mute"
+    ]
+  },
+  {
+    "name": "volume-off",
+    "displayName": "Volume Off",
+    "description": "Иконка volume-off",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio"
+    ]
+  },
+  {
+    "name": "volume-slash",
+    "displayName": "Volume Slash",
+    "description": "Иконка volume-slash",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio",
+      "mute"
+    ]
+  },
+  {
+    "name": "volume-slash",
+    "displayName": "Volume Slash",
+    "description": "Иконка volume-slash",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio",
+      "mute"
+    ]
+  },
+  {
+    "name": "volume-xmark",
+    "displayName": "Volume Xmark",
+    "description": "Иконка volume-xmark",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio",
+      "mute"
+    ]
+  },
+  {
+    "name": "volume-xmark",
+    "displayName": "Volume Xmark",
+    "description": "Иконка volume-xmark",
+    "category": "media",
+    "keywords": [
+      "sound",
+      "audio",
+      "mute"
+    ]
+  },
+  {
+    "name": "weight-hanging",
+    "displayName": "Weight Hanging",
+    "description": "Иконка weight-hanging",
+    "category": "other",
+    "keywords": []
+  },
+  {
+    "name": "wrench",
+    "displayName": "Wrench",
+    "description": "Иконка wrench",
+    "category": "other",
+    "keywords": [
+      "fix"
+    ]
+  },
+  {
+    "name": "xmark",
+    "displayName": "Xmark",
+    "description": "Иконка xmark",
+    "category": "action",
+    "keywords": [
+      "close",
+      "delete",
+      "remove"
+    ]
+  },
+  {
+    "name": "xmark-shape",
+    "displayName": "Xmark Shape",
+    "description": "Иконка xmark-shape",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "xmark-shape",
+    "displayName": "Xmark Shape",
+    "description": "Иконка xmark-shape",
+    "category": "action",
+    "keywords": []
+  },
+  {
+    "name": "layout-side-content",
+    "displayName": "Layout Side Content",
+    "description": "Иконка layout-side-content",
+    "category": "layout",
+    "keywords": [
+      "desktop",
+      "table",
+      "window"
+    ]
+  }
+]

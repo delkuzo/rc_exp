@@ -8,6 +8,13 @@ const toggleBlock = (blockId) => {
         block.classList.remove('collapsed');
         block.classList.add('expanded');
         chevron.style.transform = 'rotate(180deg)';
+        
+        // Если это блок иконок, загружаем иконки
+        if (blockId === 'icons' && window.iconSystemV3) {
+            setTimeout(async () => {
+                await window.iconSystemV3.renderIconDemo();
+            }, 100);
+        }
     } else {
         // Сворачиваем блок
         block.classList.remove('expanded');

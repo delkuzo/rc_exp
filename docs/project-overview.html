@@ -4,82 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="stylesheet" href="../styles.css">
     <style>
         .doc-page {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         .doc-content {
-            background: white;
+            background: var(--color-bg-primary);
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-regular);
+            border: 1px solid var(--color-border-secondary);
         }
         .doc-content h1 {
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: rgba(0, 0, 0, 0.9);
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            letter-spacing: var(--typography-display-2-letter-spacing);
+            color: var(--color-text-primary);
+            margin-bottom: 32px;
         }
         .doc-content h2 {
-            font-size: 24px;
-            margin: 32px 0 16px 0;
-            color: rgba(0, 0, 0, 0.9);
+            font-family: var(--typography-header-2-font-family);
+            font-weight: var(--typography-header-2-font-weight);
+            font-size: var(--typography-header-2-font-size);
+            line-height: var(--typography-header-2-line-height);
+            letter-spacing: var(--typography-header-2-letter-spacing);
+            color: var(--color-text-primary);
+            margin: 40px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         .doc-content h3 {
-            font-size: 18px;
-            margin: 24px 0 12px 0;
-            color: rgba(0, 0, 0, 0.9);
+            font-family: var(--typography-header-1-font-family);
+            font-weight: var(--typography-header-1-font-weight);
+            font-size: var(--typography-header-1-font-size);
+            line-height: var(--typography-header-1-line-height);
+            letter-spacing: var(--typography-header-1-letter-spacing);
+            color: var(--color-text-primary);
+            margin: 24px 0 16px 0;
         }
         .doc-content p, .doc-content li {
-            font-size: 16px;
-            line-height: 1.6;
-            color: rgba(0, 0, 0, 0.8);
-            margin-bottom: 12px;
-        }
-        .doc-content code {
-            background: rgba(0, 0, 0, 0.05);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 14px;
-        }
-        .doc-content pre {
-            background: rgba(0, 0, 0, 0.05);
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 16px 0;
+            font-family: var(--typography-body-font-family);
+            font-weight: var(--typography-body-font-weight);
+            font-size: var(--typography-body-font-size);
+            line-height: var(--typography-body-line-height);
+            letter-spacing: var(--typography-body-letter-spacing);
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
         }
         .back-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 24px;
-            color: #F8604A;
+            color: var(--color-red);
             text-decoration: none;
             font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s ease;
         }
         .back-link:hover {
-            text-decoration: underline;
+            color: var(--color-red-hover);
+        }
+        .role-section {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .role-title {
+            font-family: var(--typography-header-1-font-family);
+            font-weight: var(--typography-header-1-font-weight);
+            font-size: var(--typography-header-1-font-size);
+            color: var(--color-text-primary);
+            margin-bottom: 12px;
+        }
+        .role-description {
+            font-family: var(--typography-body-font-family);
+            font-weight: var(--typography-body-font-weight);
+            font-size: var(--typography-body-font-size);
+            color: var(--color-text-secondary);
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-border-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--typography-caption-2-font-family);
+            font-weight: var(--typography-caption-2-font-weight);
+            font-size: var(--typography-caption-2-font-size);
+            color: var(--color-text-secondary);
         }
     </style>
 </head>
 <body>
     <div class="doc-page">
-        <a href="../index.html" class="back-link">← Назад к демо-странице</a>
+        <a href="../index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Назад к демо-странице
+        </a>
         
         <div class="doc-content">
-            <strong>Основная цель проекта:</strong></p>
-<p>Создание системы разработки интерфейсов на основе UI Kit из Figma, где автор (эксперт по UX/UI/Figma) описывает интерфейсы через запросы, а AI-разработчик (я) верстает их используя готовую систему компонентов.</p>
-<p><strong>Роли участников:</strong></p>
-<p>- <strong>Автор</strong>: Эксперт по интерфейсам, UX, Figma - владелец UI Kit и определяет дизайн
-- <strong>AI-разработчик</strong>: Senior Front-End Developer - реализует интерфейсы используя систему компонентов
-
+            <h1>📋 Project Overview - RC Experiment</h1>
             
-            <hr>
+            <h2>🎯 Основная цель проекта</h2>
+            <p>Создание системы разработки интерфейсов на основе UI Kit из Figma, где автор (эксперт по UX/UI/Figma) описывает интерфейсы через запросы, а AI-разработчик верстает их используя готовую систему компонентов.</p>
             
-            <p><strong>Файл:</strong> project-overview.mdc</p>
-            <p><strong>Последнее обновление:</strong> 01.08.2025</p>
+            <h2>👥 Роли участников</h2>
+            
+            <div class="role-section">
+                <div class="role-title">🎨 Автор</div>
+                <div class="role-description">
+                    Эксперт по интерфейсам, UX, Figma - владелец UI Kit и определяет дизайн. Отвечает за:
+                    <ul>
+                        <li>Создание и поддержку UI Kit в Figma</li>
+                        <li>Описание интерфейсов через запросы</li>
+                        <li>Дизайн-ревью результатов</li>
+                        <li>Определение дизайн-принципов</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="role-section">
+                <div class="role-title">💻 AI-разработчик</div>
+                <div class="role-description">
+                    Senior Front-End Developer - реализует интерфейсы используя систему компонентов. Отвечает за:
+                    <ul>
+                        <li>Перенос UI Kit из Figma в код</li>
+                        <li>Создание базовых компонентов</li>
+                        <li>Верстку интерфейсов по запросам</li>
+                        <li>Поддержку и обновление кода</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>🔄 Принцип работы</h2>
+            <p>Проект работает по принципу итеративной разработки:</p>
+            <ol>
+                <li><strong>Автор</strong> описывает интерфейсный фрагмент через запрос</li>
+                <li><strong>AI-разработчик</strong> читает все правила проекта</li>
+                <li><strong>AI-разработчик</strong> создает фрагмент используя UI Kit</li>
+                <li><strong>AI-разработчик</strong> запрашивает дизайн-ревью</li>
+                <li><strong>Автор</strong> дает комментарии</li>
+                <li><strong>AI-разработчик</strong> доводит до эталонного состояния</li>
+                <li>Фрагмент становится частью библиотеки для больших интерфейсов</li>
+                <li><strong>AI-разработчик</strong> запускает localhost для демонстрации результатов</li>
+            </ol>
+            
+            <h2>🎨 UI Kit как основа</h2>
+            <p>Вся работа строится на единой системе дизайн-токенов:</p>
+            <ul>
+                <li><strong>Цветовая палитра</strong> - 20+ токенов для светлой и темной темы</li>
+                <li><strong>Типографика</strong> - 8 стилей текста с точными параметрами</li>
+                <li><strong>Система размеров</strong> - 11 размеров от 0 до 40px</li>
+                <li><strong>Тени</strong> - 2 типа для разных объектов</li>
+                <li><strong>Компоненты</strong> - базовые элементы интерфейса</li>
+            </ul>
+            
+            <h2>📈 Этапы развития</h2>
+            <p>Проект развивается поэтапно:</p>
+            <ol>
+                <li><strong>Подготовительный этап</strong> - создание правил и демо-страницы</li>
+                <li><strong>UI Kit в коде</strong> - перенос всех токенов из Figma</li>
+                <li><strong>Эксперименты</strong> - создание эталонных фрагментов</li>
+                <li><strong>Интерфейсы</strong> - сборка больших интерфейсов</li>
+                <li><strong>Поддержка</strong> - синхронизация с Figma и обновления</li>
+            </ol>
+            
+            <div class="footer">
+                <span><strong>Файл:</strong> project-overview.mdc</span>
+                <span><strong>Последнее обновление:</strong> 01.08.2025</span>
+            </div>
         </div>
     </div>
 </body>
