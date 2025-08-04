@@ -180,6 +180,20 @@ body {
     gap: 24px;
 }
 
+/* Специфические стили для табов в навигации - используем Header 1 типографику */
+.navigation .tab-item {
+    font-family: var(--typography-header-1-font-family);
+    font-weight: var(--typography-header-1-font-weight);
+    font-size: var(--typography-header-1-font-size);
+    line-height: var(--typography-header-1-line-height);
+    letter-spacing: var(--typography-header-1-letter-spacing);
+}
+
+/* Активное состояние остается таким же - Header 1 weight уже применен */
+.navigation .tab-item.active {
+    font-weight: var(--typography-header-1-font-weight);
+}
+
 
 
 
@@ -1895,6 +1909,98 @@ label, label:focus, label:active, label:hover {
         flex-direction: column;
         gap: var(--size-s);
     }
+}
+
+/* Компонент Switcher Button - дизайн из Figma */
+.switcher-demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0; /* Компонент идет сразу после предыдущего component-name */
+    margin-bottom: 0; /* Отступ теперь управляется через component-name */
+    clear: both;
+}
+
+.switcher-container {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Общая высота из Figma */
+    background: rgba(0, 0, 0, 0.05); /* Фон контейнера из Figma */
+    border-radius: 40px; /* Радиус из Figma */
+    padding: 0 4px; /* Padding из Figma */
+    gap: 4px; /* Отступы между кнопками */
+    width: fit-content;
+}
+
+.switcher-option {
+    /* ПОЛНЫЙ СБРОС ДЕФОЛТНЫХ СТИЛЕЙ КНОПКИ */
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    
+    /* Убираем любые браузерные стили */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px; /* Высота кнопок из Figma */
+    padding: 8px 12px; /* Padding из Figma */
+    border-radius: 40px; /* Радиус для активной кнопки */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* Типографика из дизайн-системы (YS Text, 400, 14px, 1.4) */
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
+    
+    /* Цвет текста из Figma */
+    color: rgba(0, 0, 0, 0.9);
+    
+    /* Белый цвет для темной темы */
+    color: var(--color-text-primary);
+}
+
+/* Активное состояние - белый фон */
+.switcher-option.active {
+    background-color: #FFFFFF !important; /* Белый фон из Figma */
+    color: rgba(0, 0, 0, 0.9); /* Черный текст для белого фона */
+}
+
+/* Hover эффект для неактивных кнопок */
+.switcher-option:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Focus состояние */
+.switcher-option:focus {
+    outline: none;
+}
+
+/* Темная тема - адаптация цветов */
+[data-theme="dark"] .switcher-container {
+    background: rgba(255, 255, 255, 0.1); /* Светлый фон для темной темы */
+}
+
+[data-theme="dark"] .switcher-option {
+    color: var(--color-text-primary); /* Светлый текст для темной темы */
+}
+
+[data-theme="dark"] .switcher-option.active {
+    background-color: var(--color-bg-primary) !important; /* Фон из токенов для темной темы */
+    color: var(--color-text-primary); /* Цвет текста из токенов */
+}
+
+[data-theme="dark"] .switcher-option:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
  

@@ -172,6 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Инициализация Input компонента
     initSearchInputDemo();
+    
+    // Инициализация Switcher Button компонента
+    initSwitcherButton();
 });
 
 // Функция для инициализации демо Input
@@ -251,4 +254,39 @@ const initInputBehavior = (container, field, clearButton) => {
     
     // Инициализация состояния
     updateClearButton();
+};
+
+// Функция для инициализации Switcher Button компонента
+const initSwitcherButton = () => {
+    const switcherContainers = document.querySelectorAll('.switcher-container');
+    
+    switcherContainers.forEach(container => {
+        const options = container.querySelectorAll('.switcher-option');
+        
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Убираем активный класс у всех опций в этом контейнере
+                options.forEach(opt => opt.classList.remove('active'));
+                
+                // Добавляем активный класс к нажатой опции
+                option.classList.add('active');
+                
+                // Можно добавить callback для обработки выбора
+                const selectedValue = option.textContent.trim();
+                console.log('Выбрана опция:', selectedValue);
+                
+                // Dispatch события для внешней обработки
+                const changeEvent = new CustomEvent('switcherChange', {
+                    detail: {
+                        selectedValue: selectedValue,
+                        selectedIndex: Array.from(options).indexOf(option),
+                        container: container
+                    }
+                });
+                container.dispatchEvent(changeEvent);
+            });
+        });
+    });
 }; 
