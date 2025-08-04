@@ -1373,15 +1373,15 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     
-    /* Типографика из Figma */
+    /* Типографика из дизайн-системы */
     font-family: var(--typography-body-font-family);
-    font-weight: 400; /* base state - regular */
-    font-size: 16px;
-    line-height: 1.4;
-    letter-spacing: -0.25%;
+    font-weight: var(--typography-body-font-weight); /* base state */
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
     
-    /* Цвет из Figma */
-    color: rgba(0, 0, 0, 0.9);
+    /* Цвет из дизайн-системы */
+    color: var(--color-text-primary);
     
     /* Размеры из Figma */
     min-height: 40px;
@@ -1397,7 +1397,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: rgba(0, 0, 0, 0.9);
+    background: var(--color-text-primary);
     border-radius: 2px; /* Из Figma */
     opacity: 0;
     transform: scaleX(0);
@@ -1412,7 +1412,7 @@ body {
 
 /* State: pressed (active) - жирный текст + подчеркивание */
 .tab-item.active {
-    font-weight: 500; /* pressed state - medium */
+    font-weight: var(--typography-header-1-font-weight); /* pressed state - использует токен 500 */
 }
 
 .tab-item.active::after {
@@ -1425,13 +1425,7 @@ body {
 }
 
 /* Темная тема - адаптация цветов */
-[data-theme="dark"] .tab-item {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-[data-theme="dark"] .tab-item::after {
-    background: rgba(255, 255, 255, 0.9);
-}
+/* Темная тема автоматически через CSS переменные */
 
 /* Название компонента */
 .component-name {
