@@ -289,4 +289,212 @@ const initSwitcherButton = () => {
             });
         });
     });
-}; 
+};
+
+// Функция для работы с иконками в кнопках
+const initializeButtonIcons = async () => {
+    // Ждем загрузки icon system
+    if (!window.iconSystemV3) {
+        setTimeout(initializeButtonIcons, 100);
+        return;
+    }
+    
+    // Находим все кнопки с data-icon атрибутом
+    const buttonsWithIcons = document.querySelectorAll('button[data-icon]');
+    
+    for (const button of buttonsWithIcons) {
+        const iconName = button.getAttribute('data-icon');
+        const iconElement = button.querySelector('.btn__icon');
+        
+        if (iconElement && iconName) {
+            try {
+                // Определяем размер иконки по размеру кнопки
+                const iconSize = button.classList.contains('btn--size-32') ? 12 : 16;
+                const iconSvg = await window.iconSystemV3.renderIcon(iconName, iconSize);
+                iconElement.innerHTML = iconSvg;
+            } catch (error) {
+                console.warn(`Не удалось загрузить иконку "${iconName}":`, error);
+                // Fallback иконка
+                iconElement.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>';
+            }
+        }
+    }
+};
+
+// Функция для создания кнопки с иконкой по запросу
+const createButtonWithIcon = async (iconName, buttonText = 'Кнопка', size = 40, style = 'action') => {
+    const button = document.createElement('button');
+    const sizeClass = `btn--size-${size}`;
+    const styleClass = `btn--style-${style}`;
+    
+    // Определяем тип кнопки
+    if (buttonText && iconName) {
+        // Кнопка с текстом и иконкой
+        button.className = `btn ${sizeClass} ${styleClass} btn--icon-start`;
+        button.innerHTML = `
+            <span class="btn__icon"></span>
+            ${buttonText}
+        `;
+    } else if (iconName && !buttonText) {
+        // Только иконка
+        button.className = `btn ${sizeClass} ${styleClass} btn--icon-only`;
+        button.innerHTML = '<span class="btn__icon"></span>';
+    } else {
+        // Только текст
+        button.className = `btn ${sizeClass} ${styleClass}`;
+        button.textContent = buttonText || 'Кнопка';
+        return button;
+    }
+    
+    // Загружаем иконку
+    const iconElement = button.querySelector('.btn__icon');
+    if (iconElement && iconName) {
+        try {
+            const iconSize = size === 32 ? 12 : 16;
+            const iconSvg = await window.iconSystemV3.renderIcon(iconName, iconSize);
+            iconElement.innerHTML = iconSvg;
+        } catch (error) {
+            console.warn(`Не удалось загрузить иконку "${iconName}":`, error);
+            iconElement.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>';
+        }
+    }
+    
+    return button;
+};
+
+// Функция для парсинга текстового запроса на создание кнопки
+const parseButtonRequest = (request) => {
+    const req = request.toLowerCase();
+    
+    // Определяем стиль кнопки по номеру/названию
+    let style = 'action';
+    if (req.includes('первого') || req.includes('главная') || req.includes('action')) {
+        style = 'action';
+    } else if (req.includes('второго') || req.includes('вторичная') || req.includes('fill')) {
+        style = 'fill';
+    } else if (req.includes('третьего') || req.includes('третичная') || req.includes('обводка') || req.includes('outline')) {
+        style = 'outline';
+    } else if (req.includes('четвертого') || req.includes('четверичная') || req.includes('blank')) {
+        style = 'blank';
+    }
+    
+    // Определяем размер
+    let size = 40;
+    if (req.includes('32') || req.includes('маленьк') || req.includes('мелк')) {
+        size = 32;
+    } else if (req.includes('40') || req.includes('большая') || req.includes('больш')) {
+        size = 40;
+    }
+    
+    // Определяем текст кнопки
+    let buttonText = 'Кнопка';
+    const textMatch = req.match(/текст[ом]*\s*["']([^"']+)["']/);
+    if (textMatch) {
+        buttonText = textMatch[1];
+    }
+    
+    // Определяем иконку
+    let iconName = null;
+    
+    // Словарь соответствий для популярных иконок
+    const iconMap = {
+        'гаечный ключ': 'wrench',
+        'ключ': 'key',
+        'звезда': 'star',
+        'сердце': 'heart',
+        'плюс': 'plus',
+        'минус': 'minus',
+        'удалить': 'delete',
+        'корзина': 'delete',
+        'глаз': 'eye',
+        'закрыть': 'close',
+        'проверить': 'check',
+        'галочка': 'check',
+        'календарь': 'calendar',
+        'замок': 'lock',
+        'разблокировать': 'unlock',
+        'папка': 'folder',
+        'файл': 'file',
+        'камера': 'camera',
+        'видео': 'video',
+        'микрофон': 'microphone',
+        'наушники': 'headphones',
+        'громкость': 'volume',
+        'играть': 'play',
+        'пауза': 'pause',
+        'стоп': 'stop',
+        'следующий': 'next',
+        'предыдущий': 'previous',
+        'домой': 'home',
+        'настройки': 'settings',
+        'поиск': 'search',
+        'фильтр': 'filter',
+        'сортировка': 'sort',
+        'список': 'list',
+        'сетка': 'grid',
+        'загрузка': 'upload',
+        'скачать': 'download',
+        'поделиться': 'share',
+        'копировать': 'copy',
+        'вставить': 'paste',
+        'вырезать': 'cut',
+        'отменить': 'undo',
+        'повторить': 'redo',
+        'печать': 'print',
+        'почта': 'mail',
+        'телефон': 'phone',
+        'сообщение': 'message',
+        'уведомление': 'notification',
+        'предупреждение': 'warning',
+        'ошибка': 'error',
+        'информация': 'info',
+        'вопрос': 'question'
+    };
+    
+    // Ищем иконку в тексте запроса
+    for (const [keyword, icon] of Object.entries(iconMap)) {
+        if (req.includes(keyword)) {
+            iconName = icon;
+            break;
+        }
+    }
+    
+    // Проверяем, указано ли только иконка
+    const onlyIcon = req.includes('только иконк') || req.includes('без текста');
+    if (onlyIcon) {
+        buttonText = null;
+    }
+    
+    return {
+        iconName,
+        buttonText,
+        size,
+        style
+    };
+};
+
+// Главная функция для создания кнопки по запросу
+const createButtonFromRequest = async (request) => {
+    const config = parseButtonRequest(request);
+    console.log('Parsed request:', config);
+    
+    const button = await createButtonWithIcon(
+        config.iconName,
+        config.buttonText,
+        config.size,
+        config.style
+    );
+    
+    return button;
+};
+
+// Экспортируем функции в глобальную область
+window.createButtonWithIcon = createButtonWithIcon;
+window.createButtonFromRequest = createButtonFromRequest;
+window.parseButtonRequest = parseButtonRequest;
+
+// Добавляем инициализацию иконок в кнопках
+document.addEventListener('DOMContentLoaded', () => {
+    // Инициализируем иконки в кнопках
+    setTimeout(initializeButtonIcons, 500);
+}); 

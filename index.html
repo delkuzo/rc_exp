@@ -577,291 +577,185 @@
                                 <div class="component-name">Input</div>
                             </div>
                             
-                            <!-- Buttons компонент -->
-                            <div class="buttons-demo">
-                                <!-- Размер 40px -->
-                                <div class="buttons-section">
-                                    <h3>Размер 40px</h3>
-                                    
-                                    <!-- Action стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-action">Кнопка</button>
-                                            <div class="button-example__label">Action</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-action btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Action + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-action btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
+                            <!-- Buttons 40px -->
+                            <div class="buttons-demo-section">
+                                <h4 class="buttons-demo-title">Buttons 40px</h4>
+                                <div class="buttons-demo-grid">
+                                    <!-- Ряд 1: Action -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-action">Кнопка</button>
+                                        <div class="component-name">Action</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-action btn--icon-start" data-icon="star">
+                                            <span class="btn__icon" id="btn-icon-action-40"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Action + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-action btn--icon-only" data-icon="star">
+                                            <span class="btn__icon" id="btn-icon-action-only-40"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
                                     </div>
                                     
-                                    <!-- Fill стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-fill">Кнопка</button>
-                                            <div class="button-example__label">Fill</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-fill btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Fill + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-fill btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
+                                    <!-- Ряд 2: Fill -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-fill">Кнопка</button>
+                                        <div class="component-name">Fill</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-fill btn--icon-start" data-icon="heart">
+                                            <span class="btn__icon" id="btn-icon-fill-40"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Fill + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-fill btn--icon-only" data-icon="heart">
+                                            <span class="btn__icon" id="btn-icon-fill-only-40"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
                                     </div>
                                     
-                                    <!-- Outline стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-outline">Кнопка</button>
-                                            <div class="button-example__label">Outline</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-outline btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Outline + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-outline btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
+                                    <!-- Ряд 3: Outline -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-outline">Кнопка</button>
+                                        <div class="component-name">Outline</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-outline btn--icon-start" data-icon="lock">
+                                            <span class="btn__icon" id="btn-icon-outline-40"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Outline + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-outline btn--icon-only" data-icon="lock">
+                                            <span class="btn__icon" id="btn-icon-outline-only-40"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
                                     </div>
                                     
-                                    <!-- Blank стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-blank">Кнопка</button>
-                                            <div class="button-example__label">Blank</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-blank btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Blank + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-blank btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
+                                    <!-- Ряд 4: Blank -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-blank">Кнопка</button>
+                                        <div class="component-name">Blank</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-blank btn--icon-start" data-icon="plus">
+                                            <span class="btn__icon" id="btn-icon-blank-40"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Blank + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-blank btn--icon-only" data-icon="plus">
+                                            <span class="btn__icon" id="btn-icon-blank-only-40"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
                                     </div>
                                     
-                                    <!-- Disabled состояние -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-action" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-fill" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-outline" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-40 btn--style-blank" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
+                                    <!-- Ряд 5: Disabled (центрируем) -->
+                                    <div></div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-40 btn--style-action" disabled>Кнопка</button>
+                                        <div class="component-name">Disabled</div>
                                     </div>
-                                </div>
-                                
-                                <!-- Размер 32px -->
-                                <div class="buttons-section">
-                                    <h3>Размер 32px</h3>
-                                    
-                                    <!-- Action стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-action">Кнопка</button>
-                                            <div class="button-example__label">Action</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-action btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Action + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-action btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Fill стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-fill">Кнопка</button>
-                                            <div class="button-example__label">Fill</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-fill btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Fill + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-fill btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Outline стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-outline">Кнопка</button>
-                                            <div class="button-example__label">Outline</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-outline btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Outline + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-outline btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Blank стиль -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-blank">Кнопка</button>
-                                            <div class="button-example__label">Blank</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-blank btn--icon-start">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                                Кнопка
-                                            </button>
-                                            <div class="button-example__label">Blank + Icon</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-blank btn--icon-only">
-                                                <span class="btn__icon">
-                                                    <svg viewBox="0 0 24 24" fill="none">
-                                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                            <div class="button-example__label">Icon Only</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Disabled состояние -->
-                                    <div class="buttons-grid">
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-action" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-fill" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-outline" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                        <div class="button-example">
-                                            <button class="btn btn--size-32 btn--style-blank" disabled>Кнопка</button>
-                                            <div class="button-example__label">Disabled</div>
-                                        </div>
-                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
-                            <div class="component-name">Buttons</div>
+                            
+                            <!-- Buttons 32px -->
+                            <div class="buttons-demo-section">
+                                <h4 class="buttons-demo-title">Buttons 32px</h4>
+                                <div class="buttons-demo-grid">
+                                    <!-- Ряд 1: Action -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-action">Кнопка</button>
+                                        <div class="component-name">Action</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-action btn--icon-start" data-icon="check">
+                                            <span class="btn__icon" id="btn-icon-action-32"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Action + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-action btn--icon-only" data-icon="check">
+                                            <span class="btn__icon" id="btn-icon-action-only-32"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
+                                    </div>
+                                    
+                                    <!-- Ряд 2: Fill -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-fill">Кнопка</button>
+                                        <div class="component-name">Fill</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-fill btn--icon-start" data-icon="calendar">
+                                            <span class="btn__icon" id="btn-icon-fill-32"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Fill + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-fill btn--icon-only" data-icon="calendar">
+                                            <span class="btn__icon" id="btn-icon-fill-only-32"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
+                                    </div>
+                                    
+                                    <!-- Ряд 3: Outline -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-outline">Кнопка</button>
+                                        <div class="component-name">Outline</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-outline btn--icon-start" data-icon="delete">
+                                            <span class="btn__icon" id="btn-icon-outline-32"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Outline + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-outline btn--icon-only" data-icon="delete">
+                                            <span class="btn__icon" id="btn-icon-outline-only-32"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
+                                    </div>
+                                    
+                                    <!-- Ряд 4: Blank -->
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-blank">Кнопка</button>
+                                        <div class="component-name">Blank</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-blank btn--icon-start" data-icon="eye">
+                                            <span class="btn__icon" id="btn-icon-blank-32"></span>
+                                            Кнопка
+                                        </button>
+                                        <div class="component-name">Blank + Icon</div>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-blank btn--icon-only" data-icon="eye">
+                                            <span class="btn__icon" id="btn-icon-blank-only-32"></span>
+                                        </button>
+                                        <div class="component-name">Icon Only</div>
+                                    </div>
+                                    
+                                    <!-- Ряд 5: Disabled (центрируем) -->
+                                    <div></div>
+                                    <div class="control-wrapper">
+                                        <button class="btn btn--size-32 btn--style-action" disabled>Кнопка</button>
+                                        <div class="component-name">Disabled</div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
