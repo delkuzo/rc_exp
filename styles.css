@@ -1430,16 +1430,17 @@ body {
 /* Компонент Toggle - дизайн из Figma с токенами дизайн-системы */
 .toggle-demo-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     gap: var(--size-l);
     justify-content: flex-start; /* Выровнять по левому краю */
     margin-top: var(--size-l);
+    margin-bottom: var(--size-l);
 }
 
 .toggle-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Выравниваем по левому краю */
     gap: var(--size-xs);
 }
 
@@ -1454,6 +1455,7 @@ body {
     width: 0;
     height: 0;
     position: absolute;
+    outline: none; /* Убираем браузерную обводку */
 }
 
 .toggle-slider {
@@ -1520,6 +1522,152 @@ body {
 
 .toggle-container:active .toggle-slider {
     transform: scale(0.95);
+}
+
+/* ==================== ГЛОБАЛЬНОЕ ОТКЛЮЧЕНИЕ БРАУЗЕРНЫХ ОБВОДОК ==================== */
+
+/* ТОТАЛЬНОЕ ОТКЛЮЧЕНИЕ СИНИХ ОБВОДОК */
+* {
+    outline: none !important;
+    outline: 0 !important;
+}
+
+*:focus, *:active, *:visited, *:hover {
+    outline: none !important;
+    outline: 0 !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Специально для всех типов input */
+input, input[type="checkbox"], input[type="radio"], input[type="text"], input[type="button"] {
+    outline: none !important;
+    outline: 0 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+input:focus, input:active, input:hover {
+    outline: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Специально для button */
+button, button:focus, button:active, button:hover {
+    outline: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Специально для label */
+label, label:focus, label:active, label:hover {
+    outline: none !important;
+    outline: 0 !important;
+}
+
+/* WebKit браузеры - полное отключение */
+*:focus {
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-focus-ring: none !important;
+    -webkit-focus-ring-width: 0 !important;
+}
+
+/* Для checkbox конкретно */
+.checkbox-input, .checkbox-input:focus, .checkbox-input:active {
+    outline: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.toggle-input, .toggle-input:focus, .toggle-input:active {
+    outline: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Убираем border только у toggle-slider (он не должен его иметь) */
+.toggle-slider {
+    border: none !important;
+}
+
+/* ==================== CHECKBOX COMPONENT ==================== */
+
+/* Layout для демо секции контроллов - вертикальное расположение */
+.control-demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-l);
+    margin-top: var(--size-l);
+    margin-bottom: var(--size-xxl); /* Увеличиваем отступ снизу */
+    clear: both;
+}
+
+.checkbox-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    outline: none; /* Убираем браузерную обводку */
+}
+
+.checkbox-box {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-primary);
+    transition: all 0.2s ease;
+}
+
+/* Hover состояние */
+.checkbox-container:hover .checkbox-box {
+    background: var(--color-hover);
+}
+
+/* Checked состояние */
+.checkbox-input:checked + .checkbox-box {
+    background: var(--color-red);
+    border-color: var(--color-red);
+}
+
+/* Галочка - поднимаем на 1px выше */
+.checkbox-box::after {
+    content: '';
+    position: absolute;
+    display: none;
+    top: calc(50% - 1px); /* Поднимаем на 1px */
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.checkbox-input:checked + .checkbox-box::after {
+    display: block;
+}
+
+/* Active состояние */
+.checkbox-container:active .checkbox-box {
+    transform: scale(0.95);
+}
+
+/* Focus состояние для accessibility - убираем браузерную обводку */
+.checkbox-input:focus + .checkbox-box {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-link);
 }
 
 /* Название компонента */

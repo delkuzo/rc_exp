@@ -472,6 +472,21 @@
                         </div>
                     </div>
 
+                    <!-- Иконки (свернутая) -->
+                    <div class="content-block collapsed" data-block="icons">
+                        <div class="block-header" onclick="toggleBlock('icons')">
+                            <h3 class="block-title">Иконки</h3>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="block-content">
+                            <div id="icons-demo">
+                                <!-- Демо иконок будет загружено через JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Контролы (свернутая) -->
                     <div class="content-block collapsed" data-block="controls">
                         <div class="block-header" onclick="toggleBlock('controls')">
@@ -509,20 +524,16 @@
                                     <div class="component-name">Toggle 32</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Иконки (свернутая) -->
-                    <div class="content-block collapsed" data-block="icons">
-                        <div class="block-header" onclick="toggleBlock('icons')">
-                            <h3 class="block-title">Иконки</h3>
-                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="block-content">
-                            <div id="icons-demo">
-                                <!-- Демо иконок будет загружено через JavaScript -->
+                            
+                            <!-- Checkbox компонент -->
+                            <div class="control-demo-section">
+                                <div class="toggle-wrapper">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="checkbox-input">
+                                        <span class="checkbox-box"></span>
+                                    </label>
+                                    <div class="component-name">Checkbox</div>
+                                </div>
                             </div>
                         </div>
                     </div>
