@@ -2238,3 +2238,39 @@ label, label:focus, label:active, label:hover {
         gap: 16px 12px;
     }
 } 
+
+/* Стили для экспериментов */
+.experiments-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.experiments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.experiment-link-simple {
+    display: block;
+    padding: 12px 0;
+    text-decoration: underline;
+    font-family: var(--typography-body-font-family);
+    font-weight: var(--typography-body-font-weight);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    letter-spacing: var(--typography-body-letter-spacing);
+    color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+    .experiments-content {
+        padding: 20px 16px;
+    }
+    
+    .experiment-link-simple {
+        padding: 10px 0;
+        font-size: var(--typography-body-font-size);
+    }
+} 
