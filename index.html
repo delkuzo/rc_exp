@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RC Experiment - UI Kit Development Platform</title>
     <link rel="stylesheet" href="fonts/fonts.css">
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=16">
     <script src="icons/icon-system-v3.js"></script>
 </head>
 <body>
@@ -585,6 +585,37 @@
                                 <div class="component-name">Input</div>
                             </div>
                             
+                            <!-- Select компонент -->
+                            <div class="control-demo-section">
+                                <div class="select-wrapper">
+                                    <div class="select-container" id="selectDemo">
+                                        <button class="select-button" type="button" aria-haspopup="listbox" aria-expanded="false" id="selectButton">
+                                            <span class="select-text">choose label</span>
+                                            <span class="select-icon" id="selectIcon">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <div class="select-dropdown" id="selectDropdown" role="listbox" aria-hidden="true">
+                                            <div class="select-option" role="option" data-value="label1" tabindex="0">
+                                                <span class="select-option-text">label 1</span>
+                                            </div>
+                                            <div class="select-option" role="option" data-value="label2" tabindex="0">
+                                                <span class="select-option-text">label 2</span>
+                                            </div>
+                                            <div class="select-option" role="option" data-value="label3" tabindex="0">
+                                                <span class="select-option-text">label 3</span>
+                                            </div>
+                                            <div class="select-option" role="option" data-value="label4" tabindex="0">
+                                                <span class="select-option-text">label 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="component-name">Select</div>
+                                </div>
+                            </div>
+                            
                             <!-- Buttons 40px -->
                             <div class="buttons-demo-section">
                                 <h4 class="buttons-demo-title">Buttons 40px</h4>
@@ -902,6 +933,6 @@
         </main>
     </div>
 
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html> 

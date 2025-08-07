@@ -54,151 +54,65 @@ const updateThemeIcon = (theme) => {
     }
 };
 
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM загружен, инициализация темы...');
+// Функция для обновления aria-expanded при сворачивании/разворачивании
+const updateAriaExpanded = (block) => {
+    const header = block.querySelector('.block-header');
+    const isExpanded = block.classList.contains('expanded');
+    header.setAttribute('aria-expanded', isExpanded.toString());
+};
+
+// Переопределяем функцию toggleBlock для обновления aria-expanded
+window.toggleBlock = (blockId) => {
+    const block = document.querySelector(`[data-block="${blockId}"]`);
+    const chevron = block.querySelector('.chevron-icon');
     
-    // Инициализация темы
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    console.log('Сохраненная тема:', savedTheme);
-    
-    // Устанавливаем тему
-    document.body.setAttribute('data-theme', savedTheme);
-    
-    // Обновляем иконку
-    updateThemeIcon(savedTheme);
-    
-    // Обработчик для переключения темы
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Клик по кнопке темы');
-            toggleTheme();
-        });
+    if (block.classList.contains('collapsed')) {
+        block.classList.remove('collapsed');
+        block.classList.add('expanded');
+        chevron.style.transform = 'rotate(180deg)';
     } else {
-        console.error('Кнопка темы не найдена!');
+        block.classList.remove('expanded');
+        block.classList.add('collapsed');
+        chevron.style.transform = 'rotate(0deg)';
     }
     
-    // Обработчики для навигации
-    const navTabs = document.querySelectorAll('.tab-item[data-section]');
-    navTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+    updateAriaExpanded(block);
+};
+
+// Инициализируем aria-expanded для всех блоков
+document.querySelectorAll('.content-block').forEach(block => {
+    updateAriaExpanded(block);
+});
+
+// Функция переключения контента
+const switchContent = (section) => {
+    // Скрываем все секции
+    const allSections = document.querySelectorAll('.content-section');
+    allSections.forEach(s => s.classList.add('hidden'));
+    
+    // Показываем нужную секцию
+    const targetSection = document.getElementById(`${section}-content`);
+    if (targetSection) {
+        targetSection.classList.remove('hidden');
+    }
+};
+
+// Обработка хэша в URL при загрузке страницы
+const handleHashChange = () => {
+    const hash = window.location.hash.substring(1); // Убираем #
+    if (hash) {
+        // Находим вкладку с соответствующим data-section
+        const targetTab = document.querySelector(`.tab-item[data-section="${hash}"]`);
+        if (targetTab) {
             // Убираем активный класс у всех вкладок
             navTabs.forEach(t => t.classList.remove('active'));
-            // Добавляем активный класс к текущей вкладке
-            tab.classList.add('active');
-            
+            // Добавляем активный класс к целевой вкладке
+            targetTab.classList.add('active');
             // Переключаем контент
-            const section = tab.getAttribute('data-section');
-            switchContent(section);
-        });
-    });
-    
-    // Обработчики для вкладок в UI Kit (без data-section)
-    const uiKitTabs = document.querySelectorAll('.tab-item:not([data-section])');
-    uiKitTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Убираем активный класс у всех вкладок в этой группе
-            const container = tab.closest('.tabs-container');
-            if (container) {
-                container.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
-            }
-            // Добавляем активный класс к текущей вкладке
-            tab.classList.add('active');
-        });
-    });
-    
-    // Функция переключения контента
-    const switchContent = (section) => {
-        // Скрываем все секции
-        const allSections = document.querySelectorAll('.content-section');
-        allSections.forEach(s => s.classList.add('hidden'));
-        
-        // Показываем нужную секцию
-        const targetSection = document.getElementById(`${section}-content`);
-        if (targetSection) {
-            targetSection.classList.remove('hidden');
+            switchContent(hash);
         }
-    };
-    
-    // Обработка хэша в URL при загрузке страницы
-    const handleHashChange = () => {
-        const hash = window.location.hash.substring(1); // Убираем #
-        if (hash) {
-            // Находим вкладку с соответствующим data-section
-            const targetTab = document.querySelector(`.tab-item[data-section="${hash}"]`);
-            if (targetTab) {
-                // Убираем активный класс у всех вкладок
-                navTabs.forEach(t => t.classList.remove('active'));
-                // Добавляем активный класс к целевой вкладке
-                targetTab.classList.add('active');
-                // Переключаем контент
-                switchContent(hash);
-            }
-        }
-    };
-    
-    // Обрабатываем хэш при загрузке страницы
-    handleHashChange();
-    
-    // Обрабатываем изменение хэша в браузере
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Добавляем обработчики клавиатуры для доступности
-    const blockHeaders = document.querySelectorAll('.block-header');
-    blockHeaders.forEach(header => {
-        header.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                const blockId = header.parentElement.getAttribute('data-block');
-                toggleBlock(blockId);
-            }
-        });
-        
-        // Добавляем tabindex для доступности
-        header.setAttribute('tabindex', '0');
-        header.setAttribute('role', 'button');
-        header.setAttribute('aria-expanded', 'false');
-    });
-    
-    // Обновляем aria-expanded при сворачивании/разворачивании
-    const updateAriaExpanded = (block) => {
-        const header = block.querySelector('.block-header');
-        const isExpanded = block.classList.contains('expanded');
-        header.setAttribute('aria-expanded', isExpanded.toString());
-    };
-    
-    // Переопределяем функцию toggleBlock для обновления aria-expanded
-    window.toggleBlock = (blockId) => {
-        const block = document.querySelector(`[data-block="${blockId}"]`);
-        const chevron = block.querySelector('.chevron-icon');
-        
-        if (block.classList.contains('collapsed')) {
-            block.classList.remove('collapsed');
-            block.classList.add('expanded');
-            chevron.style.transform = 'rotate(180deg)';
-        } else {
-            block.classList.remove('expanded');
-            block.classList.add('collapsed');
-            chevron.style.transform = 'rotate(0deg)';
-        }
-        
-        updateAriaExpanded(block);
-    };
-    
-    // Инициализируем aria-expanded для всех блоков
-    document.querySelectorAll('.content-block').forEach(block => {
-        updateAriaExpanded(block);
-    });
-    
-    // Инициализация Input компонента
-    initSearchInputDemo();
-    
-    // Инициализация Switcher Button компонента
-    initSwitcherButton();
-});
+    }
+};
 
 // Функция для инициализации демо Input
 const initSearchInputDemo = async () => {
@@ -687,53 +601,132 @@ const createButtonBuilder = () => {
 
 // Функция предпросмотра кнопки
 const createPreviewButton = async () => {
-    const preview = document.getElementById('button-preview');
-    const text = document.getElementById('button-text').value;
-    const icon = document.getElementById('button-icon').value;
-    const size = parseInt(document.getElementById('button-size').value);
-    const style = document.getElementById('button-style').value;
+    const previewContainer = document.getElementById('buttonPreview');
+    if (!previewContainer) return;
     
-    preview.innerHTML = '<div style="color: var(--color-text-secondary);">🔄 Создание...</div>';
+    // Очищаем контейнер
+    previewContainer.innerHTML = '';
     
-    try {
-        const button = await createButtonWithIcon(icon || null, text || null, size, style);
-        preview.innerHTML = '';
-        preview.appendChild(button);
+    // Создаем кнопку с текущими настройками
+    const button = await createButtonFromRequest(currentButtonConfig);
+    previewContainer.appendChild(button);
+};
+
+// Инициализация компонента Select
+const initSelectComponent = () => {
+    console.log('Инициализация компонента Select...');
+    const selectContainer = document.getElementById('selectDemo');
+    if (!selectContainer) {
+        console.error('Select контейнер не найден!');
+        return;
+    }
+    console.log('Select контейнер найден:', selectContainer);
+    
+    const selectButton = document.getElementById('selectButton');
+    const selectDropdown = document.getElementById('selectDropdown');
+    const selectIcon = document.getElementById('selectIcon');
+    const selectOptions = selectDropdown.querySelectorAll('.select-option');
+    
+    let isOpen = false;
+    let selectedValue = null;
+    
+    // Функция для открытия/закрытия dropdown
+    const toggleDropdown = () => {
+        isOpen = !isOpen;
         
-        // Добавляем код для копирования
-        const code = `
-// Создание кнопки
-const button = await createButtonWithIcon('${icon}', '${text}', ${size}, '${style}');
-document.body.appendChild(button);
-        `.trim();
-        
-        const codeBlock = document.createElement('div');
-        codeBlock.style.cssText = `
-            margin-top: 12px;
-            padding: 8px;
-            background: var(--color-bg-secondary);
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 11px;
-            color: var(--color-text-secondary);
-            cursor: pointer;
-        `;
-        codeBlock.textContent = code;
-        codeBlock.title = 'Кликните, чтобы скопировать код';
-        
-        codeBlock.addEventListener('click', () => {
-            navigator.clipboard.writeText(code);
-            codeBlock.textContent = 'Код скопирован!';
-            setTimeout(() => {
-                codeBlock.textContent = code;
-            }, 1500);
+        if (isOpen) {
+            selectDropdown.classList.add('select-dropdown-open');
+            selectButton.setAttribute('aria-expanded', 'true');
+            selectIcon.classList.add('select-icon-up');
+            selectDropdown.setAttribute('aria-hidden', 'false');
+        } else {
+            selectDropdown.classList.remove('select-dropdown-open');
+            selectButton.setAttribute('aria-expanded', 'false');
+            selectIcon.classList.remove('select-icon-up');
+            selectDropdown.setAttribute('aria-hidden', 'true');
+        }
+    };
+    
+    // Обработчик клика по кнопке
+    selectButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDropdown();
+    });
+    
+    // Обработчик клика по опциям
+    selectOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const value = option.getAttribute('data-value');
+            const text = option.querySelector('.select-option-text').textContent;
+            
+            // Обновляем текст кнопки
+            selectButton.querySelector('.select-text').textContent = text;
+            selectedValue = value;
+            
+            // Обновляем состояние опций
+            selectOptions.forEach(opt => opt.classList.remove('select-option-selected'));
+            option.classList.add('select-option-selected');
+            
+            // Закрываем dropdown
+            toggleDropdown();
         });
         
-        preview.appendChild(codeBlock);
+        // Обработчик клавиатуры для опций
+        option.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                option.click();
+            }
+        });
+    });
+    
+    // Обработчик клавиатуры для кнопки
+    selectButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (!isOpen) {
+                toggleDropdown();
+            }
+        } else if (e.key === 'Escape' && isOpen) {
+            e.preventDefault();
+            toggleDropdown();
+        }
+    });
+    
+    // Закрытие dropdown при клике вне компонента
+    document.addEventListener('click', (e) => {
+        if (!selectContainer.contains(e.target) && isOpen) {
+            toggleDropdown();
+        }
+    });
+    
+    // Обработчик фокуса для навигации по опциям
+    selectDropdown.addEventListener('keydown', (e) => {
+        const currentOption = document.activeElement;
+        const currentIndex = Array.from(selectOptions).indexOf(currentOption);
         
-    } catch (error) {
-        preview.innerHTML = '<div style="color: var(--color-red);">❌ Ошибка создания кнопки</div>';
-    }
+        switch (e.key) {
+            case 'ArrowDown':
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % selectOptions.length;
+                selectOptions[nextIndex].focus();
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                const prevIndex = currentIndex === 0 ? selectOptions.length - 1 : currentIndex - 1;
+                selectOptions[prevIndex].focus();
+                break;
+            case 'Escape':
+                e.preventDefault();
+                toggleDropdown();
+                selectButton.focus();
+                break;
+        }
+    });
 };
 
 // Экспортируем функции в глобальную область
@@ -743,9 +736,13 @@ window.parseButtonRequest = parseButtonRequest;
 window.loadIconsDemo = loadIconsDemo;
 window.createButtonBuilder = createButtonBuilder;
 window.createPreviewButton = createPreviewButton;
+window.initSelectComponent = initSelectComponent; // Добавляем инициализацию Select в глобальную область
 
 // Инициализация иконок в кнопках
 document.addEventListener('DOMContentLoaded', () => {
     // Запускаем инициализацию иконок с небольшой задержкой
     setTimeout(initializeButtonIcons, 200);
+    
+    // Инициализация компонента Select
+    initSelectComponent();
 }); 
