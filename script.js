@@ -21,6 +21,8 @@ const toggleBlock = (blockId) => {
         block.classList.add('collapsed');
         chevron.style.transform = 'rotate(0deg)';
     }
+    
+    updateAriaExpanded(block);
 };
 
 // Функция для переключения темы
@@ -38,6 +40,7 @@ const toggleTheme = () => {
     updateThemeIcon(newTheme);
     
     console.log('Тема установлена:', newTheme);
+    console.log('data-theme атрибут:', document.body.getAttribute('data-theme'));
 };
 
 // Функция для обновления иконки
@@ -61,23 +64,8 @@ const updateAriaExpanded = (block) => {
     header.setAttribute('aria-expanded', isExpanded.toString());
 };
 
-// Переопределяем функцию toggleBlock для обновления aria-expanded
-window.toggleBlock = (blockId) => {
-    const block = document.querySelector(`[data-block="${blockId}"]`);
-    const chevron = block.querySelector('.chevron-icon');
-    
-    if (block.classList.contains('collapsed')) {
-        block.classList.remove('collapsed');
-        block.classList.add('expanded');
-        chevron.style.transform = 'rotate(180deg)';
-    } else {
-        block.classList.remove('expanded');
-        block.classList.add('collapsed');
-        chevron.style.transform = 'rotate(0deg)';
-    }
-    
-    updateAriaExpanded(block);
-};
+// Экспортируем функцию toggleBlock в глобальную область
+window.toggleBlock = toggleBlock;
 
 // Инициализируем aria-expanded для всех блоков
 document.querySelectorAll('.content-block').forEach(block => {
@@ -86,6 +74,8 @@ document.querySelectorAll('.content-block').forEach(block => {
 
 // Функция переключения контента
 const switchContent = (section) => {
+    console.log('Переключаем контент на секцию:', section);
+    
     // Скрываем все секции
     const allSections = document.querySelectorAll('.content-section');
     allSections.forEach(s => s.classList.add('hidden'));
@@ -94,6 +84,9 @@ const switchContent = (section) => {
     const targetSection = document.getElementById(`${section}-content`);
     if (targetSection) {
         targetSection.classList.remove('hidden');
+        console.log('Секция показана:', targetSection.id);
+    } else {
+        console.error('Секция не найдена:', `${section}-content`);
     }
 };
 
@@ -105,6 +98,7 @@ const handleHashChange = () => {
         const targetTab = document.querySelector(`.tab-item[data-section="${hash}"]`);
         if (targetTab) {
             // Убираем активный класс у всех вкладок
+            const navTabs = document.querySelectorAll('.tab-item');
             navTabs.forEach(t => t.classList.remove('active'));
             // Добавляем активный класс к целевой вкладке
             targetTab.classList.add('active');
@@ -704,6 +698,26 @@ const initSelectComponent = () => {
         }
     });
     
+    // Предотвращение закрытия при наведении на dropdown
+    selectDropdown.addEventListener('mouseenter', (e) => {
+        e.stopPropagation();
+    });
+    
+    selectDropdown.addEventListener('mouseleave', (e) => {
+        e.stopPropagation();
+    });
+    
+    // Дополнительная защита от закрытия при наведении на опции
+    selectOptions.forEach(option => {
+        option.addEventListener('mouseenter', (e) => {
+            e.stopPropagation();
+        });
+        
+        option.addEventListener('mouseleave', (e) => {
+            e.stopPropagation();
+        });
+    });
+    
     // Обработчик фокуса для навигации по опциям
     selectDropdown.addEventListener('keydown', (e) => {
         const currentOption = document.activeElement;
@@ -740,9 +754,58 @@ window.initSelectComponent = initSelectComponent; // Добавляем иниц
 
 // Инициализация иконок в кнопках
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM загружен, инициализируем компоненты...');
+    
+    // Инициализация переключения вкладок
+    const navTabs = document.querySelectorAll('.tab-item');
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Обработчики для вкладок
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Клик по вкладке:', tab.getAttribute('data-section'));
+            
+            // Убираем активный класс у всех вкладок
+            navTabs.forEach(t => t.classList.remove('active'));
+            
+            // Добавляем активный класс к кликнутой вкладке
+            tab.classList.add('active');
+            
+            // Переключаем контент
+            const section = tab.getAttribute('data-section');
+            switchContent(section);
+            
+            // Обновляем URL
+            window.location.hash = section;
+        });
+    });
+    
+    // Обработчик для переключения темы
+    if (themeToggle) {
+        themeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Клик по переключателю темы');
+            toggleTheme();
+        });
+    }
+    
+    // Загружаем сохраненную тему
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    // Обрабатываем хэш в URL при загрузке
+    handleHashChange();
+    
+    // Обработчик изменения хэша в URL
+    window.addEventListener('hashchange', handleHashChange);
+    
     // Запускаем инициализацию иконок с небольшой задержкой
     setTimeout(initializeButtonIcons, 200);
     
     // Инициализация компонента Select
     initSelectComponent();
+    
+    console.log('Все компоненты инициализированы');
 }); 

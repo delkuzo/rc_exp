@@ -2286,17 +2286,17 @@ label, label:focus, label:active, label:hover {
 }
 
 /* Select компонент */
-.select-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--size-s);
+
+/* Специальное выравнивание для select - по левому краю */
+.select-control-wrapper {
+    align-items: flex-start;
 }
 
 .select-container {
     position: relative;
     display: inline-block;
     min-width: 240px;
+    overflow: visible;
 }
 
 .select-button {
@@ -2360,7 +2360,7 @@ label, label:focus, label:active, label:hover {
     background-color: var(--color-bg-primary);
     border-radius: var(--size-l);
     box-shadow: var(--shadow-regular);
-    z-index: 1000;
+    z-index: 9999;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -2372,6 +2372,7 @@ label, label:focus, label:active, label:hover {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    box-shadow: var(--shadow-regular);
 }
 
 .select-option {
@@ -2391,6 +2392,16 @@ label, label:focus, label:active, label:hover {
 .select-option:focus {
     outline: 2px solid var(--color-border-primary);
     outline-offset: 2px;
+}
+
+/* Сохраняем тень при наведении на опции */
+.select-dropdown-open .select-option:hover {
+    background-color: var(--color-hover);
+}
+
+/* Принудительно сохраняем тень только у dropdown контейнера */
+.select-dropdown-open {
+    box-shadow: var(--shadow-regular) !important;
 }
 
 .select-option-selected {
@@ -2420,10 +2431,26 @@ label, label:focus, label:active, label:hover {
 [data-theme="dark"] .select-dropdown {
     background-color: var(--color-bg-primary);
     box-shadow: var(--shadow-regular);
+    z-index: 9999;
+}
+
+[data-theme="dark"] .select-dropdown-open {
+    box-shadow: var(--shadow-regular);
+    /* Временная усиленная тень для тестирования */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] .select-option:hover {
     background-color: var(--color-hover);
+}
+
+[data-theme="dark"] .select-dropdown-open .select-option:hover {
+    background-color: var(--color-hover);
+}
+
+/* Принудительно сохраняем тень только у dropdown контейнера в темной теме */
+[data-theme="dark"] .select-dropdown-open {
+    box-shadow: var(--shadow-regular) !important;
 }
 
 [data-theme="dark"] .select-option-selected {
