@@ -88,7 +88,6 @@
             margin-bottom: var(--size-xxl);
             display: flex;
             flex-direction: column;
-            gap: var(--size-m);
         }
         
         .heading-text-button-block:last-child {
@@ -98,7 +97,6 @@
         .heading-text-content {
             display: flex;
             flex-direction: column;
-            gap: var(--size-m);
         }
         
         .heading-text-title {
@@ -120,7 +118,37 @@
         .button-container {
             display: flex;
             align-items: flex-start;
-            margin-top: var(--size-s);
+        }
+        
+        /* ЭТАЛОННЫЕ НАСТРОЙКИ ИЗ ПЕРВОГО ЭКСПЕРИМЕНТА */
+        /* Специфичные отступы для каждого уровня заголовков */
+        .heading-display-2 {
+            margin-bottom: 24px;
+        }
+        
+        .heading-display-1 {
+            margin-bottom: 20px;
+        }
+        
+        .heading-header-2 {
+            margin-bottom: 16px;
+        }
+        
+        .heading-header-1 {
+            margin-bottom: 12px;
+        }
+        
+        /* Прогрессивная иерархия отступов между текстом и кнопкой */
+        /* Для Display 2 и Display 1 - больший отступ */
+        .heading-text-button-block:has(.heading-display-2) .button-container,
+        .heading-text-button-block:has(.heading-display-1) .button-container {
+            margin-top: var(--size-l);
+        }
+        
+        /* Для Header 2 и Header 1 - меньший отступ */
+        .heading-text-button-block:has(.heading-header-2) .button-container,
+        .heading-text-button-block:has(.heading-header-1) .button-container {
+            margin-top: var(--size-m);
         }
         
         /* Стили заголовков */
