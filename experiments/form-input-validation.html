@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Форма ввода с валидацией - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
+        }
+        .back-link:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        .experiment-result {
+            margin-top: 40px;
+            display: flex;
+            gap: 80px;
+        }
+        
+        .form-column {
+            flex: 1;
+        }
+        
+        /* Переключатель темы */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+        .theme-toggle-btn:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .theme-toggle-btn:active {
+            transform: scale(0.95);
+        }
+        .theme-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* ЭТАЛОННЫЕ НАСТРОЙКИ ИЗ ПРЕДЫДУЩИХ ЭКСПЕРИМЕНТОВ */
+        /* Блок формы */
+        .form-block {
+            margin-bottom: var(--size-xxl);
+            max-width: 600px;
+        }
+        
+        .form-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .form-title {
+            font-family: var(--typography-header-2-font-family);
+            font-weight: var(--typography-header-2-font-weight);
+            font-size: var(--typography-header-2-font-size);
+            line-height: var(--typography-header-2-line-height);
+            color: var(--color-text-primary);
+            margin-bottom: var(--size-xl);
+        }
+        
+        .form-description {
+            font-family: var(--typography-body-font-family);
+            font-weight: var(--typography-body-font-weight);
+            font-size: var(--typography-body-font-size);
+            line-height: var(--typography-body-line-height);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--size-l);
+        }
+        
+        /* Поля ввода в столбик */
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-xl);
+            margin-bottom: var(--size-xl);
+        }
+        
+
+        
+        /* Дополнительный отступ для места под ошибки */
+        .form-field {
+            margin-bottom: var(--size-xs);
+        }
+        
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-field .input-container {
+            width: 300px;
+        }
+        
+        .form-field-label {
+            display: block;
+            font-family: var(--typography-subheader-1-font-family);
+            font-weight: var(--typography-subheader-1-font-weight);
+            font-size: var(--typography-subheader-1-font-size);
+            line-height: var(--typography-subheader-1-line-height);
+            color: var(--color-text-primary);
+            margin-bottom: var(--size-xs);
+        }
+        
+        .form-field {
+            position: relative;
+        }
+        
+        /* Стили для второй формы без лейблов */
+        .form-fields-simple {
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-xl);
+            margin-bottom: var(--size-l);
+        }
+        
+
+        
+        .form-field-simple {
+            position: relative;
+        }
+        
+        .form-field-simple .input-container {
+            width: 300px;
+        }
+        
+        .form-error-message {
+            font-family: var(--typography-caption-2-font-family);
+            font-weight: var(--typography-caption-2-font-weight);
+            font-size: var(--typography-caption-2-font-size);
+            line-height: var(--typography-caption-2-line-height);
+            color: var(--color-red);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: var(--size-xs);
+            display: none;
+        }
+        
+        .form-error-message.show {
+            display: block;
+        }
+        
+        .form-success-message {
+            font-family: var(--typography-caption-2-font-family);
+            font-weight: var(--typography-caption-2-font-weight);
+            font-size: var(--typography-caption-2-font-size);
+            line-height: var(--typography-caption-2-line-height);
+            color: var(--color-success-text);
+            margin-top: var(--size-xs);
+            display: none;
+        }
+        
+        .form-success-message.show {
+            display: block;
+        }
+        
+        /* Кнопка */
+        .form-button {
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .form-button .btn {
+            width: 300px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .experiment-page {
+                margin-left: 20px;
+                padding: 20px 16px;
+            }
+            
+            .form-fields {
+                gap: var(--size-s);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <div class="experiment-header">
+            <a href="../index.html#experiments" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <h1 class="experiment-title">Форма ввода с валидацией</h1>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
+                <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="experiment-result">
+            <!-- Первая колонка: форма с лейблами -->
+            <div class="form-column">
+                <div class="form-block">
+                    <h2 class="form-title">Регистрация пользователя</h2>
+                    
+                    <div class="form-fields">
+                        <div class="form-field">
+                            <label class="form-field-label">Имя пользователя</label>
+                            <div class="input-container" id="usernameInput">
+                                <input type="text" class="input-field" placeholder="Введите имя пользователя" id="usernameField">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="usernameClear"></button>
+                            </div>
+                            <div class="form-error-message" id="usernameError">Имя пользователя должно содержать минимум 3 символа</div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">Email</label>
+                            <div class="input-container" id="emailInput">
+                                <input type="email" class="input-field" placeholder="Введите email" id="emailField">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="emailClear"></button>
+                            </div>
+                            <div class="form-error-message" id="emailError">Введите корректный email адрес</div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">Пароль</label>
+                            <div class="input-container" id="passwordInput">
+                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField" autocomplete="new-password">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="passwordClear"></button>
+                            </div>
+                            <div class="form-error-message" id="passwordError">Пароль должен содержать минимум 8 символов</div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">Подтвердите пароль</label>
+                            <div class="input-container" id="confirmPasswordInput">
+                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField" autocomplete="new-password">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="confirmPasswordClear"></button>
+                            </div>
+                            <div class="form-error-message" id="confirmPasswordError">Пароли не совпадают</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-button">
+                        <button class="btn btn--style-action btn--size-40" id="submitBtn">
+                            Сохранить
+                        </button>
+                    </div>
+                    
+                    <div class="form-success-message" id="successMessage">Регистрация успешно завершена!</div>
+                </div>
+            </div>
+            
+            <!-- Вторая колонка: форма без лейблов -->
+            <div class="form-column">
+                <div class="form-block">
+                    <h2 class="form-title">Регистрация пользователя</h2>
+                    
+                    <div class="form-fields-simple">
+                        <div class="form-field-simple">
+                            <div class="input-container" id="username2Input">
+                                <input type="text" class="input-field" placeholder="Имя пользователя" id="usernameField2">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="usernameClear2"></button>
+                            </div>
+                            <div class="form-error-message" id="username2Error">Имя пользователя должно содержать минимум 3 символа</div>
+                        </div>
+                        
+                        <div class="form-field-simple">
+                            <div class="input-container" id="email2Input">
+                                <input type="email" class="input-field" placeholder="Email" id="emailField2">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="emailClear2"></button>
+                            </div>
+                            <div class="form-error-message" id="email2Error">Введите корректный email адрес</div>
+                        </div>
+                        
+                        <div class="form-field-simple">
+                            <div class="input-container" id="password2Input">
+                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField2" autocomplete="new-password">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="passwordClear2"></button>
+                            </div>
+                            <div class="form-error-message" id="password2Error">Пароль должен содержать минимум 8 символов</div>
+                        </div>
+                        
+                        <div class="form-field-simple">
+                            <div class="input-container" id="confirmPassword2Input">
+                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField2" autocomplete="new-password">
+                                <button class="input-clear-button" type="button" aria-label="Очистить" id="confirmPasswordClear2"></button>
+                            </div>
+                            <div class="form-error-message" id="confirmPassword2Error">Пароли не совпадают</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-button">
+                        <button class="btn btn--style-action btn--size-40" id="submitBtn2">
+                            Сохранить
+                        </button>
+                    </div>
+                    
+                    <div class="form-success-message" id="successMessage2">Регистрация успешно завершена!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Инициализация валидации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Валидация формы
+            initializeFormValidation();
+            
+            // Переключение темы
+            initializeThemeToggle();
+        });
+
+        function initializeFormValidation() {
+            // Первая форма
+            const usernameField = document.getElementById('usernameField');
+            const emailField = document.getElementById('emailField');
+            const passwordField = document.getElementById('passwordField');
+            const confirmPasswordField = document.getElementById('confirmPasswordField');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Вторая форма
+            const usernameField2 = document.getElementById('usernameField2');
+            const emailField2 = document.getElementById('emailField2');
+            const passwordField2 = document.getElementById('passwordField2');
+            const confirmPasswordField2 = document.getElementById('confirmPasswordField2');
+            const submitBtn2 = document.getElementById('submitBtn2');
+            
+            // Функции валидации
+            function validateUsername(value) {
+                return value.length >= 3;
+            }
+            
+            function validateEmail(value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(value);
+            }
+            
+            function validatePassword(value) {
+                return value.length >= 8;
+            }
+            
+            // Обработчики событий для первой формы
+            usernameField.addEventListener('input', function() {
+                const isValid = validateUsername(this.value);
+                toggleFieldError('username', !isValid);
+            });
+            
+            emailField.addEventListener('input', function() {
+                const isValid = validateEmail(this.value);
+                toggleFieldError('email', !isValid);
+            });
+            
+            passwordField.addEventListener('input', function() {
+                const isValid = validatePassword(this.value);
+                toggleFieldError('password', !isValid);
+            });
+            
+            confirmPasswordField.addEventListener('input', function() {
+                const isValid = this.value === passwordField.value && this.value.length > 0;
+                toggleFieldError('confirmPassword', !isValid);
+            });
+            
+            // Обработчики событий для второй формы
+            usernameField2.addEventListener('input', function() {
+                const isValid = validateUsername(this.value);
+                toggleFieldError('username2', !isValid);
+            });
+            
+            emailField2.addEventListener('input', function() {
+                const isValid = validateEmail(this.value);
+                toggleFieldError('email2', !isValid);
+            });
+            
+            passwordField2.addEventListener('input', function() {
+                const isValid = validatePassword(this.value);
+                toggleFieldError('password2', !isValid);
+            });
+            
+            confirmPasswordField2.addEventListener('input', function() {
+                const isValid = this.value === passwordField2.value && this.value.length > 0;
+                toggleFieldError('confirmPassword2', !isValid);
+            });
+            
+            // Обработчики кнопок
+            submitBtn.addEventListener('click', function() {
+                const usernameValid = validateUsername(usernameField.value);
+                const emailValid = validateEmail(emailField.value);
+                const passwordValid = validatePassword(passwordField.value);
+                const confirmValid = confirmPasswordField.value === passwordField.value;
+                
+                toggleFieldError('username', !usernameValid);
+                toggleFieldError('email', !emailValid);
+                toggleFieldError('password', !passwordValid);
+                toggleFieldError('confirmPassword', !confirmValid);
+                
+                if (usernameValid && emailValid && passwordValid && confirmValid) {
+                    showSuccessMessage('successMessage');
+                }
+            });
+            
+            submitBtn2.addEventListener('click', function() {
+                const usernameValid = validateUsername(usernameField2.value);
+                const emailValid = validateEmail(emailField2.value);
+                const passwordValid = validatePassword(passwordField2.value);
+                const confirmValid = confirmPasswordField2.value === passwordField2.value;
+                
+                toggleFieldError('username2', !usernameValid);
+                toggleFieldError('email2', !emailValid);
+                toggleFieldError('password2', !passwordValid);
+                toggleFieldError('confirmPassword2', !confirmValid);
+                
+                if (usernameValid && emailValid && passwordValid && confirmValid) {
+                    showSuccessMessage('successMessage2');
+                }
+            });
+            
+            // Функции для управления ошибками
+            function toggleFieldError(fieldName, showError) {
+                const errorElement = document.getElementById(fieldName + 'Error');
+                const inputContainer = document.getElementById(fieldName + 'Input');
+                
+                if (errorElement && inputContainer) {
+                    if (showError) {
+                        errorElement.classList.add('show');
+                        inputContainer.classList.add('error');
+                    } else {
+                        errorElement.classList.remove('show');
+                        inputContainer.classList.remove('error');
+                    }
+                }
+            }
+            
+            function showSuccessMessage(messageId) {
+                const messageElement = document.getElementById(messageId);
+                messageElement.classList.add('show');
+                
+                setTimeout(() => {
+                    messageElement.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        function initializeThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            
+            function toggleTheme() {
+                const body = document.body;
+                const isDark = body.classList.contains('dark-theme');
+                
+                if (isDark) {
+                    body.classList.remove('dark-theme');
+                    themeIcon.style.transform = 'rotate(0deg)';
+                } else {
+                    body.classList.add('dark-theme');
+                    themeIcon.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+    </script>
+</body>
+</html>
