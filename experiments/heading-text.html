@@ -23,16 +23,24 @@
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
             color: var(--color-text-secondary);
             text-decoration: none;
-            font-family: var(--typography-body-font-family);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
         }
         .back-link:hover {
+            background-color: var(--color-hover);
             color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
         }
         .experiment-title {
             font-family: var(--typography-display-2-font-family);
@@ -46,6 +54,35 @@
             margin-top: 40px;
         }
         
+        /* Переключатель темы */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+        .theme-toggle-btn:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .theme-toggle-btn:active {
+            transform: scale(0.95);
+        }
+        .theme-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
         /* Блоки заголовков и текста */
         .heading-text-block {
             margin-bottom: var(--size-xxl);
@@ -57,7 +94,23 @@
         
         .heading-text-title {
             color: var(--color-text-primary);
-            margin-bottom: var(--size-m);
+        }
+        
+        /* Специфичные отступы для каждого уровня заголовков */
+        .heading-display-2 {
+            margin-bottom: 24px;
+        }
+        
+        .heading-display-1 {
+            margin-bottom: 20px;
+        }
+        
+        .heading-header-2 {
+            margin-bottom: 16px;
+        }
+        
+        .heading-header-1 {
+            margin-bottom: 12px;
         }
         
         .heading-text-content {
@@ -67,7 +120,7 @@
             line-height: var(--typography-body-line-height);
             letter-spacing: var(--typography-body-letter-spacing);
             color: var(--color-text-primary);
-            max-width: 400px;
+            max-width: 600px;
         }
         
         /* Стили заголовков */
@@ -111,36 +164,79 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                К экспериментам
             </a>
             <h1 class="experiment-title">Заголовок и текст</h1>
+            <!-- Переключатель темы -->
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
+                <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
         
         <div class="experiment-result">
             <!-- Блок 1: Display 2 -->
             <div class="heading-text-block">
                 <h2 class="heading-text-title heading-display-2">Основной заголовок страницы</h2>
-                <p class="heading-text-content">Этот заголовок используется для главных заголовков страниц и разделов. Он создает сильную визуальную иерархию и привлекает внимание пользователя к основному контенту.</p>
+                <p class="heading-text-content">Этот заголовок используется для главных заголовков страниц и разделов. Он создает сильную визуальную иерархию и привлекает внимание пользователя к основному контенту. Такие заголовки часто используются в hero-секциях, на главных страницах сервисов и в ключевых разделах интерфейсов.</p>
             </div>
             
             <!-- Блок 2: Display 1 -->
             <div class="heading-text-block">
                 <h3 class="heading-text-title heading-display-1">Заголовок второго уровня</h3>
-                <p class="heading-text-content">Заголовок второго уровня используется для подразделов и важных секций контента. Он обеспечивает четкую структуру и помогает пользователям ориентироваться в информации.</p>
+                <p class="heading-text-content">Заголовок второго уровня используется для подразделов и важных секций контента. Он обеспечивает четкую структуру и помогает пользователям ориентироваться в информации. Этот тип заголовков идеально подходит для разделения больших блоков контента на логические части.</p>
             </div>
             
             <!-- Блок 3: Header 2 -->
             <div class="heading-text-block">
                 <h4 class="heading-text-title heading-header-2">Заголовок третьего уровня</h4>
-                <p class="heading-text-content">Заголовок третьего уровня подходит для группировки связанного контента и создания логической структуры. Он помогает разбить большие блоки текста на более читаемые части.</p>
+                <p class="heading-text-content">Заголовок третьего уровня подходит для группировки связанного контента и создания логической структуры. Он помогает разбить большие блоки текста на более читаемые части. Такие заголовки часто используются в статьях, документации и информационных разделах.</p>
             </div>
             
             <!-- Блок 4: Header 1 -->
             <div class="heading-text-block">
                 <h5 class="heading-text-title heading-header-1">Заголовок четвертого уровня</h5>
-                <p class="heading-text-content">Заголовок четвертого уровня используется для детализации и уточнения информации. Он создает дополнительную структуру в рамках основных разделов контента.</p>
+                <p class="heading-text-content">Заголовок четвертого уровня используется для детализации и уточнения информации. Он создает дополнительную структуру в рамках основных разделов контента. Этот уровень заголовков помогает организовать детальную информацию и улучшает навигацию по контенту.</p>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript для переключения темы -->
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Обновляем иконку
+            const themeIcon = document.querySelector('.theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+        }
+
+        // Инициализация темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            // Устанавливаем правильную иконку
+            const themeIcon = document.querySelector('.theme-icon');
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+            
+            // Добавляем обработчик события
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html> 

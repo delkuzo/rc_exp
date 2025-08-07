@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эксперимент: Заголовок текст и кнопка - RC Experiment</title>
+    <title>Эксперимент: Заголовок текст кнопка - RC Experiment</title>
     <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="stylesheet" href="../styles.css">
     <script src="../icons/icon-system-v3.js"></script>
@@ -23,16 +23,24 @@
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
             color: var(--color-text-secondary);
             text-decoration: none;
-            font-family: var(--typography-body-font-family);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
         }
         .back-link:hover {
+            background-color: var(--color-hover);
             color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
         }
         .experiment-title {
             font-family: var(--typography-display-2-font-family);
@@ -45,6 +53,124 @@
         .experiment-result {
             margin-top: 40px;
         }
+        
+        /* Переключатель темы */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+        .theme-toggle-btn:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .theme-toggle-btn:active {
+            transform: scale(0.95);
+        }
+        .theme-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Блоки заголовков и текста с кнопками */
+        .heading-text-button-block {
+            margin-bottom: var(--size-xxl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-m);
+        }
+        
+        .heading-text-button-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .heading-text-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-m);
+        }
+        
+        .heading-text-title {
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        
+        .heading-text-description {
+            font-family: var(--typography-body-font-family);
+            font-weight: var(--typography-body-font-weight);
+            font-size: var(--typography-body-font-size);
+            line-height: var(--typography-body-line-height);
+            letter-spacing: var(--typography-body-letter-spacing);
+            color: var(--color-text-primary);
+            max-width: 600px;
+            margin: 0;
+        }
+        
+        .button-container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: var(--size-s);
+        }
+        
+        /* Стили заголовков */
+        .heading-display-2 {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            letter-spacing: var(--typography-display-2-letter-spacing);
+        }
+        
+        .heading-display-1 {
+            font-family: var(--typography-display-1-font-family);
+            font-weight: var(--typography-display-1-font-weight);
+            font-size: var(--typography-display-1-font-size);
+            line-height: var(--typography-display-1-line-height);
+            letter-spacing: var(--typography-display-1-letter-spacing);
+        }
+        
+        .heading-header-2 {
+            font-family: var(--typography-header-2-font-family);
+            font-weight: var(--typography-header-2-font-weight);
+            font-size: var(--typography-header-2-font-size);
+            line-height: var(--typography-header-2-line-height);
+            letter-spacing: var(--typography-header-2-letter-spacing);
+        }
+        
+        .heading-header-1 {
+            font-family: var(--typography-header-1-font-family);
+            font-weight: var(--typography-header-1-font-weight);
+            font-size: var(--typography-header-1-font-size);
+            line-height: var(--typography-header-1-line-height);
+            letter-spacing: var(--typography-header-1-letter-spacing);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .experiment-page {
+                margin-left: 20px;
+                padding: 20px 16px;
+            }
+            
+            .heading-text-button-block {
+                gap: var(--size-s);
+            }
+            
+            .button-container {
+                margin-top: var(--size-xs);
+            }
+        }
     </style>
 </head>
 <body>
@@ -54,14 +180,117 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                К экспериментам
             </a>
-            <h1 class="experiment-title">Заголовок текст и кнопка</h1>
+            <h1 class="experiment-title">Заголовок текст кнопка</h1>
+            <!-- Переключатель темы -->
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
+                <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
         
         <div class="experiment-result">
-            <!-- Здесь будет результат эксперимента -->
+            <!-- Блок 1: Display 2 + основная кнопка -->
+            <div class="heading-text-button-block">
+                <div class="heading-text-content">
+                    <h2 class="heading-text-title heading-display-2">Основной заголовок страницы</h2>
+                    <p class="heading-text-description">Этот заголовок используется для главных заголовков страниц и разделов. Он создает сильную визуальную иерархию и привлекает внимание пользователя к основному контенту. Такие заголовки часто используются в hero-секциях, на главных страницах сервисов и в ключевых разделах интерфейсов.</p>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn--style-action btn--size-40">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Блок 2: Display 1 + вторичная кнопка -->
+            <div class="heading-text-button-block">
+                <div class="heading-text-content">
+                    <h3 class="heading-text-title heading-display-1">Заголовок второго уровня</h3>
+                    <p class="heading-text-description">Заголовок второго уровня используется для подразделов и важных секций контента. Он обеспечивает четкую структуру и помогает пользователям ориентироваться в информации. Этот тип заголовков идеально подходит для разделения больших блоков контента на логические части.</p>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn--style-fill btn--size-40">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Блок 3: Header 2 + третичная кнопка с иконкой -->
+            <div class="heading-text-button-block">
+                <div class="heading-text-content">
+                    <h4 class="heading-text-title heading-header-2">Заголовок третьего уровня</h4>
+                    <p class="heading-text-description">Заголовок третьего уровня подходит для группировки связанного контента и создания логической структуры. Он помогает разбить большие блоки текста на более читаемые части. Такие заголовки часто используются в статьях, документации и информационных разделах.</p>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn--style-outline btn--size-40 btn--icon-start">
+                        <span class="btn__icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill="currentColor" fill-rule="evenodd" d="M11 13.5H5A1.5 1.5 0 0 1 3.5 12V4A1.5 1.5 0 0 1 5 2.5h2V5a3 3 0 0 0 3 3h2.5v4a1.5 1.5 0 0 1-1.5 1.5m1.303-7a1.5 1.5 0 0 0-.242-.318L8.818 2.939a1.5 1.5 0 0 0-.318-.242V5A1.5 1.5 0 0 0 10 6.5zm.818-1.379A3 3 0 0 1 14 7.243V12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h2.757a3 3 0 0 1 2.122.879z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Блок 4: Header 1 + четвертичная кнопка с иконкой -->
+            <div class="heading-text-button-block">
+                <div class="heading-text-content">
+                    <h5 class="heading-text-title heading-header-1">Заголовок четвертого уровня</h5>
+                    <p class="heading-text-description">Заголовок четвертого уровня используется для детализации и уточнения информации. Он создает дополнительную структуру в рамках основных разделов контента. Этот уровень заголовков помогает организовать детальную информацию и улучшает навигацию по контенту.</p>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn--style-blank btn--size-40 btn--icon-start">
+                        <span class="btn__icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill="currentColor" fill-rule="evenodd" d="M11 13.5H5A1.5 1.5 0 0 1 3.5 12V4A1.5 1.5 0 0 1 5 2.5h2V5a3 3 0 0 0 3 3h2.5v4a1.5 1.5 0 0 1-1.5 1.5m1.303-7a1.5 1.5 0 0 0-.242-.318L8.818 2.939a1.5 1.5 0 0 0-.318-.242V5A1.5 1.5 0 0 0 10 6.5zm.818-1.379A3 3 0 0 1 14 7.243V12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h2.757a3 3 0 0 1 2.122.879z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        Сохранить
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- JavaScript для переключения темы -->
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Обновляем иконку
+            const themeIcon = document.querySelector('.theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+        }
+
+        // Инициализация темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            // Устанавливаем правильную иконку
+            const themeIcon = document.querySelector('.theme-icon');
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+            
+            // Добавляем обработчик события
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html> 

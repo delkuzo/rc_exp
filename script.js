@@ -123,6 +123,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
+    // Обработка хэша в URL при загрузке страницы
+    const handleHashChange = () => {
+        const hash = window.location.hash.substring(1); // Убираем #
+        if (hash) {
+            // Находим вкладку с соответствующим data-section
+            const targetTab = document.querySelector(`.tab-item[data-section="${hash}"]`);
+            if (targetTab) {
+                // Убираем активный класс у всех вкладок
+                navTabs.forEach(t => t.classList.remove('active'));
+                // Добавляем активный класс к целевой вкладке
+                targetTab.classList.add('active');
+                // Переключаем контент
+                switchContent(hash);
+            }
+        }
+    };
+    
+    // Обрабатываем хэш при загрузке страницы
+    handleHashChange();
+    
+    // Обрабатываем изменение хэша в браузере
+    window.addEventListener('hashchange', handleHashChange);
+    
     // Добавляем обработчики клавиатуры для доступности
     const blockHeaders = document.querySelectorAll('.block-header');
     blockHeaders.forEach(header => {
