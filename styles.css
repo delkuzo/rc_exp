@@ -2028,6 +2028,8 @@ label, label:focus, label:active, label:hover {
     transition: all 0.2s ease;
     user-select: none;
     box-sizing: border-box;
+    /* Жесткое правило: текст на кнопке всегда в одну строку */
+    white-space: nowrap;
 }
 
 /* Размеры кнопок - ИСПОЛЬЗУЕМ ТОКЕНЫ */

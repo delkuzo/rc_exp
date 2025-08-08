@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Группа кнопок / фильтры - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
+        }
+        .back-link:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg { width: 16px; height: 16px; }
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+
+        /* Локальные стили эксперимента */
+        .filters-section { max-width: 100%; }
+        .filters-title {
+            font-family: var(--typography-header-1-font-family);
+            font-weight: var(--typography-header-1-font-weight);
+            font-size: var(--typography-header-1-font-size);
+            line-height: var(--typography-header-1-line-height);
+            color: var(--color-text-primary);
+            margin: 0 0 var(--size-m) 0; /* 16px между заголовком и рядом контроллов */
+        }
+        .filters-row {
+            display: flex;
+            align-items: center;
+            gap: var(--size-s-spec); /* 12px по UI‑киту */
+            flex-wrap: nowrap;
+        }
+        .filters-row .select-container { min-width: 190px; }
+
+        /* Локальная настройка вида опций месяца: месяц слева, год справа вторичным цветом */
+        .select-dropdown .select-option {
+            justify-content: space-between;
+        }
+        .select-option-month {
+            color: var(--color-text-primary);
+            font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        .select-option-year {
+            color: var(--color-text-secondary);
+            margin-left: auto;
+            font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        .select-divider {
+            height: 1px;
+            background-color: var(--color-border-primary);
+            margin: var(--size-xxs) var(--size-s-spec);
+            border-radius: 1px;
+        }
+
+        /* Адаптивность: на мобильных переносим в столбик */
+        @media (max-width: 768px) {
+            .experiment-page { margin-left: 20px; padding: 20px 16px; }
+            .filters-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--size-m);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <div class="experiment-header">
+            <a href="../index.html#experiments" class="back-link" aria-label="Назад к экспериментам">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </a>
+            <h1 class="experiment-title">Группа кнопок / фильтры</h1>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
+                <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"></svg>
+            </button>
+        </div>
+
+        <div class="experiment-result">
+            <section class="filters-section" aria-labelledby="filtersTitle">
+                <h4 id="filtersTitle" class="filters-title">Сформируйте отчет</h4>
+
+                <div class="filters-row" role="group" aria-label="Панель фильтров">
+                    <!-- Select: Регион -->
+                    <div class="select-container" data-select="region">
+                        <button type="button" class="select-button" id="selectButton-region" aria-haspopup="listbox" aria-expanded="false" aria-controls="selectDropdown-region">
+                            <span class="select-text">Регион</span>
+                            <span class="select-icon" id="selectIcon-region">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="select-dropdown" id="selectDropdown-region" role="listbox" aria-hidden="true">
+                            <div class="select-option" role="option" tabindex="0" data-value="moscow"><span class="select-option-text">Москва</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="spb"><span class="select-option-text">Санкт-Петербург</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="novosibirsk"><span class="select-option-text">Новосибирск</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="ekb"><span class="select-option-text">Екатеринбург</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="kazan"><span class="select-option-text">Казань</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Select: Платформа -->
+                    <div class="select-container" data-select="platform">
+                        <button type="button" class="select-button" id="selectButton-platform" aria-haspopup="listbox" aria-expanded="false" aria-controls="selectDropdown-platform">
+                            <span class="select-text">Платформа</span>
+                            <span class="select-icon" id="selectIcon-platform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="select-dropdown" id="selectDropdown-platform" role="listbox" aria-hidden="true">
+                            <div class="select-option" role="option" tabindex="0" data-value="desktop"><span class="select-option-text">Десктоп</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="app"><span class="select-option-text">Приложение</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="mweb"><span class="select-option-text">Мобильный веб</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Select: Тип данных -->
+                    <div class="select-container" data-select="datatype">
+                        <button type="button" class="select-button" id="selectButton-datatype" aria-haspopup="listbox" aria-expanded="false" aria-controls="selectDropdown-datatype">
+                            <span class="select-text">Тип данных</span>
+                            <span class="select-icon" id="selectIcon-datatype">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="select-dropdown" id="selectDropdown-datatype" role="listbox" aria-hidden="true">
+                            <div class="select-option" role="option" tabindex="0" data-value="table"><span class="select-option-text">Таблица</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="xml"><span class="select-option-text">XML</span></div>
+                            <div class="select-option" role="option" tabindex="0" data-value="query"><span class="select-option-text">Запрос</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Select: Дата (месяц) -->
+                    <div class="select-container" data-select="month">
+                        <button type="button" class="select-button" id="selectButton-month" aria-haspopup="listbox" aria-expanded="false" aria-controls="selectDropdown-month">
+                            <span class="select-text">Дата</span>
+                            <span class="select-icon" id="selectIcon-month">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="select-dropdown" id="selectDropdown-month" role="listbox" aria-hidden="true">
+                            <!-- 12 месяцев: Август 2024 — Декабрь 2024 -->
+                            <div class="select-option" role="option" tabindex="0" data-value="2024-08">
+                                <span class="select-option-month">Август</span>
+                                <span class="select-option-year">2024</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2024-09">
+                                <span class="select-option-month">Сентябрь</span>
+                                <span class="select-option-year">2024</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2024-10">
+                                <span class="select-option-month">Октябрь</span>
+                                <span class="select-option-year">2024</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2024-11">
+                                <span class="select-option-month">Ноябрь</span>
+                                <span class="select-option-year">2024</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2024-12">
+                                <span class="select-option-month">Декабрь</span>
+                                <span class="select-option-year">2024</span>
+                            </div>
+                            <!-- Разделитель смены года -->
+                            <div class="select-divider" aria-hidden="true"></div>
+                            <!-- 2025 -->
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-01">
+                                <span class="select-option-month">Январь</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-02">
+                                <span class="select-option-month">Февраль</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-03">
+                                <span class="select-option-month">Март</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-04">
+                                <span class="select-option-month">Апрель</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-05">
+                                <span class="select-option-month">Май</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-06">
+                                <span class="select-option-month">Июнь</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                            <div class="select-option" role="option" tabindex="0" data-value="2025-07">
+                                <span class="select-option-month">Июль</span>
+                                <span class="select-option-year">2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Button -->
+                    <button class="btn btn--style-action btn--size-40" type="button" id="build-report-btn">Сформировать</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Переключение темы (как в других экспериментах)
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            const themeIcon = document.querySelector('.theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+        }
+
+        // Инициализация темы при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            const themeIcon = document.querySelector('.theme-icon');
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+            // Инициализация всех локальных select-компонентов в этой странице
+            initializeLocalSelects();
+        });
+
+        function initializeLocalSelects() {
+            const containers = document.querySelectorAll('.filters-row .select-container');
+
+            const closeAll = (except = null) => {
+                containers.forEach(cn => {
+                    if (cn === except) return;
+                    const btn = cn.querySelector('.select-button');
+                    const dd = cn.querySelector('.select-dropdown');
+                    const icon = cn.querySelector('.select-icon');
+                    if (dd && dd.classList.contains('select-dropdown-open')) {
+                        dd.classList.remove('select-dropdown-open');
+                        btn && btn.setAttribute('aria-expanded', 'false');
+                        icon && icon.classList.remove('select-icon-up');
+                        dd.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            };
+
+            containers.forEach(container => {
+                const button = container.querySelector('.select-button');
+                const dropdown = container.querySelector('.select-dropdown');
+                const icon = container.querySelector('.select-icon');
+                const options = dropdown.querySelectorAll('.select-option');
+
+                const toggle = () => {
+                    const isOpen = dropdown.classList.contains('select-dropdown-open');
+                    if (isOpen) {
+                        dropdown.classList.remove('select-dropdown-open');
+                        button.setAttribute('aria-expanded', 'false');
+                        icon.classList.remove('select-icon-up');
+                        dropdown.setAttribute('aria-hidden', 'true');
+                    } else {
+                        closeAll(container);
+                        dropdown.classList.add('select-dropdown-open');
+                        button.setAttribute('aria-expanded', 'true');
+                        icon.classList.add('select-icon-up');
+                        dropdown.setAttribute('aria-hidden', 'false');
+                    }
+                };
+
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggle();
+                });
+
+                options.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Универсально получаем текст опции: обычный (.select-option-text) или кастомный (месяц+год)
+                        const textNode = option.querySelector('.select-option-text');
+                        let text;
+                        if (textNode) {
+                            text = textNode.textContent;
+                        } else {
+                            const monthEl = option.querySelector('.select-option-month');
+                            const yearEl = option.querySelector('.select-option-year');
+                            if (monthEl && yearEl) {
+                                text = `${monthEl.textContent}, ${yearEl.textContent}`;
+                            } else {
+                                text = option.textContent.trim();
+                            }
+                        }
+                        button.querySelector('.select-text').textContent = text;
+                        options.forEach(o => o.classList.remove('select-option-selected'));
+                        option.classList.add('select-option-selected');
+                        toggle();
+                    });
+                    option.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            option.click();
+                        }
+                    });
+                });
+
+                button.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        if (!dropdown.classList.contains('select-dropdown-open')) toggle();
+                        const first = dropdown.querySelector('.select-option');
+                        first && first.focus();
+                    } else if (e.key === 'Escape') {
+                        e.preventDefault();
+                        if (dropdown.classList.contains('select-dropdown-open')) toggle();
+                    }
+                });
+            });
+
+            // Клик вне — закрыть все
+            document.addEventListener('click', () => closeAll());
+        }
+    </script>
+</body>
+</html>
+
+
