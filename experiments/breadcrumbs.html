@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эксперимент: Breadcrumbs - RC Experiment</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../icons/icon-system-v3.js"></script>
+  <style>
+    .experiment-page { max-width: 1200px; margin: 0; margin-left: 80px; padding: 40px 20px; }
+    .experiment-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .back-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--color-text-secondary); border: 1px solid var(--color-border-secondary); text-decoration: none; }
+    .back-link:hover { background: var(--color-hover); color: var(--color-text-primary); border-color: var(--color-border-primary); }
+    .back-link svg { width: 16px; height: 16px; }
+    .experiment-title { font-family: var(--typography-display-1-font-family); font-weight: var(--typography-display-1-font-weight); font-size: var(--typography-display-1-font-size); line-height: var(--typography-display-1-line-height); color: var(--color-text-primary); margin: 0; }
+
+    .breadcrumbs { display: flex; align-items: center; gap: var(--size-xs); }
+    .crumb { color: var(--color-link); text-decoration: none; font-family: var(--typography-body-font-family); font-size: var(--typography-body-font-size); }
+    .crumb:hover { text-decoration: underline; }
+    .crumb--current { color: var(--color-text-secondary); pointer-events: none; text-decoration: none; }
+    .sep { width: 16px; height: 16px; color: var(--color-text-secondary); display: inline-flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="experiment-page">
+    <div class="experiment-header">
+      <a href="../index.html#experiments" class="back-link" aria-label="Назад">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </a>
+      <h1 class="experiment-title">Breadcrumbs</h1>
+    </div>
+
+    <nav class="breadcrumbs" id="breadcrumbs"></nav>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const nav = document.getElementById('breadcrumbs');
+      const sep = await window.iconSystemV3.renderIconOriginal('chevron-right', 16);
+      const path = ['Главная', 'Каталог', 'Обувь', 'Кроссовки'];
+
+      path.forEach((label, idx) => {
+        if (idx) nav.insertAdjacentHTML('beforeend', `<span class="sep">${sep}</span>`);
+        if (idx === path.length - 1) {
+          nav.insertAdjacentHTML('beforeend', `<span class="crumb crumb--current">${label}</span>`);
+        } else {
+          nav.insertAdjacentHTML('beforeend', `<a href="#" class="crumb">${label}</a>`);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

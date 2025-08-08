@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эксперимент: Search + Suggestions - RC Experiment</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../icons/icon-system-v3.js"></script>
+  <style>
+    .experiment-page { max-width: 1200px; margin: 0; margin-left: 80px; padding: 40px 20px; }
+    .experiment-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .back-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--color-text-secondary); border: 1px solid var(--color-border-secondary); text-decoration: none; }
+    .back-link:hover { background: var(--color-hover); color: var(--color-text-primary); border-color: var(--color-border-primary); }
+    .back-link svg { width: 16px; height: 16px; }
+    .experiment-title { font-family: var(--typography-display-1-font-family); font-weight: var(--typography-display-1-font-weight); font-size: var(--typography-display-1-font-size); line-height: var(--typography-display-1-line-height); color: var(--color-text-primary); margin: 0; }
+
+    .search-wrap { position: relative; width: 320px; }
+    .search-input { width: 100%; height: 40px; padding: 8px 12px 8px 36px; border-radius: 100px; border: 1px solid var(--color-border-primary); background: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--typography-body-font-family); font-size: var(--typography-body-font-size); }
+    .search-input::placeholder { color: var(--color-text-secondary); }
+    .search-input:focus { outline: none; border-color: var(--color-text-primary); }
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); width: 16px; height: 16px; }
+
+    .suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--color-bg-primary); border: 1px solid var(--color-border-secondary); border-radius: var(--size-l); box-shadow: var(--shadow-regular); overflow: hidden; }
+    .sugg-item { padding: 8px 12px; cursor: pointer; }
+    .sugg-item:hover, .sugg-item.active { background: var(--color-hover); }
+  </style>
+</head>
+<body>
+  <div class="experiment-page">
+    <div class="experiment-header">
+      <a href="../index.html#experiments" class="back-link" aria-label="Назад">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </a>
+      <h1 class="experiment-title">Search + Suggestions</h1>
+    </div>
+
+    <div class="search-wrap" id="searchWrap">
+      <input class="search-input" id="searchInput" placeholder="Поиск" />
+      <span class="search-icon" id="searchIcon"></span>
+      <div class="suggestions" id="suggestions" hidden></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const input = document.getElementById('searchInput');
+      const sugg = document.getElementById('suggestions');
+      const iconEl = document.getElementById('searchIcon');
+      try { iconEl.innerHTML = await window.iconSystemV3.renderIconOriginal('search', 16); } catch {}
+
+      const data = ['Обувь мужская', 'Обувь женская', 'Кроссовки', 'Ботинки', 'Сандалии', 'Зимняя обувь', 'Беговые кроссовки'];
+      let activeIndex = -1;
+
+      const open = (items) => {
+        sugg.innerHTML = items.map((t, i) => `<div class="sugg-item${i===activeIndex?' active':''}">${t}</div>`).join('');
+        sugg.hidden = false;
+      };
+      const close = () => { sugg.hidden = true; activeIndex = -1; };
+
+      input.addEventListener('input', () => {
+        const v = input.value.trim().toLowerCase();
+        const items = data.filter(x => x.toLowerCase().includes(v)).slice(0, 8);
+        if (items.length) { open(items); } else { close(); }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (sugg.hidden) return;
+        const items = [...sugg.querySelectorAll('.sugg-item')];
+        if (e.key === 'ArrowDown') { e.preventDefault(); activeIndex = Math.min(items.length-1, activeIndex+1); open(items.map(i=>i.textContent)); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); activeIndex = Math.max(0, activeIndex-1); open(items.map(i=>i.textContent)); }
+        if (e.key === 'Enter' && activeIndex >= 0) { input.value = items[activeIndex].textContent; close(); }
+        if (e.key === 'Escape') { close(); }
+      });
+
+      document.addEventListener('click', (e) => { if (!e.target.closest('#searchWrap')) close(); });
+    });
+  </script>
+</body>
+</html>
+
+
