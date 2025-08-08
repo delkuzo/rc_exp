@@ -20,7 +20,8 @@ class IconSystemV3 {
 
     async loadAllIcons() {
         try {
-            const response = await fetch('icons/all-icons.json');
+            // Используем корнеотносительный путь, чтобы работать и из /experiments/*
+            const response = await fetch('/icons/all-icons.json');
             this.allIcons = await response.json();
             console.log(`✅ Загружено ${this.allIcons.length} иконок из каталога`);
         } catch (error) {
@@ -223,6 +224,19 @@ window.connectIconV3 = async function(iconName, size = 24) {
     } else {
         console.warn(`Иконка "${iconName}" не найдена`);
         return iconSystem.renderIcon('question', size); // Fallback иконка
+    }
+};
+
+// Совместимость со старыми экспериментами: window.createIcon(name, elementId, size?)
+// Рендерим иконку в элемент по id
+window.createIcon = async function(iconName, elementId, size = 16) {
+    try {
+        const target = document.getElementById(elementId);
+        if (!target) return;
+        const svg = await window.iconSystemV3.renderIcon(iconName, size);
+        target.innerHTML = svg;
+    } catch (e) {
+        console.warn('createIcon: ошибка рендера иконки', iconName, e);
     }
 };
 

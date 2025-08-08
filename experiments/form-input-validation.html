@@ -122,7 +122,7 @@
         .form-fields {
             display: flex;
             flex-direction: column;
-            gap: var(--size-xl);
+            gap: var(--size-l);
             margin-bottom: var(--size-xl);
         }
         
@@ -252,36 +252,36 @@
                     
                     <div class="form-fields">
                         <div class="form-field">
-                            <label class="form-field-label">Имя пользователя</label>
+                            <label class="form-field-label" for="usernameField">Имя пользователя</label>
                             <div class="input-container" id="usernameInput">
-                                <input type="text" class="input-field" placeholder="Введите имя пользователя" id="usernameField">
+                                <input type="text" class="input-field" placeholder="Введите имя пользователя" id="usernameField" name="username" required autocomplete="username" aria-describedby="usernameError" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="usernameClear"></button>
                             </div>
                             <div class="form-error-message" id="usernameError">Имя пользователя должно содержать минимум 3 символа</div>
                         </div>
                         
                         <div class="form-field">
-                            <label class="form-field-label">Email</label>
+                            <label class="form-field-label" for="emailField">Email</label>
                             <div class="input-container" id="emailInput">
-                                <input type="email" class="input-field" placeholder="Введите email" id="emailField">
+                                <input type="email" class="input-field" placeholder="Введите email" id="emailField" name="email" required autocomplete="email" aria-describedby="emailError" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="emailClear"></button>
                             </div>
                             <div class="form-error-message" id="emailError">Введите корректный email адрес</div>
                         </div>
                         
                         <div class="form-field">
-                            <label class="form-field-label">Пароль</label>
+                            <label class="form-field-label" for="passwordField">Пароль</label>
                             <div class="input-container" id="passwordInput">
-                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField" autocomplete="new-password">
+                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField" name="new-password" required autocomplete="new-password" aria-describedby="passwordError" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="passwordClear"></button>
                             </div>
                             <div class="form-error-message" id="passwordError">Пароль должен содержать минимум 8 символов</div>
                         </div>
                         
                         <div class="form-field">
-                            <label class="form-field-label">Подтвердите пароль</label>
+                            <label class="form-field-label" for="confirmPasswordField">Подтвердите пароль</label>
                             <div class="input-container" id="confirmPasswordInput">
-                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField" autocomplete="new-password">
+                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField" name="confirm-password" required autocomplete="new-password" aria-describedby="confirmPasswordError" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="confirmPasswordClear"></button>
                             </div>
                             <div class="form-error-message" id="confirmPasswordError">Пароли не совпадают</div>
@@ -289,12 +289,12 @@
                     </div>
                     
                     <div class="form-button">
-                        <button class="btn btn--style-action btn--size-40" id="submitBtn">
+                        <button class="btn btn--style-action btn--size-40" id="submitBtn" disabled>
                             Сохранить
                         </button>
                     </div>
                     
-                    <div class="form-success-message" id="successMessage">Регистрация успешно завершена!</div>
+                    <div class="form-success-message" id="successMessage" role="status" aria-live="polite">Регистрация успешно завершена!</div>
                 </div>
             </div>
             
@@ -306,7 +306,7 @@
                     <div class="form-fields-simple">
                         <div class="form-field-simple">
                             <div class="input-container" id="username2Input">
-                                <input type="text" class="input-field" placeholder="Имя пользователя" id="usernameField2">
+                                <input type="text" class="input-field" placeholder="Имя пользователя" id="usernameField2" name="username2" required autocomplete="username" aria-describedby="username2Error" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="usernameClear2"></button>
                             </div>
                             <div class="form-error-message" id="username2Error">Имя пользователя должно содержать минимум 3 символа</div>
@@ -314,7 +314,7 @@
                         
                         <div class="form-field-simple">
                             <div class="input-container" id="email2Input">
-                                <input type="email" class="input-field" placeholder="Email" id="emailField2">
+                                <input type="email" class="input-field" placeholder="Email" id="emailField2" name="email2" required autocomplete="email" aria-describedby="email2Error" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="emailClear2"></button>
                             </div>
                             <div class="form-error-message" id="email2Error">Введите корректный email адрес</div>
@@ -322,7 +322,7 @@
                         
                         <div class="form-field-simple">
                             <div class="input-container" id="password2Input">
-                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField2" autocomplete="new-password">
+                                <input type="password" class="input-field" placeholder="Придумайте надежный пароль" id="passwordField2" name="new-password2" required autocomplete="new-password" aria-describedby="password2Error" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="passwordClear2"></button>
                             </div>
                             <div class="form-error-message" id="password2Error">Пароль должен содержать минимум 8 символов</div>
@@ -330,7 +330,7 @@
                         
                         <div class="form-field-simple">
                             <div class="input-container" id="confirmPassword2Input">
-                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField2" autocomplete="new-password">
+                                <input type="password" class="input-field" placeholder="Повторите пароль" id="confirmPasswordField2" name="confirm-password2" required autocomplete="new-password" aria-describedby="confirmPassword2Error" aria-invalid="false">
                                 <button class="input-clear-button" type="button" aria-label="Очистить" id="confirmPasswordClear2"></button>
                             </div>
                             <div class="form-error-message" id="confirmPassword2Error">Пароли не совпадают</div>
@@ -338,12 +338,12 @@
                     </div>
                     
                     <div class="form-button">
-                        <button class="btn btn--style-action btn--size-40" id="submitBtn2">
+                        <button class="btn btn--style-action btn--size-40" id="submitBtn2" disabled>
                             Сохранить
                         </button>
                     </div>
                     
-                    <div class="form-success-message" id="successMessage2">Регистрация успешно завершена!</div>
+                    <div class="form-success-message" id="successMessage2" role="status" aria-live="polite">Регистрация успешно завершена!</div>
                 </div>
             </div>
         </div>
@@ -392,42 +392,50 @@
             usernameField.addEventListener('input', function() {
                 const isValid = validateUsername(this.value);
                 toggleFieldError('username', !isValid);
+                updateSubmitButtons();
             });
             
             emailField.addEventListener('input', function() {
                 const isValid = validateEmail(this.value);
                 toggleFieldError('email', !isValid);
+                updateSubmitButtons();
             });
             
             passwordField.addEventListener('input', function() {
                 const isValid = validatePassword(this.value);
                 toggleFieldError('password', !isValid);
+                updateSubmitButtons();
             });
             
             confirmPasswordField.addEventListener('input', function() {
                 const isValid = this.value === passwordField.value && this.value.length > 0;
                 toggleFieldError('confirmPassword', !isValid);
+                updateSubmitButtons();
             });
             
             // Обработчики событий для второй формы
             usernameField2.addEventListener('input', function() {
                 const isValid = validateUsername(this.value);
                 toggleFieldError('username2', !isValid);
+                updateSubmitButtons();
             });
             
             emailField2.addEventListener('input', function() {
                 const isValid = validateEmail(this.value);
                 toggleFieldError('email2', !isValid);
+                updateSubmitButtons();
             });
             
             passwordField2.addEventListener('input', function() {
                 const isValid = validatePassword(this.value);
                 toggleFieldError('password2', !isValid);
+                updateSubmitButtons();
             });
             
             confirmPasswordField2.addEventListener('input', function() {
                 const isValid = this.value === passwordField2.value && this.value.length > 0;
                 toggleFieldError('confirmPassword2', !isValid);
+                updateSubmitButtons();
             });
             
             // Обработчики кнопок
@@ -462,19 +470,48 @@
                     showSuccessMessage('successMessage2');
                 }
             });
+
+            // Разблокировка кнопок при валидном состоянии и Enter-сабмит
+            function updateSubmitButtons() {
+                const valid1 = validateUsername(usernameField.value) && validateEmail(emailField.value) && validatePassword(passwordField.value) && (confirmPasswordField.value === passwordField.value && confirmPasswordField.value.length > 0);
+                const valid2 = validateUsername(usernameField2.value) && validateEmail(emailField2.value) && validatePassword(passwordField2.value) && (confirmPasswordField2.value === passwordField2.value && confirmPasswordField2.value.length > 0);
+                submitBtn.disabled = !valid1;
+                submitBtn2.disabled = !valid2;
+            }
+
+            [usernameField, emailField, passwordField, confirmPasswordField].forEach(el => {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !submitBtn.disabled) {
+                        e.preventDefault();
+                        submitBtn.click();
+                    }
+                });
+            });
+            [usernameField2, emailField2, passwordField2, confirmPasswordField2].forEach(el => {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !submitBtn2.disabled) {
+                        e.preventDefault();
+                        submitBtn2.click();
+                    }
+                });
+            });
             
             // Функции для управления ошибками
             function toggleFieldError(fieldName, showError) {
                 const errorElement = document.getElementById(fieldName + 'Error');
                 const inputContainer = document.getElementById(fieldName + 'Input');
+                const fieldId = fieldName.endsWith('2') ? fieldName.replace(/2$/, 'Field2') : fieldName + 'Field';
+                const inputField = document.getElementById(fieldId);
                 
                 if (errorElement && inputContainer) {
                     if (showError) {
                         errorElement.classList.add('show');
                         inputContainer.classList.add('error');
+                        if (inputField) inputField.setAttribute('aria-invalid', 'true');
                     } else {
                         errorElement.classList.remove('show');
                         inputContainer.classList.remove('error');
+                        if (inputField) inputField.setAttribute('aria-invalid', 'false');
                     }
                 }
             }
@@ -487,26 +524,27 @@
                     messageElement.classList.remove('show');
                 }, 3000);
             }
+            // Инициализация состояния кнопок при загрузке
+            updateSubmitButtons();
         }
 
         function initializeThemeToggle() {
             const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = themeToggle.querySelector('.theme-icon');
             
-            function toggleTheme() {
-                const body = document.body;
-                const isDark = body.classList.contains('dark-theme');
-                
-                if (isDark) {
-                    body.classList.remove('dark-theme');
-                    themeIcon.style.transform = 'rotate(0deg)';
-                } else {
-                    body.classList.add('dark-theme');
-                    themeIcon.style.transform = 'rotate(180deg)';
-                }
-            }
+            const applyTheme = (theme) => {
+                document.body.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                themeIcon.style.transform = theme === 'dark' ? 'rotate(180deg)' : 'rotate(0deg)';
+            };
             
-            themeToggle.addEventListener('click', toggleTheme);
+            // Инициализация по сохраненному значению
+            applyTheme(localStorage.getItem('theme') || 'light');
+            
+            themeToggle.addEventListener('click', () => {
+                const current = document.body.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            });
         }
     </script>
 </body>
