@@ -2529,33 +2529,45 @@ label, label:focus, label:active, label:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    background-color: var(--color-control);
-    border: 1px solid var(--color-border-secondary);
-    color: var(--color-text-secondary); /* hint */
-    font-family: var(--typography-caption-2-font-family);
-    font-size: var(--typography-caption-2-font-size);
-    line-height: 1;
+    width: 32px; /* зона наведения 32x32 */
+    height: 32px;
+    background: transparent; /* без подложки */
+    border: none; /* без рамки */
+    color: var(--color-text-secondary); /* hint в base */
     cursor: pointer;
 }
 
 .tooltip-trigger:hover {
-    background-color: var(--color-hover);
-    color: var(--color-text-primary); /* foreground */
+    color: var(--color-text-primary); /* foreground на hover */
 }
 
 .tooltip-trigger svg { width: 16px; height: 16px; display: block; }
+
+/* Иконка внутри триггера: отдельный класс, без наследования от .btn__icon */
+.tooltip-icon { display: block; width: 16px; height: 16px; }
+.tooltip-icon svg {
+    width: 16px; height: 16px; display: block;
+    shape-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Жестко отключаем любые глобальные фильтры и сбои масштаба для иконки тултипа */
+.tooltip-icon .icon {
+    width: 16px !important;
+    height: 16px !important;
+    filter: none !important;
+    transform: none !important;
+}
 
 .tooltip-bubble {
     position: absolute;
     max-width: 420px;
     padding: 16px;
     border-radius: 12px; /* из Figma */
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border-secondary);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
     box-shadow: var(--shadow-regular); /* сохраняем тень всегда */
     z-index: 10000;
     opacity: 0;
@@ -2564,138 +2576,44 @@ label, label:focus, label:active, label:hover {
     will-change: opacity, transform;
 }
 
-.tooltip-wrapper:hover .tooltip-bubble,
-.tooltip-wrapper:focus-within .tooltip-bubble,
-.tooltip-bubble:hover {
+/* Поверх глобального правила, которое убирает box-shadow на :hover */
+.tooltip-bubble,
+.tooltip--bubble::after {
+    box-shadow: var(--shadow-regular) !important;
+}
+
+.tooltip-bubble.tooltip-visible {
     opacity: 1;
     visibility: visible;
 }
 
 /* Positions */
-.tooltip--top {
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-}
+.tooltip--top { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
 
-.tooltip--right {
-    left: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-}
+.tooltip--right { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
 
-.tooltip--bottom {
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-}
+.tooltip--bottom { top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
 
-.tooltip--left {
-    right: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-}
+.tooltip--left { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
 
-/* Arrow */
-/* по умолчанию хвост отключен; включается модификаторами ниже */
-.tooltip-bubble::after,
-.tooltip-bubble::before { content: none; }
-
-/* ===== Variant 1: DIAMOND (как в наборе подсказок WebMaster) ===== */
-.tooltip--diamond::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--color-bg-primary);
-    border: 1px solid var(--color-border-secondary);
-    transform: rotate(45deg);
-}
-
-.tooltip--diamond.tooltip--top::after {
-    bottom: -7px; left: calc(50% - 6px);
-}
-.tooltip--diamond.tooltip--right::after {
-    left: -7px; top: calc(50% - 6px);
-}
-.tooltip--diamond.tooltip--bottom::after {
-    top: -7px; left: calc(50% - 6px);
-}
-.tooltip--diamond.tooltip--left::after {
-    right: -7px; top: calc(50% - 6px);
-}
-
-/* ===== Variant 2: BUBBLE (скруглённый лепесток из Figma) ===== */
-/* Улучшенная форма хвостика: мягкий лепесток с плавными скруглениями */
-.tooltip--bubble::after {
-    content: '';
-    position: absolute;
-    width: 18px; /* ближе к макету */
-    height: 18px;
-    background: inherit;
-    border: 1px solid var(--color-border-secondary);
-    border-left: none;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    box-shadow: var(--shadow-regular);
-}
-.tooltip--bubble::before {
-    content: '';
-    position: absolute;
-    width: 10px; height: 10px;
-    background: inherit;
-}
-
-/* позиции для bubble */
-.tooltip--bubble.tooltip--right::after { left: -9px; top: calc(50% - 9px); border-left: none; border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 0; border-bottom-left-radius: 0; }
-.tooltip--bubble.tooltip--right::before { left: -1px; top: calc(50% - 5px); border-radius: 2px; transform: rotate(45deg); }
-
-.tooltip--bubble.tooltip--left::after { right: -9px; top: calc(50% - 9px); border-right: none; border-top-left-radius: 18px; border-bottom-left-radius: 18px; border-top-right-radius: 0; border-bottom-right-radius: 0; }
-.tooltip--bubble.tooltip--left::before { right: -1px; top: calc(50% - 5px); border-radius: 2px; transform: rotate(45deg); }
-
-.tooltip--bubble.tooltip--top::after { bottom: -9px; left: calc(50% - 9px); width: 18px; height: 18px; border-bottom: none; border-top-left-radius: 18px; border-top-right-radius: 18px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-.tooltip--bubble.tooltip--top::before { bottom: -1px; left: calc(50% - 5px); border-radius: 2px; width: 10px; height: 10px; transform: rotate(45deg); }
-
-.tooltip--bubble.tooltip--bottom::after { top: -9px; left: calc(50% - 9px); width: 18px; height: 18px; border-top: none; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; border-top-left-radius: 0; border-top-right-radius: 0; }
-.tooltip--bubble.tooltip--bottom::before { top: -1px; left: calc(50% - 5px); border-radius: 2px; width: 10px; height: 10px; transform: rotate(45deg); }
+/* Хвостик через встроенный SVG-элемент */
+.tooltip-tail { position: absolute; display: block; pointer-events: none; }
+.tooltip-tail--left { right: -6px; top: 50%; transform: translateY(-50%); width: 6px; height: 16px; }
+.tooltip-tail--right { left: -6px; top: 50%; transform: translateY(-50%); width: 6px; height: 16px; }
+.tooltip-tail--top { bottom: -6px; left: 50%; transform: translateX(-50%); width: 16px; height: 6px; }
+.tooltip-tail--bottom { top: -6px; left: 50%; transform: translateX(-50%); width: 16px; height: 6px; }
 
 /* Инвертированный вариант tooltip (как в макете) */
-.tooltip--inverted {
-    background-color: var(--color-text-primary);
-    color: var(--color-white);
-    border: none;
-}
-.tooltip--inverted.tooltip--bubble::after,
-.tooltip--inverted.tooltip--bubble::before {
-    background: var(--color-text-primary);
-    border-color: transparent;
-}
 
-.tooltip--top::after {
-    bottom: -6px;
-    left: calc(50% - 5px);
-}
+/* Инвертированный вариант tooltip (как в макете) */
+/* Инвертированный вариант больше не требуется, так как черный фон теперь по умолчанию */
 
-.tooltip--right::after {
-    left: -6px;
-    top: calc(50% - 5px);
-}
-
-.tooltip--bottom::after {
-    top: -6px;
-    left: calc(50% - 5px);
-}
-
-.tooltip--left::after {
-    right: -6px;
-    top: calc(50% - 5px);
-}
 
 .tooltip-text {
     font-family: var(--typography-body-font-family);
     font-weight: var(--typography-body-font-weight);
     font-size: var(--typography-body-font-size);
-    line-height: var(--typography-body-line-height);
+    line-height: 1.5;
     letter-spacing: var(--typography-body-letter-spacing);
 }
 

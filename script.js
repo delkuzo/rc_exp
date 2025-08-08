@@ -680,50 +680,6 @@ const initSelectComponent = () => {
 
     initOne('selectDemo');
     initOne('selectDemo40');
-    
-    // Предотвращение закрытия при наведении на dropdown
-    selectDropdown.addEventListener('mouseenter', (e) => {
-        e.stopPropagation();
-    });
-    
-    selectDropdown.addEventListener('mouseleave', (e) => {
-        e.stopPropagation();
-    });
-    
-    // Дополнительная защита от закрытия при наведении на опции
-    selectOptions.forEach(option => {
-        option.addEventListener('mouseenter', (e) => {
-            e.stopPropagation();
-        });
-        
-        option.addEventListener('mouseleave', (e) => {
-            e.stopPropagation();
-        });
-    });
-    
-    // Обработчик фокуса для навигации по опциям
-    selectDropdown.addEventListener('keydown', (e) => {
-        const currentOption = document.activeElement;
-        const currentIndex = Array.from(selectOptions).indexOf(currentOption);
-        
-        switch (e.key) {
-            case 'ArrowDown':
-                e.preventDefault();
-                const nextIndex = (currentIndex + 1) % selectOptions.length;
-                selectOptions[nextIndex].focus();
-                break;
-            case 'ArrowUp':
-                e.preventDefault();
-                const prevIndex = currentIndex === 0 ? selectOptions.length - 1 : currentIndex - 1;
-                selectOptions[prevIndex].focus();
-                break;
-            case 'Escape':
-                e.preventDefault();
-                toggleDropdown();
-                selectButton.focus();
-                break;
-        }
-    });
 };
 
 // Экспортируем функции в глобальную область
@@ -797,19 +753,72 @@ document.addEventListener('DOMContentLoaded', () => {
             ['tooltip-info-top-short', 16],
             ['tooltip-info-right', 16],
             ['tooltip-info-left', 16],
-            ['tooltip-info-top', 16]
+            ['tooltip-info-top', 16],
+            ['tooltip-info-bottom', 16]
         ];
         for (const [id, size] of infoTargets) {
             const el = document.getElementById(id);
             if (!el) continue;
             try {
-                const svg = await window.iconSystemV3.renderIcon('circle-info', size);
+                const svg = await window.iconSystemV3.renderIconOriginal('circle-info', size, 'icon');
                 el.innerHTML = svg;
             } catch (e) {
                 el.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>';
             }
         }
     })();
+
+    // Инициализация поведения Tooltip: показ по hover/focus на триггере,
+    // не скрывается при наведении на сам tooltip, скрытие через 1с после ухода курсора
+    const initTooltips = () => {
+        const wrappers = document.querySelectorAll('.tooltip-wrapper');
+        wrappers.forEach(wrapper => {
+            const trigger = wrapper.querySelector('.tooltip-trigger');
+            const bubble = wrapper.querySelector('.tooltip-bubble');
+            if (!trigger || !bubble) return;
+
+            let hideTimer = null;
+
+            const show = () => {
+                if (hideTimer) {
+                    clearTimeout(hideTimer);
+                    hideTimer = null;
+                }
+                bubble.classList.add('tooltip-visible');
+            };
+
+            const hideWithDelay = () => {
+                if (hideTimer) clearTimeout(hideTimer);
+                hideTimer = setTimeout(() => {
+                    bubble.classList.remove('tooltip-visible');
+                    hideTimer = null;
+                }, 300);
+            };
+
+            // Hover/focus на триггере
+            trigger.addEventListener('mouseenter', show);
+            trigger.addEventListener('focus', show);
+            trigger.addEventListener('mouseleave', hideWithDelay);
+            trigger.addEventListener('blur', hideWithDelay);
+
+            // Наведение на сам tooltip должно отменять скрытие
+            bubble.addEventListener('mouseenter', () => {
+                if (hideTimer) {
+                    clearTimeout(hideTimer);
+                    hideTimer = null;
+                }
+                bubble.classList.add('tooltip-visible');
+            });
+            bubble.addEventListener('mouseleave', hideWithDelay);
+
+            // Безопасность: клики внутри пузыря не закрывают его (позволяет перейти по ссылкам)
+            bubble.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+    };
+
+    initTooltips();
     
     console.log('Все компоненты инициализированы');
 }); 
