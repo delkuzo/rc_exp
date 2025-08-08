@@ -2320,6 +2320,17 @@ label, label:focus, label:active, label:hover {
     gap: var(--size-xs);
 }
 
+/* Размеры Select: 32px и 40px для выравнивания с кнопками */
+.select-button--size-32 {
+    height: var(--size-xl); /* 32px */
+    padding: var(--size-s) var(--size-m);
+}
+
+.select-button--size-40 {
+    height: var(--size-xxl); /* 40px */
+    padding: var(--size-s-spec) var(--size-m);
+}
+
 .select-button:hover {
     background-color: var(--color-hover);
 }

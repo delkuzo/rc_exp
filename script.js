@@ -610,93 +610,76 @@ const createPreviewButton = async () => {
 const initSelectComponent = () => {
     console.log('Инициализация компонента Select...');
     const selectContainer = document.getElementById('selectDemo');
-    if (!selectContainer) {
+    const selectContainer40 = document.getElementById('selectDemo40');
+    if (!selectContainer && !selectContainer40) {
         console.error('Select контейнер не найден!');
         return;
     }
-    console.log('Select контейнер найден:', selectContainer);
-    
-    const selectButton = document.getElementById('selectButton');
-    const selectDropdown = document.getElementById('selectDropdown');
-    const selectIcon = document.getElementById('selectIcon');
-    const selectOptions = selectDropdown.querySelectorAll('.select-option');
-    
-    let isOpen = false;
-    let selectedValue = null;
-    
-    // Функция для открытия/закрытия dropdown
-    const toggleDropdown = () => {
-        isOpen = !isOpen;
-        
-        if (isOpen) {
-            selectDropdown.classList.add('select-dropdown-open');
-            selectButton.setAttribute('aria-expanded', 'true');
-            selectIcon.classList.add('select-icon-up');
-            selectDropdown.setAttribute('aria-hidden', 'false');
-        } else {
-            selectDropdown.classList.remove('select-dropdown-open');
-            selectButton.setAttribute('aria-expanded', 'false');
-            selectIcon.classList.remove('select-icon-up');
-            selectDropdown.setAttribute('aria-hidden', 'true');
-        }
-    };
-    
-    // Обработчик клика по кнопке
-    selectButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleDropdown();
-    });
-    
-    // Обработчик клика по опциям
-    selectOptions.forEach(option => {
-        option.addEventListener('click', (e) => {
+    console.log('Select контейнер(ы) найден(ы)');
+
+    const initOne = (rootId) => {
+        const root = document.getElementById(rootId);
+        if (!root) return;
+
+        const button = root.querySelector('.select-button');
+        const dropdown = root.querySelector('.select-dropdown');
+        const icon = root.querySelector('.select-icon');
+        const options = dropdown.querySelectorAll('.select-option');
+        let isOpen = false;
+
+        const toggleDropdown = () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                dropdown.classList.add('select-dropdown-open');
+                button.setAttribute('aria-expanded', 'true');
+                icon.classList.add('select-icon-up');
+                dropdown.setAttribute('aria-hidden', 'false');
+            } else {
+                dropdown.classList.remove('select-dropdown-open');
+                button.setAttribute('aria-expanded', 'false');
+                icon.classList.remove('select-icon-up');
+                dropdown.setAttribute('aria-hidden', 'true');
+            }
+        };
+
+        button.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
-            const value = option.getAttribute('data-value');
-            const text = option.querySelector('.select-option-text').textContent;
-            
-            // Обновляем текст кнопки
-            selectButton.querySelector('.select-text').textContent = text;
-            selectedValue = value;
-            
-            // Обновляем состояние опций
-            selectOptions.forEach(opt => opt.classList.remove('select-option-selected'));
-            option.classList.add('select-option-selected');
-            
-            // Закрываем dropdown
             toggleDropdown();
         });
-        
-        // Обработчик клавиатуры для опций
-        option.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
                 e.preventDefault();
-                option.click();
-            }
+                e.stopPropagation();
+                const value = option.getAttribute('data-value');
+                const text = option.querySelector('.select-option-text')?.textContent || option.textContent.trim();
+                button.querySelector('.select-text').textContent = text;
+                options.forEach(opt => opt.classList.remove('select-option-selected'));
+                option.classList.add('select-option-selected');
+                toggleDropdown();
+            });
         });
-    });
-    
-    // Обработчик клавиатуры для кнопки
-    selectButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
-            e.preventDefault();
-            if (!isOpen) {
+
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (!isOpen) toggleDropdown();
+                const first = dropdown.querySelector('.select-option');
+                first && first.focus();
+            } else if (e.key === 'Escape' && isOpen) {
+                e.preventDefault();
                 toggleDropdown();
             }
-        } else if (e.key === 'Escape' && isOpen) {
-            e.preventDefault();
-            toggleDropdown();
-        }
-    });
-    
-    // Закрытие dropdown при клике вне компонента
-    document.addEventListener('click', (e) => {
-        if (!selectContainer.contains(e.target) && isOpen) {
-            toggleDropdown();
-        }
-    });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!root.contains(e.target) && isOpen) toggleDropdown();
+        });
+    };
+
+    initOne('selectDemo');
+    initOne('selectDemo40');
     
     // Предотвращение закрытия при наведении на dropdown
     selectDropdown.addEventListener('mouseenter', (e) => {
