@@ -789,6 +789,27 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Инициализация компонента Select
     initSelectComponent();
+
+    // Рендерим info-иконки для tooltip триггеров
+    (async () => {
+        if (!window.iconSystemV3) return;
+        const infoTargets = [
+            ['tooltip-info-top-short', 16],
+            ['tooltip-info-right', 16],
+            ['tooltip-info-left', 16],
+            ['tooltip-info-top', 16]
+        ];
+        for (const [id, size] of infoTargets) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+            try {
+                const svg = await window.iconSystemV3.renderIcon('circle-info', size);
+                el.innerHTML = svg;
+            } catch (e) {
+                el.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>';
+            }
+        }
+    })();
     
     console.log('Все компоненты инициализированы');
 }); 

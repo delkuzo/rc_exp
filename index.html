@@ -651,6 +651,8 @@
                                         <button class="btn btn--size-40 btn--style-action">Кнопка</button>
                                         <div class="component-name">Action</div>
                                     </div>
+
+                            
                                     <div class="control-wrapper">
                                         <button class="btn btn--size-40 btn--style-action btn--icon-start" data-icon="star">
                                             <span class="btn__icon" id="btn-icon-action-40"></span>
@@ -820,6 +822,68 @@
                                     </div>
                                     <div></div>
                                 </div>
+                            </div>
+
+                            <!-- Tooltip компонент (размещаем после кнопок) -->
+                            <div class="tooltip-demo-section">
+                                <div class="tooltip-grid">
+                                    <!-- Top (короткий текст) -->
+                                    <div class="control-wrapper">
+                                        <div class="tooltip-wrapper">
+                                            <button class="tooltip-trigger" aria-label="Подсказка" tabindex="0">
+                                                <span class="btn__icon" id="tooltip-info-top-short"></span>
+                                            </button>
+                                            <div class="tooltip-bubble tooltip--top tooltip--bubble" role="tooltip">
+                                                <div class="tooltip-text">Короткая подсказка</div>
+                                            </div>
+                                        </div>
+                                        <div class="component-name">Tooltip Top</div>
+                                    </div>
+
+                                    <!-- Right (короткий текст) -->
+                                    <div class="control-wrapper">
+                                        <div class="tooltip-wrapper">
+                                            <button class="tooltip-trigger" aria-label="Подсказка" tabindex="0">
+                                                <span class="btn__icon" id="tooltip-info-right"></span>
+                                            </button>
+                                            <div class="tooltip-bubble tooltip--right tooltip--bubble" role="tooltip">
+                                                <div class="tooltip-text">Короткая подсказка</div>
+                                            </div>
+                                        </div>
+                                        <div class="component-name">Tooltip Right</div>
+                                    </div>
+
+                                    <!-- Top (длинный текст, ширина 300px) -->
+                                    <div class="control-wrapper">
+                                        <div class="tooltip-wrapper">
+                                            <button class="tooltip-trigger" aria-label="Подсказка" tabindex="0">
+                                                <span class="btn__icon" id="tooltip-info-top"></span>
+                                            </button>
+                                            <div class="tooltip-bubble tooltip--top tooltip--long tooltip--bubble tooltip--inverted" role="tooltip">
+                                                <div class="tooltip-text">
+                                                    <p>Если Яндекс Вебмастер обнаруживает ошибки на сайте, информация об этом появляется в разделе. Сайт проверяется каждый день.</p>
+                                                    <p>Наличие информации об ошибках не влияет на ранжирование или индексацию сайта, но советуем исправлять «Критичные» и «Фатальные» ошибки. Подробнее.</p>
+                                                    <p>Если вы исправили ошибку, сообщение в Яндекс Вебмастере исчезнет после того, как робот посетит ваш сайт.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="component-name">Tooltip Top (long 300px)</div>
+                                    </div>
+
+                                    <!-- Left (короткий текст) -->
+                                    <div class="control-wrapper">
+                                        <div class="tooltip-wrapper">
+                                            <button class="tooltip-trigger" aria-label="Подсказка" tabindex="0">
+                                                <span class="btn__icon" id="tooltip-info-left"></span>
+                                            </button>
+                                            <div class="tooltip-bubble tooltip--left tooltip--diamond" role="tooltip">
+                                                <div class="tooltip-text">Короткая подсказка</div>
+                                            </div>
+                                        </div>
+                                        <div class="component-name">Tooltip Left</div>
+                                    </div>
+                                </div>
+                                <div class="component-name">Tooltip (4 стороны, короткий/длинный текст)</div>
                             </div>
                         </div>
                     </div>
