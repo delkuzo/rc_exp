@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Input с кнопкой - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
+        }
+        .back-link:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        .experiment-result {
+            margin-top: 40px;
+        }
+        
+        /* Переключатель темы */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+        .theme-toggle-btn:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .theme-toggle-btn:active {
+            transform: scale(0.95);
+        }
+        .theme-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Блоки форм подписки */
+        .subscription-form-block {
+            margin-bottom: var(--size-xxl);
+            max-width: 600px;
+        }
+
+        .subscription-form-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Ряд: input + кнопки в одной строке */
+        .subscription-row {
+            display: flex;
+            align-items: center;
+            gap: var(--size-s-spec); /* 12px по UI‑киту */
+        }
+
+        .buttons {
+            display: flex;
+            gap: var(--size-s);
+        }
+
+        /* Увеличенная ширина инпута на +50px относительно базовых 240px */
+        .subscription-row .input-container {
+            width: 290px;
+        }
+
+        /* Чекбокс под вторым рядом */
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: var(--size-s);
+            margin-top: var(--size-s);
+        }
+
+        .checkbox-text {
+            font-family: var(--typography-caption-2-font-family);
+            font-weight: var(--typography-caption-2-font-weight);
+            font-size: var(--typography-caption-2-font-size);
+            line-height: var(--typography-caption-2-line-height);
+            color: var(--color-text-secondary);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .subscription-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--size-m);
+            }
+
+            .buttons {
+                width: 100%;
+            }
+
+            .buttons .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <!-- Заголовок эксперимента -->
+        <header class="experiment-header">
+            <a href="../index.html" class="back-link" aria-label="Вернуться на главную">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <h1 class="experiment-title">Input с кнопкой</h1>
+            
+            <!-- Переключатель темы -->
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
+                <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Результаты эксперимента -->
+        <div class="experiment-result">
+            
+            <!-- Вариант 1: Простая форма подписки -->
+            <div class="subscription-form-block">
+                <div class="subscription-row">
+                    <div class="input-container">
+                        <input type="email" class="input-field" placeholder="Введите email" id="email-1" autocomplete="email">
+                        <button class="input-clear-button" type="button" aria-label="Очистить"></button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn btn--size-40 btn--style-action" type="button">Подписаться</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вариант 2: Форма с чекбоксом -->
+            <div class="subscription-form-block">
+                <div class="subscription-row">
+                    <div class="input-container">
+                        <input type="email" class="input-field" placeholder="Введите email" id="email-2" autocomplete="email">
+                        <button class="input-clear-button" type="button" aria-label="Очистить"></button>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn btn--size-40 btn--style-action" type="button" id="subscribe-2" disabled>Подписаться</button>
+                    </div>
+                </div>
+                <div class="checkbox-row">
+                    <label class="checkbox-container" for="agreement">
+                        <input type="checkbox" class="checkbox-input" id="agreement">
+                        <span class="checkbox-box"></span>
+                    </label>
+                    <div class="checkbox-text">Отправляя email, вы соглашаетесь с правилами сервиса</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // Переключение темы через data-theme + сохранение в localStorage
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            const themeIcon = document.querySelector('.theme-icon');
+            if (newTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+
+            // Устанавливаем корректную иконку при загрузке
+            const themeIcon = document.querySelector('.theme-icon');
+            if (savedTheme === 'dark') {
+                themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            }
+
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+            // Логика: у второго инпута кнопка disabled, пока не введен email
+            const email2 = document.getElementById('email-2');
+            const subscribe2 = document.getElementById('subscribe-2');
+            if (email2 && subscribe2) {
+                const updateState = () => {
+                    const hasValue = email2.value.trim().length > 0;
+                    const isValid = email2.checkValidity();
+                    subscribe2.disabled = !(hasValue && isValid);
+                };
+                email2.addEventListener('input', updateState);
+                updateState();
+            }
+        });
+    </script>
+</body>
+</html>
