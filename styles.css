@@ -2429,6 +2429,13 @@ label, label:focus, label:active, label:hover {
     color: var(--color-text-primary);
 }
 
+/* Ряд из двух Select как у input-states-row */
+.select-states-row {
+    display: flex;
+    gap: var(--size-m);
+    align-items: center;
+}
+
 
 
 /* Темная тема */
