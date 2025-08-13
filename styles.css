@@ -187,6 +187,11 @@ body {
     gap: 24px;
 }
 
+/* Выровнять кнопку темы по вертикали с табами: используем тот же верхний отступ */
+#theme-toggle {
+    margin-top: var(--size-l);
+}
+
 .navigation .tab-item {
     font-family: var(--typography-header-1-font-family);
     font-weight: var(--typography-header-1-font-weight);

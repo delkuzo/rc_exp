@@ -43,17 +43,25 @@ const toggleTheme = () => {
     console.log('data-theme атрибут:', document.body.getAttribute('data-theme'));
 };
 
-// Функция для обновления иконки
+// Функция для обновления иконки (делегируем UI‑kit отрисовку)
 const updateThemeIcon = (theme) => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const icon = themeToggle.querySelector('.theme-icon');
-    
-    if (theme === 'light') {
-        // Иконка солнца для светлой темы
-        icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-    } else {
-        // Иконка луны для темной темы
-        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+    // Рисуем иконку через систему иконок проекта
+    updateThemeToggleIcon();
+};
+
+// Обновить иконку UI-kit для тумблера темы
+const updateThemeToggleIcon = async () => {
+    const iconContainer = document.getElementById('themeIcon');
+    if (!iconContainer || !window.iconSystemV3) return;
+    try {
+        const theme = document.body.getAttribute('data-theme') || 'light';
+        // Иконки из набора: используем понятные метафоры "sun" / "moon"
+        const iconName = theme === 'dark' ? 'sun' : 'moon';
+        const size = 12; // для кнопки 32px
+        const svg = await window.iconSystemV3.renderIconOriginal(iconName, size, 'icon');
+        iconContainer.innerHTML = svg;
+    } catch (e) {
+        iconContainer.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>';
     }
 };
 
@@ -692,7 +700,7 @@ window.createPreviewButton = createPreviewButton;
 window.initSelectComponent = initSelectComponent; // Добавляем инициализацию Select в глобальную область
 
 // Инициализация иконок в кнопках
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM загружен, инициализируем компоненты...');
     
     // Инициализация переключения вкладок
@@ -722,10 +730,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Обработчик для переключения темы
     if (themeToggle) {
-        themeToggle.addEventListener('click', (e) => {
+        themeToggle.addEventListener('click', async (e) => {
             e.preventDefault();
-            console.log('Клик по переключателю темы');
             toggleTheme();
+            await updateThemeToggleIcon();
         });
     }
     

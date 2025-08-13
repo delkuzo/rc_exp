@@ -29,8 +29,8 @@
 <body>
   <div class="experiment-page">
     <div class="experiment-header">
-      <a href="../index.html#experiments" class="back-link" aria-label="Назад">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <a href="../index.html#experiments" class="btn btn--size-32 btn--style-fill btn--icon-only" aria-label="Назад">
+        <span class="btn__icon" id="backIcon-search"></span>
       </a>
       <h1 class="experiment-title">Search + Suggestions</h1>
     </div>
@@ -44,6 +44,9 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', savedTheme);
+      try { const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon'); const el = document.getElementById('backIcon-search'); if (el) el.innerHTML = svg; } catch {}
       const input = document.getElementById('searchInput');
       const sugg = document.getElementById('suggestions');
       const iconEl = document.getElementById('searchIcon');
