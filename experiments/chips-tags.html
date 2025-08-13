@@ -16,11 +16,14 @@
 
         /* Chips */
         .chips-row { display: flex; gap: var(--size-s); align-items: center; flex-wrap: wrap; }
-        .chip { display: inline-flex; align-items: center; gap: var(--size-xs); height: var(--size-xxl); padding: 0 var(--size-m); border-radius: var(--size-xxl); background: var(--color-control); color: var(--color-text-primary); cursor: pointer; transition: background-color .15s ease, color .15s ease; user-select: none; }
+        .chip { display: inline-flex; align-items: center; gap: var(--size-xs); padding: 0 var(--size-m); border-radius: 1000px; background: var(--color-control); color: var(--color-text-primary); cursor: pointer; transition: background-color .15s ease, color .15s ease; user-select: none; border: 1px solid var(--color-border-primary); }
         .chip:hover { background: var(--color-hover); }
-        .chip--active { background: var(--color-red); color: var(--color-white); }
+        .chip--active { background: var(--color-red); color: var(--color-white); border-color: var(--color-red); }
+        .chip--size-40 { height: var(--size-xxl); }
+        .chip--size-32 { height: var(--size-xl); padding: 0 var(--size-s-spec); }
         .chip__text { font-family: var(--typography-body-font-family); font-weight: var(--typography-body-font-weight); font-size: var(--typography-body-font-size); line-height: var(--typography-body-line-height); }
-        .chip__close { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; color: var(--color-text-secondary); transition: color .15s ease; }
+        .chip--size-32 .chip__text { font-size: var(--typography-caption-2-font-size); line-height: var(--typography-caption-2-line-height); }
+        .chip__close { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; color: var(--color-text-secondary); transition: color .15s ease; margin-left: var(--size-xs); }
         .chip:hover .chip__close { color: var(--color-text-primary); }
         .chip--active .chip__close { color: var(--color-white); opacity: .9; }
         .chip__close svg { width: 16px; height: 16px; display: block; }
@@ -39,10 +42,23 @@
         </div>
 
         <div class="section">
-            <div class="label">Категории</div>
-            <div class="chips-row" id="chipsRow">
-                <!-- наполняется снизу JS -->
-            </div>
+            <div class="label">Фильтры • размер 40</div>
+            <div class="chips-row" id="chipsFilters40"></div>
+        </div>
+
+        <div class="section">
+            <div class="label">Фильтры • размер 32</div>
+            <div class="chips-row" id="chipsFilters32"></div>
+        </div>
+
+        <div class="section">
+            <div class="label">Теги (с удалением) • размер 40</div>
+            <div class="chips-row" id="chipsTags40"></div>
+        </div>
+
+        <div class="section">
+            <div class="label">Теги (с удалением) • размер 32</div>
+            <div class="chips-row" id="chipsTags32"></div>
         </div>
     </div>
 
@@ -58,23 +74,24 @@
             } catch {}
 
             const items = ['Обувь', 'Мужская', 'Кроссовки', 'Бег', 'Зима', 'Кожа'];
-            const row = document.getElementById('chipsRow');
 
             // Рендер крестика
             const closeSvg = await (async () => {
                 try { return await window.iconSystemV3.renderIconOriginal('xmark', 16); } catch { return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg>'; }
             })();
 
-            const createChip = (label) => {
+            const createChip = (label, { removable = false, size = 40 } = {}) => {
                 const chip = document.createElement('button');
                 chip.type = 'button';
-                chip.className = 'chip';
-                chip.innerHTML = `<span class="chip__text">${label}</span><span class="chip__close" aria-hidden="true">${closeSvg}</span>`;
+                chip.className = `chip ${size === 32 ? 'chip--size-32' : 'chip--size-40'}`;
+                chip.innerHTML = removable
+                    ? `<span class="chip__text">${label}</span><span class="chip__close" aria-label="Удалить" title="Удалить">${closeSvg}</span>`
+                    : `<span class="chip__text">${label}</span>`;
 
                 // toggle по клику на чип (кроме крестика)
                 chip.addEventListener('click', (e) => {
                     const isClose = e.target.closest('.chip__close');
-                    if (isClose) {
+                    if (isClose && removable) {
                         e.stopPropagation();
                         chip.remove();
                         return;
@@ -85,7 +102,16 @@
                 return chip;
             };
 
-            items.forEach(label => row.appendChild(createChip(label)));
+            // Заполнение разделов
+            const fill = (containerId, rem, size) => {
+                const el = document.getElementById(containerId);
+                items.forEach(label => el.appendChild(createChip(label, { removable: rem, size })));
+            };
+
+            fill('chipsFilters40', false, 40);
+            fill('chipsFilters32', false, 32);
+            fill('chipsTags40', true, 40);
+            fill('chipsTags32', true, 32);
         });
     </script>
 </body>
