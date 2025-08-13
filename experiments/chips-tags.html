@@ -16,14 +16,16 @@
 
         /* Chips — 1:1 Figma (node 5194:994) */
         .chips-row { display: flex; gap: var(--size-xs); align-items: center; flex-wrap: wrap; }
-        .chip { display: inline-flex; align-items: center; gap: var(--size-xxs); height: 24px; padding: var(--size-xxxs) var(--size-xs); border-radius: var(--size-xxs); background: var(--color-control); color: var(--color-text-primary); cursor: pointer; transition: background-color .15s ease, color .15s ease; user-select: none; border: none; }
+        .chip { display: inline-flex; align-items: center; gap: var(--size-xxs); height: 24px; padding: var(--size-xxxs) var(--size-xs) var(--size-xxxs) var(--size-s); border-radius: var(--size-xxs); background: var(--color-control); color: var(--color-text-primary); cursor: pointer; transition: background-color .15s ease, color .15s ease; user-select: none; border: none; }
         .chip:hover { background: var(--color-hover); }
         .chip__text { font-family: var(--typography-caption-2-font-family); font-weight: var(--typography-caption-2-font-weight); font-size: var(--typography-caption-2-font-size); line-height: var(--typography-caption-2-line-height); }
         .chip__close { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; color: var(--color-text-primary); margin-left: var(--size-xxs); }
         .chip__close svg { width: 12px; height: 12px; display: block; }
 
         .section { margin-top: var(--size-xxl); }
-        .label { font-family: var(--typography-subheader-1-font-family); font-weight: var(--typography-subheader-1-font-weight); font-size: var(--typography-subheader-1-font-size); line-height: var(--typography-subheader-1-line-height); color: var(--color-text-secondary); margin-bottom: var(--size-m); }
+        .label { display: none; }
+        .chips-container { max-width: 600px; }
+        .chips-row { flex-wrap: wrap; }
     </style>
 </head>
 <body>
@@ -32,12 +34,13 @@
             <a href="../index.html#experiments" class="btn btn--size-32 btn--style-fill btn--icon-only" aria-label="Назад">
                 <span class="btn__icon" id="backIcon-chips"></span>
             </a>
-            <h1 class="experiment-title">Chips & Tags</h1>
+            <h1 class="experiment-title">Теги</h1>
         </div>
 
         <div class="section">
-            <div class="label">Теги (по макету)</div>
-            <div class="chips-row" id="chipsFilters40"></div>
+            <div class="chips-container">
+                <div class="chips-row" id="chipsRow"></div>
+            </div>
         </div>
     </div>
 
@@ -79,7 +82,7 @@
             };
 
             // Заполнение разделов
-            const el = document.getElementById('chipsFilters40');
+            const el = document.getElementById('chipsRow');
             items.forEach(label => el.appendChild(createChip(label)));
         });
     </script>
