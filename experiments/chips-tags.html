@@ -22,6 +22,11 @@
         .chip__close { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; color: var(--color-text-primary); margin-left: var(--size-xxs); }
         .chip__close svg { width: 12px; height: 12px; display: block; }
 
+        /* Крупная версия (Body + 16px icon) */
+        .chip--lg { height: var(--size-xl); padding: var(--size-xxs) var(--size-s) var(--size-xxs) var(--size-s-spec); gap: var(--size-xs); }
+        .chip--lg .chip__text { font-family: var(--typography-body-font-family); font-weight: var(--typography-body-font-weight); font-size: var(--typography-body-font-size); line-height: var(--typography-body-line-height); }
+        .chip--lg .chip__close, .chip--lg .chip__close svg { width: 16px; height: 16px; }
+
         .section { margin-top: var(--size-xxl); }
         .label { display: none; }
         .chips-container { max-width: 600px; }
@@ -40,6 +45,12 @@
         <div class="section">
             <div class="chips-container">
                 <div class="chips-row" id="chipsRow"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="chips-container">
+                <div class="chips-row" id="chipsRowLg"></div>
             </div>
         </div>
     </div>
@@ -62,10 +73,10 @@
                 try { return await window.iconSystemV3.renderIconOriginal('xmark', 16); } catch { return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg>'; }
             })();
 
-            const createChip = (label) => {
+            const createChip = (label, large = false) => {
                 const chip = document.createElement('button');
                 chip.type = 'button';
-                chip.className = 'chip';
+                chip.className = 'chip' + (large ? ' chip--lg' : '');
                 chip.innerHTML = `<span class="chip__text">${label}</span><span class="chip__close" aria-label="Удалить" title="Удалить">${closeSvg}</span>`;
 
                 // toggle по клику на чип (кроме крестика)
@@ -84,6 +95,9 @@
             // Заполнение разделов
             const el = document.getElementById('chipsRow');
             items.forEach(label => el.appendChild(createChip(label)));
+
+            const elLg = document.getElementById('chipsRowLg');
+            items.forEach(label => elLg.appendChild(createChip(label, true)));
         });
     </script>
 </body>
