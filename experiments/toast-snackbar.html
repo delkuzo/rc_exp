@@ -10,24 +10,24 @@
   <style>
     .experiment-page { max-width: 1200px; margin: 0; margin-left: 80px; padding: 40px 20px; }
     .experiment-header { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
-    .back-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--color-text-secondary); border: 1px solid var(--color-border-secondary); text-decoration: none; transition: all 0.2s ease; }
-    .back-link:hover { background: var(--color-hover); color: var(--color-text-primary); border-color: var(--color-border-primary); }
-    .back-link svg { width: 16px; height: 16px; }
     .experiment-title { font-family: var(--typography-display-1-font-family); font-weight: var(--typography-display-1-font-weight); font-size: var(--typography-display-1-font-size); line-height: var(--typography-display-1-line-height); color: var(--color-text-primary); margin: 0; }
-    .theme-toggle-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-bg-secondary); color: var(--color-text-secondary); border: 1px solid var(--color-border-secondary); cursor: pointer; transition: all 0.2s ease; }
-    .theme-toggle-btn:hover { background-color: var(--color-hover); color: var(--color-text-primary); border-color: var(--color-border-primary); }
-    .theme-toggle-btn:active { transform: scale(0.95); }
-    .theme-icon { width: 16px; height: 16px; transition: transform 0.3s ease; }
 
     /* Toast */
-    .toast-stack { position: fixed; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 100000; }
-    .toast { display: flex; align-items: flex-start; gap: var(--size-m); max-width: 420px; padding: var(--size-m); border-radius: var(--size-l); background: var(--color-bg-primary); color: var(--color-text-primary); border: 1px solid var(--color-border-secondary); box-shadow: var(--shadow-regular); }
-    .toast__icon { width: 16px; height: 16px; color: var(--color-text-primary); margin-top: 2px; }
+    .toast-stack { position: fixed; right: 24px; top: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 100000; }
+    .toast { position: relative; display: flex; flex-direction: column; gap: var(--size-s); width: 392px; padding: var(--size-m); padding-right: 56px; border-radius: var(--size-l); background: var(--color-bg-primary); color: var(--color-text-primary); border: none; box-shadow: var(--shadow-regular) !important; }
+    .toast:hover { box-shadow: var(--shadow-regular) !important; }
+    .toast__body { display: flex; align-items: flex-start; gap: var(--size-s); }
+    .toast__icon { display: none; }
     .toast__content { display: flex; flex-direction: column; gap: var(--size-xxs); }
-    .toast__title { font-family: var(--typography-subheader-1-font-family); font-size: var(--typography-subheader-1-font-size); font-weight: var(--typography-subheader-1-font-weight); line-height: var(--typography-subheader-1-line-height); }
-    .toast__text { font-family: var(--typography-body-font-family); font-size: var(--typography-body-font-size); line-height: var(--typography-body-line-height); color: var(--color-text-secondary); }
-    .toast__close { margin-left: auto; color: var(--color-text-secondary); width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
-    .toast__close:hover { color: var(--color-text-primary); }
+    .toast__title { font-family: var(--typography-header-1-font-family); font-size: var(--typography-header-1-font-size); font-weight: var(--typography-header-1-font-weight); line-height: var(--typography-header-1-line-height); }
+    .toast__text { font-family: var(--typography-body-font-family); font-size: var(--typography-body-font-size); line-height: var(--typography-body-line-height); color: var(--color-text-primary); }
+    .toast__footer { display: flex; justify-content: flex-start; gap: var(--size-s); margin-top: var(--size-xs); }
+    .toast__close { position: absolute; top: 8px; right: 8px; }
+    /* Варианты */
+    .toast--error .toast__title { color: var(--color-red); }
+    .toast--success .toast__title { color: var(--color-green); }
+    .toast--error .toast__icon { color: var(--color-red); }
+    .toast--success .toast__icon { color: var(--color-green); }
   </style>
 </head>
 <body>
@@ -37,75 +37,84 @@
         <span class="btn__icon" id="backIcon-toast"></span>
       </a>
       <h1 class="experiment-title">Toast / Snackbar</h1>
-      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Переключить тему">
-        <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a 4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
     </div>
-  </div>
 
-  <div class="toast-stack" id="toastStack"></div>
+    <!-- Контейнер для демонстрации тостов размещается фиксированно в правом верхнем углу -->
+    <div class="toast-stack" id="toastStack"></div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.body.setAttribute('data-theme', savedTheme);
-      try { const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon'); const el = document.getElementById('backIcon-toast'); if (el) el.innerHTML = svg; } catch {}
-    });
+      try {
+        const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon');
+        const el = document.getElementById('backIcon-toast');
+        if (el) el.innerHTML = svg;
+      } catch {}
 
-    function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      const themeIcon = document.querySelector('.theme-icon');
-      if (newTheme === 'dark') {
-        themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-      } else {
-        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', async () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.body.setAttribute('data-theme', savedTheme);
-      const themeIcon = document.querySelector('.theme-icon');
-      if (savedTheme === 'dark') {
-        themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-      } else {
-        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-      }
-      const toggle = document.getElementById('theme-toggle');
-      if (toggle) toggle.addEventListener('click', toggleTheme);
       const stack = document.getElementById('toastStack');
 
-      const icons = {
-        info: await window.iconSystemV3.renderIconOriginal('circle-info', 16),
-        close: await window.iconSystemV3.renderIconOriginal('xmark', 16)
-      };
+      const icons = { close: await window.iconSystemV3.renderIconOriginal('xmark', 16) };
 
-      const createToast = (title, text = '', type = 'info') => {
+      // options.buttons: [{ label: string, kind: 1|2|3|4 | 'action'|'fill'|'outline'|'blank' }]
+      const createToast = (title, text = '', type = 'info', options = {}) => {
         const el = document.createElement('div');
-        el.className = 'toast';
-        el.innerHTML = `
-          <span class="toast__icon">${icons[type]}</span>
-          <div class="toast__content">
-            <div class="toast__title">${title}</div>
-            ${text ? `<div class="toast__text">${text}</div>` : ''}
+        el.className = `toast toast--${type}`;
+        const kindToClass = {
+          1: 'btn--style-action', action: 'btn--style-action',
+          2: 'btn--style-fill',   fill:   'btn--style-fill',
+          3: 'btn--style-outline',outline:'btn--style-outline',
+          4: 'btn--style-blank',  blank:  'btn--style-blank'
+        };
+        const buttons = Array.isArray(options.buttons) ? options.buttons : [];
+        const footer = buttons.length ? `
+          <div class="toast__footer">
+            ${buttons.map((b) => {
+              const cls = kindToClass[b.kind] || 'btn--style-fill';
+              const label = b.label || 'Кнопка';
+              return `<button class="btn btn--size-32 ${cls}">${label}</button>`;
+            }).join('')}
           </div>
-          <button class="toast__close" aria-label="Закрыть" title="Закрыть">${icons.close}</button>
+        ` : '';
+        el.innerHTML = `
+          <div class="toast__body">
+            <div class="toast__content">
+              <div class="toast__title">${title}</div>
+              ${text ? `<div class="toast__text">${text}</div>` : ''}
+            </div>
+          </div>
+          ${footer}
+          <button class="toast__close btn btn--size-40 btn--style-blank btn--icon-only" aria-label="Закрыть" title="Закрыть"><span class="btn__icon">${icons.close}</span></button>
         `;
 
-        el.querySelector('.toast__close').addEventListener('click', () => el.remove());
+        // Поведение кнопок: крестик и обе кнопки в футере закрывают тост
+        const closeIconBtn = el.querySelector('.toast__close');
+        if (closeIconBtn) closeIconBtn.addEventListener('click', () => el.remove());
+        const footerButtons = el.querySelectorAll('.toast__footer .btn');
+        footerButtons.forEach(btn => btn.addEventListener('click', () => el.remove()));
         return el;
       };
 
-      // Демо 3 тостов
-      stack.appendChild(createToast('Сохранено', 'Изменения успешно сохранены.'));
-      stack.appendChild(createToast('Не удалось сохранить', 'Проверьте подключение к сети.'));
-      stack.appendChild(createToast('Уведомление', 'У вас новое сообщение.'));
+      // Демо: разные типы и разные наборы кнопок (можно менять последовательности и стили)
+      stack.appendChild(createToast('Сохранено', 'Изменения успешно сохранены.', 'success', {
+        buttons: [
+          { label: 'Ок', kind: 'fill' },
+          { label: 'Закрыть', kind: 'blank' }
+        ]
+      }));
+      stack.appendChild(createToast('Ошибка', 'Не удалось сохранить. Проверьте подключение к сети.', 'error', {
+        buttons: [
+          { label: 'Повторить', kind: 1 },
+          { label: 'Закрыть', kind: 2 }
+        ]
+      }));
+      stack.appendChild(createToast('Уведомление', 'У вас новое сообщение.', 'info', {
+        buttons: [
+          { label: 'Понятно', kind: 'action' },
+          { label: 'Закрыть', kind: 'fill' }
+        ]
+      }));
     });
   </script>
 </body>
