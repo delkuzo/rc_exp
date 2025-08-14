@@ -65,7 +65,7 @@ rc_exp/
 2. **✅ Система иконок** - интеграция высококачественных иконок Gravity UI
 3. **⏳ UI Kit в коде** - перенос компонентов из Figma
 4. **⏳ Эксперименты** - создание интерфейсных фрагментов
-   - Эталон: Toast / Snackbar (`experiments/toast-snackbar.html`)
+   - Эталоны: Toast / Snackbar (`experiments/toast-snackbar.html`), Search + Suggestions (`experiments/search-suggestions.html`)
 5. **⏳ Интерфейсы** - готовые макеты страниц
 6. **⏳ Документация** - полная документация проекта
 
