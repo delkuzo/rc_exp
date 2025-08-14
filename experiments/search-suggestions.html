@@ -16,14 +16,9 @@
     .back-link svg { width: 16px; height: 16px; }
     .experiment-title { font-family: var(--typography-display-1-font-family); font-weight: var(--typography-display-1-font-weight); font-size: var(--typography-display-1-font-size); line-height: var(--typography-display-1-line-height); color: var(--color-text-primary); margin: 0; }
 
-    .search-wrap { position: relative; width: 320px; }
-    /* Переводим на UI-kit input */
+    .search-wrap { display: flex; align-items: center; gap: var(--size-s-spec); }
+    .search-wrap .select-container { width: 320px; }
     .search-wrap .input-container { width: 100%; }
-    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); width: 16px; height: 16px; }
-
-    .suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--color-bg-primary); border: 1px solid var(--color-border-secondary); border-radius: var(--size-l); box-shadow: var(--shadow-regular); overflow: hidden; }
-    .sugg-item { padding: 8px 12px; cursor: pointer; }
-    .sugg-item:hover, .sugg-item.active { background: var(--color-hover); }
   </style>
 </head>
 <body>
@@ -36,12 +31,14 @@
     </div>
 
     <div class="search-wrap" id="searchWrap">
-      <div class="input-container">
-        <input class="input-field" id="searchInput" placeholder="Поиск" />
-        <button class="input-clear-button" type="button" aria-label="Очистить"></button>
+      <div class="select-container" id="searchSelect">
+        <div class="input-container">
+          <input class="input-field" id="searchInput" placeholder="Поиск" />
+          <button class="input-clear-button" type="button" aria-label="Очистить"></button>
+        </div>
+        <div class="select-dropdown" id="searchDropdown" role="listbox" aria-hidden="true"></div>
       </div>
-      <span class="search-icon" id="searchIcon"></span>
-      <div class="suggestions" id="suggestions" hidden></div>
+      <button class="btn btn--size-40 btn--style-action" id="searchBtn">Поиск</button>
     </div>
   </div>
 
@@ -51,35 +48,48 @@
       document.body.setAttribute('data-theme', savedTheme);
       try { const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon'); const el = document.getElementById('backIcon-search'); if (el) el.innerHTML = svg; } catch {}
       const input = document.getElementById('searchInput');
-      const sugg = document.getElementById('suggestions');
-      const iconEl = document.getElementById('searchIcon');
-      try { iconEl.innerHTML = await window.iconSystemV3.renderIconOriginal('search', 16); } catch {}
+      const dropdown = document.getElementById('searchDropdown');
+      const searchBtn = document.getElementById('searchBtn');
 
       const data = ['Обувь мужская', 'Обувь женская', 'Кроссовки', 'Ботинки', 'Сандалии', 'Зимняя обувь', 'Беговые кроссовки'];
       let activeIndex = -1;
 
       const open = (items) => {
-        sugg.innerHTML = items.map((t, i) => `<div class="sugg-item${i===activeIndex?' active':''}">${t}</div>`).join('');
-        sugg.hidden = false;
+        dropdown.innerHTML = items.map((t, i) => (
+          `<div class=\"select-option${i===activeIndex?' select-option-selected':''}\" role=\"option\" tabindex=\"0\"><span class=\"select-option-text\">${t}</span></div>`
+        )).join('');
+        dropdown.classList.add('select-dropdown-open');
+        dropdown.setAttribute('aria-hidden', 'false');
       };
-      const close = () => { sugg.hidden = true; activeIndex = -1; };
+      const close = () => { dropdown.classList.remove('select-dropdown-open'); dropdown.setAttribute('aria-hidden', 'true'); activeIndex = -1; };
 
-      input.addEventListener('input', () => {
+      const filter = () => {
         const v = input.value.trim().toLowerCase();
         const items = data.filter(x => x.toLowerCase().includes(v)).slice(0, 8);
         if (items.length) { open(items); } else { close(); }
+      };
+
+      input.addEventListener('input', filter);
+      searchBtn.addEventListener('click', filter);
+
+      dropdown.addEventListener('click', (e) => {
+        const opt = e.target.closest('.select-option');
+        if (!opt) return;
+        const text = opt.querySelector('.select-option-text')?.textContent || opt.textContent.trim();
+        input.value = text;
+        close();
       });
 
       input.addEventListener('keydown', (e) => {
-        if (sugg.hidden) return;
-        const items = [...sugg.querySelectorAll('.sugg-item')];
-        if (e.key === 'ArrowDown') { e.preventDefault(); activeIndex = Math.min(items.length-1, activeIndex+1); open(items.map(i=>i.textContent)); }
-        if (e.key === 'ArrowUp') { e.preventDefault(); activeIndex = Math.max(0, activeIndex-1); open(items.map(i=>i.textContent)); }
-        if (e.key === 'Enter' && activeIndex >= 0) { input.value = items[activeIndex].textContent; close(); }
+        const items = [...dropdown.querySelectorAll('.select-option')];
+        if (!dropdown.classList.contains('select-dropdown-open')) return;
+        if (e.key === 'ArrowDown') { e.preventDefault(); activeIndex = Math.min(items.length-1, activeIndex+1); items[activeIndex]?.focus(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); activeIndex = Math.max(0, activeIndex-1); items[activeIndex]?.focus(); }
+        if (e.key === 'Enter' && activeIndex >= 0) { e.preventDefault(); items[activeIndex]?.click(); }
         if (e.key === 'Escape') { close(); }
       });
 
-      document.addEventListener('click', (e) => { if (!e.target.closest('#searchWrap')) close(); });
+      document.addEventListener('click', (e) => { if (!e.target.closest('#searchSelect')) close(); });
     });
   </script>
 </body>
