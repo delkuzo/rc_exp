@@ -101,13 +101,13 @@
         .calendar-title-group { position: relative; }
         .calendar-title-button { display: inline-flex; align-items: center; gap: var(--size-xs); padding: 0; border-radius: 6px; background: transparent; border: none; color: var(--color-red); cursor: default; font-family: var(--typography-header-1-font-family); font-weight: var(--typography-header-1-font-weight); font-size: var(--typography-header-1-font-size); line-height: var(--typography-header-1-line-height); }
         .calendar-nav-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border: none; background: transparent; color: var(--color-red); cursor: pointer; transform: translateY(2px); }
-        .calendar-nav-btn:hover { background: transparent; color: var(--color-black); }
+        .calendar-nav-btn:hover { background: transparent; color: var(--color-text-primary); }
         .calendar-title-icon { width: 16px; height: 16px; display: inline-flex; }
         .calendar-title-text--month { display: inline; text-align: left; }
         .calendar-title-text--year { display: inline; text-align: right; }
         /* При ховере на стрелку затемняем соответствующий заголовок (месяц/год) */
-        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--month { color: var(--color-black); }
-        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--year { color: var(--color-black); }
+        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--month { color: var(--color-text-primary); }
+        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--year { color: var(--color-text-primary); }
         .calendar-dropdown { max-height: 180px; overflow-y: auto; margin-top: 4px; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--size-s); }
         .calendar-weekday { text-align: center; color: var(--color-text-secondary); font-family: var(--typography-caption-2-font-family); font-weight: var(--typography-caption-2-font-weight); font-size: var(--typography-caption-2-font-size); line-height: var(--typography-caption-2-line-height); }
