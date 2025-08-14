@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Календарь - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+
+        /* Календарь */
+        .calendar-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-m);
+            width: max-content;
+        }
+        .calendar-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--size-m);
+        }
+        .calendar-controls .spacer {
+            flex: 1;
+        }
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            gap: var(--size-s);
+        }
+        .calendar-titles {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--size-m);
+            justify-content: space-between;
+            width: calc(7 * 32px + 6 * var(--size-s)); /* ширина сетки: 7 колонок по 32 + 6 промежутков */
+        }
+        .calendar-title-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--size-xs);
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: transparent;
+            border: none;
+            color: var(--color-red);
+            cursor: pointer;
+            font-family: var(--typography-header-1-font-family);
+            font-weight: var(--typography-header-1-font-weight);
+            font-size: var(--typography-header-1-font-size);
+            line-height: var(--typography-header-1-line-height);
+        }
+        .calendar-title-button:hover { background: transparent; color: var(--color-text-primary); }
+        .calendar-title-icon { width: 16px; height: 16px; display: inline-flex; }
+        .calendar-title-text--month { display: inline; text-align: left; }
+        .calendar-title-text--year { display: inline-block; width: 72px; text-align: right; }
+        .calendar-title-group { position: relative; }
+        .calendar-dropdown { max-height: 180px; overflow-y: auto; margin-top: 4px; }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--size-s);
+        }
+        .calendar-weekday {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-family: var(--typography-caption-2-font-family);
+            font-weight: var(--typography-caption-2-font-weight);
+            font-size: var(--typography-caption-2-font-size);
+            line-height: var(--typography-caption-2-line-height);
+        }
+        .calendar-day-btn.btn {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Базово — как текст, без подложки */
+        .calendar-day-btn.btn.btn--style-blank { background: transparent; }
+        .calendar-day-btn.btn.btn--style-blank:hover { background: var(--color-control); }
+        .calendar-day-btn.is-other-month {
+            opacity: 0.5;
+        }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <div class="experiment-header">
+            <a href="../index.html#experiments" class="btn btn--size-32 btn--style-fill btn--icon-only" aria-label="Назад">
+                <span class="btn__icon" id="backIcon-calendar"></span>
+            </a>
+            <h1 class="experiment-title">Календарь</h1>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-controls">
+                <!-- Навигация и заголовок -->
+                <div class="calendar-header">
+                    <!-- стрелки листания убраны по ТЗ -->
+
+                    <div class="calendar-titles">
+                        <div class="calendar-title-group" id="monthTitleGroup">
+                            <button class="calendar-title-button" id="monthTitleBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="monthDropdown">
+                                <span class="calendar-title-text--month" id="monthTitleText">—</span>
+                                <span class="calendar-title-icon" id="monthChevron"></span>
+                            </button>
+                            <div class="select-dropdown calendar-dropdown" id="monthDropdown" role="listbox" aria-hidden="true"></div>
+                        </div>
+                        <div class="calendar-title-group" id="yearTitleGroup" style="margin-left:auto;">
+                            <button class="calendar-title-button" id="yearTitleBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="yearDropdown">
+                                <span class="calendar-title-text--year" id="yearTitleText">—</span>
+                                <span class="calendar-title-icon" id="yearChevron"></span>
+                            </button>
+                            <div class="select-dropdown calendar-dropdown" id="yearDropdown" role="listbox" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!-- Заголовки дней недели -->
+            <div class="calendar-grid" id="calendarWeekdays" aria-hidden="true"></div>
+
+            <!-- Сетка дней -->
+            <div class="calendar-grid" id="calendarDays" role="grid" aria-label="Выбор даты"></div>
+
+            
+
+            <div id="calendarStatus" class="sr-only" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            try {
+                const chevronDown = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                const back = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon');
+                const backEl = document.getElementById('backIcon-calendar'); if (backEl) backEl.innerHTML = back;
+                const monthCh = document.getElementById('monthChevron'); if (monthCh) monthCh.innerHTML = chevronDown;
+                const yearCh = document.getElementById('yearChevron'); if (yearCh) yearCh.innerHTML = chevronDown;
+            } catch {}
+
+            initCalendar();
+        });
+
+        function initCalendar() {
+            const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+            const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+            const state = {
+                viewYear: new Date().getFullYear(),
+                viewMonth: new Date().getMonth(),
+                selected: null, // { y, m, d }
+                today: new Date()
+            };
+
+            const weekdaysContainer = document.getElementById('calendarWeekdays');
+            const daysContainer = document.getElementById('calendarDays');
+            const monthTitleBtn = document.getElementById('monthTitleBtn');
+            const monthTitleText = document.getElementById('monthTitleText');
+            const monthDropdown = document.getElementById('monthDropdown');
+            const yearTitleBtn = document.getElementById('yearTitleBtn');
+            const yearTitleText = document.getElementById('yearTitleText');
+            const yearDropdown = document.getElementById('yearDropdown');
+            const statusEl = document.getElementById('calendarStatus');
+            // Упрощенная шапка: без селектов, только стрелки и текущий месяц/год
+
+            // Рендер заголовков дней недели
+            weekdaysContainer.innerHTML = '';
+            weekdays.forEach(w => {
+                const el = document.createElement('div');
+                el.className = 'calendar-weekday';
+                el.textContent = w;
+                weekdaysContainer.appendChild(el);
+            });
+
+            // Заполняем выпадающие списки в заголовке
+            monthDropdown.innerHTML = monthNames.map((name, idx) => (
+                `<div class=\"select-option\" role=\"option\" data-value=\"${idx}\" tabindex=\"0\"><span class=\"select-option-text\">${name}</span></div>`
+            )).join('');
+            // Годы: текущий и 10 лет назад, вперед не бежим
+            const baseYear = 2026; // по ТЗ ориентируемся на 2026 как верхнюю точку
+            const years = Array.from({length: 11}, (_, i) => baseYear - i); // 2026, 2025, ... 2016
+            yearDropdown.innerHTML = years.map(y => (
+                `<div class=\"select-option\" role=\"option\" data-value=\"${y}\" tabindex=\"0\"><span class=\"select-option-text\">${y}</span></div>`
+            )).join('');
+
+            function setMonthYearLabel() {
+                monthTitleText.textContent = monthNames[state.viewMonth];
+                yearTitleText.textContent = String(state.viewYear);
+            }
+
+            function compareDates(y, m, d, dateObj) {
+                return y === dateObj.getFullYear() && m === dateObj.getMonth() && d === dateObj.getDate();
+            }
+
+            function renderDays() {
+                daysContainer.innerHTML = '';
+
+                // Рассчитываем первый день месяца с понедельника
+                const firstOfMonth = new Date(state.viewYear, state.viewMonth, 1);
+                let startWeekDay = firstOfMonth.getDay(); // 0..6 (вс..сб)
+                if (startWeekDay === 0) startWeekDay = 7; // вс -> 7
+                const daysInPrevMonth = new Date(state.viewYear, state.viewMonth, 0).getDate();
+                const daysInMonth = new Date(state.viewYear, state.viewMonth + 1, 0).getDate();
+
+                // Количество ячеек до первого числа (понедельник = 1)
+                const leading = startWeekDay - 1;
+                const totalCells = Math.ceil((leading + daysInMonth) / 7) * 7;
+
+                for (let cell = 0; cell < totalCells; cell++) {
+                    const dayNum = cell - leading + 1;
+                    const isPrev = cell < leading;
+                    const isNext = cell >= (leading + daysInMonth);
+
+                    let y = state.viewYear;
+                    let m = state.viewMonth;
+                    let d;
+                    if (isPrev) {
+                        m = (m + 11) % 12;
+                        y = state.viewMonth === 0 ? y - 1 : y;
+                        d = daysInPrevMonth - (leading - cell - 1);
+                    } else if (isNext) {
+                        m = (m + 1) % 12;
+                        y = state.viewMonth === 11 ? y + 1 : y;
+                        d = (cell - (leading + daysInMonth)) + 1;
+                    } else {
+                        d = dayNum;
+                    }
+
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    // Базово: невидимая (blank) окружность как на iOS
+                    btn.className = 'btn btn--size-32 btn--style-blank btn--icon-only calendar-day-btn';
+                    btn.textContent = String(d);
+                    btn.setAttribute('role', 'gridcell');
+                    btn.dataset.y = String(y);
+                    btn.dataset.m = String(m);
+                    btn.dataset.d = String(d);
+
+                    if (isPrev || isNext) btn.classList.add('is-other-month');
+                    // Сегодня — выделяем как нажатую action-кнопку (красная)
+                    if (compareDates(y, m, d, state.today)) {
+                        btn.classList.remove('btn--style-blank');
+                        btn.classList.add('btn--style-action', 'is-today');
+                    }
+                    // Выбранная дата — выделяем outline (вторично)
+                    if (state.selected && y === state.selected.y && m === state.selected.m && d === state.selected.d) {
+                        btn.classList.remove('btn--style-blank');
+                        btn.classList.add('btn--style-outline');
+                    }
+
+                    btn.addEventListener('click', () => {
+                        state.viewYear = y;
+                        state.viewMonth = m;
+                        state.selected = { y, m, d };
+                        setMonthYearLabel();
+                        renderDays();
+                        if (statusEl) statusEl.textContent = `Выбрана дата ${String(d).padStart(2,'0')}.${String(m+1).padStart(2,'0')}.${y}`;
+                    });
+
+                    daysContainer.appendChild(btn);
+                }
+            }
+
+            // Навигация по месяцам
+            // стрелки листания убраны, переключение через dropdown
+
+            // Dropdowns в шапке
+            const openDropdown = (btn, dd, chevron) => {
+                btn.setAttribute('aria-expanded', 'true');
+                dd.setAttribute('aria-hidden', 'false');
+                dd.classList.add('select-dropdown-open');
+                if (chevron) chevron.classList.add('select-icon-up');
+            };
+            const closeDropdown = (btn, dd, chevron) => {
+                btn.setAttribute('aria-expanded', 'false');
+                dd.setAttribute('aria-hidden', 'true');
+                dd.classList.remove('select-dropdown-open');
+                if (chevron) chevron.classList.remove('select-icon-up');
+            };
+            const toggle = (btn, dd, chevron) => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                if (expanded) closeDropdown(btn, dd, chevron); else openDropdown(btn, dd, chevron);
+            };
+            const monthChevronEl = document.getElementById('monthChevron');
+            const yearChevronEl = document.getElementById('yearChevron');
+            monthTitleBtn.addEventListener('click', () => toggle(monthTitleBtn, monthDropdown, monthChevronEl));
+            yearTitleBtn.addEventListener('click', () => toggle(yearTitleBtn, yearDropdown, yearChevronEl));
+
+            monthDropdown.addEventListener('click', (e) => {
+                const opt = e.target.closest('.select-option');
+                if (!opt) return;
+                state.viewMonth = Number(opt.dataset.value);
+                setMonthYearLabel();
+                renderDays();
+                closeDropdown(monthTitleBtn, monthDropdown, monthChevronEl);
+            });
+
+            yearDropdown.addEventListener('click', (e) => {
+                const opt = e.target.closest('.select-option');
+                if (!opt) return;
+                state.viewYear = Number(opt.dataset.value);
+                setMonthYearLabel();
+                renderDays();
+                closeDropdown(yearTitleBtn, yearDropdown, yearChevronEl);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!document.getElementById('monthTitleGroup').contains(e.target)) {
+                    closeDropdown(monthTitleBtn, monthDropdown, monthChevronEl);
+                }
+                if (!document.getElementById('yearTitleGroup').contains(e.target)) {
+                    closeDropdown(yearTitleBtn, yearDropdown, yearChevronEl);
+                }
+            });
+
+            // Закрытие по Esc
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeDropdown(monthTitleBtn, monthDropdown, monthChevronEl);
+                    closeDropdown(yearTitleBtn, yearDropdown, yearChevronEl);
+                }
+            });
+
+            // (селекты убраны)
+
+            setMonthYearLabel();
+            renderDays();
+        }
+    </script>
+</body>
+</html>
+
+
