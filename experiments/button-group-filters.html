@@ -314,17 +314,17 @@
                             <div class="calendar-container">
                                 <div class="calendar-header">
                                     <div class="calendar-titles">
-                                        <button class="calendar-nav-btn" id="monthPrevBtn" aria-label="Предыдущий месяц">◀</button>
+                                        <button class="calendar-nav-btn" id="monthPrevBtn" aria-label="Предыдущий месяц"><span id="iconMonthPrev"></span></button>
                                         <div class="calendar-title-group">
                                             <div class="calendar-title-button"><span class="calendar-title-text--month" id="monthTitleText2">—</span></div>
                                         </div>
-                                        <button class="calendar-nav-btn" id="monthNextBtn" aria-label="Следующий месяц">▶</button>
+                                        <button class="calendar-nav-btn" id="monthNextBtn" aria-label="Следующий месяц"><span id="iconMonthNext"></span></button>
                                         <div style="width:16px;"></div>
-                                        <button class="calendar-nav-btn" id="yearPrevBtn" aria-label="Предыдущий год">◀</button>
+                                        <button class="calendar-nav-btn" id="yearPrevBtn" aria-label="Предыдущий год"><span id="iconYearPrev"></span></button>
                                         <div class="calendar-title-group">
                                             <div class="calendar-title-button"><span class="calendar-title-text--year" id="yearTitleText2">—</span></div>
                                         </div>
-                                        <button class="calendar-nav-btn" id="yearNextBtn" aria-label="Следующий год">▶</button>
+                                        <button class="calendar-nav-btn" id="yearNextBtn" aria-label="Следующий год"><span id="iconYearNext"></span></button>
                                     </div>
                                 </div>
                                 <div class="calendar-grid" id="calendarWeekdays2" aria-hidden="true"></div>
@@ -353,6 +353,15 @@
             } catch {}
             // Инициализация всех локальных select-компонентов в этой странице
             initializeLocalSelects();
+            // Рендерим иконки chevron для навигации календаря (вариант 2)
+            try {
+                const left = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon');
+                const right = await window.iconSystemV3.renderIconOriginal('chevron-right', 16, 'icon');
+                const mPrev = document.getElementById('iconMonthPrev'); if (mPrev) mPrev.innerHTML = left;
+                const mNext = document.getElementById('iconMonthNext'); if (mNext) mNext.innerHTML = right;
+                const yPrev = document.getElementById('iconYearPrev'); if (yPrev) yPrev.innerHTML = left;
+                const yNext = document.getElementById('iconYearNext'); if (yNext) yNext.innerHTML = right;
+            } catch {}
         });
 
         function initializeLocalSelects() {
