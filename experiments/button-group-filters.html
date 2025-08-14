@@ -95,14 +95,19 @@
         /* Встроенный календарь в dropdown (берем стили из эксперимента "Календарь") */
         .calendar-container { display: flex; flex-direction: column; gap: var(--size-m); width: max-content; padding: var(--size-m); }
         .calendar-header { display: flex; align-items: center; gap: var(--size-s); }
-        .calendar-titles { display: inline-flex; align-items: center; gap: var(--size-m); justify-content: space-between; width: auto; }
+        .calendar-titles { display: inline-flex; align-items: center; justify-content: flex-start; gap: 0; width: 100%; }
+        .calendar-side { display: inline-flex; align-items: center; gap: var(--size-s); }
+        .calendar-gap { flex: 0 0 var(--size-m); width: var(--size-m); }
         .calendar-title-group { position: relative; }
-        .calendar-title-button { display: inline-flex; align-items: center; gap: var(--size-xs); padding: 4px 8px; border-radius: 6px; background: transparent; border: none; color: var(--color-red); cursor: default; font-family: var(--typography-header-1-font-family); font-weight: var(--typography-header-1-font-weight); font-size: var(--typography-header-1-font-size); line-height: var(--typography-header-1-line-height); }
-        .calendar-nav-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border: none; background: transparent; border-radius: 6px; color: var(--color-text-primary); cursor: pointer; }
-        .calendar-nav-btn:hover { background: var(--color-hover); }
+        .calendar-title-button { display: inline-flex; align-items: center; gap: var(--size-xs); padding: 0; border-radius: 6px; background: transparent; border: none; color: var(--color-red); cursor: default; font-family: var(--typography-header-1-font-family); font-weight: var(--typography-header-1-font-weight); font-size: var(--typography-header-1-font-size); line-height: var(--typography-header-1-line-height); }
+        .calendar-nav-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border: none; background: transparent; color: var(--color-red); cursor: pointer; transform: translateY(2px); }
+        .calendar-nav-btn:hover { background: transparent; color: var(--color-black); }
         .calendar-title-icon { width: 16px; height: 16px; display: inline-flex; }
         .calendar-title-text--month { display: inline; text-align: left; }
-        .calendar-title-text--year { display: inline-block; width: 72px; text-align: right; }
+        .calendar-title-text--year { display: inline; text-align: right; }
+        /* При ховере на стрелку затемняем соответствующий заголовок (месяц/год) */
+        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--month { color: var(--color-black); }
+        .calendar-side:has(.calendar-nav-btn:hover) .calendar-title-text--year { color: var(--color-black); }
         .calendar-dropdown { max-height: 180px; overflow-y: auto; margin-top: 4px; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--size-s); }
         .calendar-weekday { text-align: center; color: var(--color-text-secondary); font-family: var(--typography-caption-2-font-family); font-weight: var(--typography-caption-2-font-weight); font-size: var(--typography-caption-2-font-size); line-height: var(--typography-caption-2-line-height); }
@@ -112,7 +117,7 @@
         .calendar-day-btn.is-other-month { opacity: 0.5; }
 
         /* Расширяем дропдаун под календарь (не ограничивать шириной кнопки) */
-        #selectDropdown-month2 { right: auto; width: auto; min-width: 360px; }
+        #selectDropdown-month2 { right: auto; width: auto; min-width: calc(7 * 32px + 6 * var(--size-s) + 2 * var(--size-m)); }
 
         /* Адаптивность: на мобильных переносим в столбик */
         @media (max-width: 768px) {
@@ -314,17 +319,21 @@
                             <div class="calendar-container">
                                 <div class="calendar-header">
                                     <div class="calendar-titles">
-                                        <button class="calendar-nav-btn" id="monthPrevBtn" aria-label="Предыдущий месяц"><span id="iconMonthPrev"></span></button>
-                                        <div class="calendar-title-group">
-                                            <div class="calendar-title-button"><span class="calendar-title-text--month" id="monthTitleText2">—</span></div>
+                                        <div class="calendar-side" style="justify-content:flex-start; gap: 8px; flex: 0 0 auto;">
+                                            <button class="calendar-nav-btn" id="monthPrevBtn" aria-label="Предыдущий месяц"><span id="iconMonthPrev"></span></button>
+                                            <div class="calendar-title-group">
+                                                <div class="calendar-title-button"><span class="calendar-title-text--month" id="monthTitleText2">—</span></div>
+                                            </div>
+                                            <button class="calendar-nav-btn" id="monthNextBtn" aria-label="Следующий месяц"><span id="iconMonthNext"></span></button>
                                         </div>
-                                        <button class="calendar-nav-btn" id="monthNextBtn" aria-label="Следующий месяц"><span id="iconMonthNext"></span></button>
-                                        <div style="width:16px;"></div>
-                                        <button class="calendar-nav-btn" id="yearPrevBtn" aria-label="Предыдущий год"><span id="iconYearPrev"></span></button>
-                                        <div class="calendar-title-group">
-                                            <div class="calendar-title-button"><span class="calendar-title-text--year" id="yearTitleText2">—</span></div>
+                                        <div class="calendar-gap" style="flex: 1 1 auto;"></div>
+                                        <div class="calendar-side" style="justify-content:flex-end; margin-left:auto; gap: 8px; flex: 0 0 auto; min-width: max-content;">
+                                            <button class="calendar-nav-btn" id="yearPrevBtn" aria-label="Предыдущий год"><span id="iconYearPrev"></span></button>
+                                            <div class="calendar-title-group">
+                                                <div class="calendar-title-button"><span class="calendar-title-text--year" id="yearTitleText2">—</span></div>
+                                            </div>
+                                            <button class="calendar-nav-btn" id="yearNextBtn" aria-label="Следующий год"><span id="iconYearNext"></span></button>
                                         </div>
-                                        <button class="calendar-nav-btn" id="yearNextBtn" aria-label="Следующий год"><span id="iconYearNext"></span></button>
                                     </div>
                                 </div>
                                 <div class="calendar-grid" id="calendarWeekdays2" aria-hidden="true"></div>
@@ -454,8 +463,22 @@
                 });
             });
 
-            // Клик вне — закрыть все
-            document.addEventListener('click', () => closeAll());
+            // Клик вне — закрыть все, но если клик внутри конкретного контейнера, его не закрываем
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                containers.forEach(cn => {
+                    if (cn.contains(target)) return; // не закрываем тот, в котором клик
+                    const btn = cn.querySelector('.select-button');
+                    const dd = cn.querySelector('.select-dropdown');
+                    const icon = cn.querySelector('.select-icon');
+                    if (dd && dd.classList.contains('select-dropdown-open')) {
+                        dd.classList.remove('select-dropdown-open');
+                        btn && btn.setAttribute('aria-expanded', 'false');
+                        icon && icon.classList.remove('select-icon-up');
+                        dd.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            });
 
             // Инициализация встроенного календаря для селекта месяца (вторая версия)
             initEmbeddedCalendar();
@@ -467,18 +490,13 @@
             const weekdays = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
             const state = { viewYear: new Date().getFullYear(), viewMonth: new Date().getMonth(), selected: null, today: new Date() };
 
-            const monthTitleBtn = document.getElementById('monthTitleBtn2');
             const monthTitleText = document.getElementById('monthTitleText2');
-            const monthDropdown = document.getElementById('monthDropdown2');
-            const monthChevron = document.getElementById('monthChevron2');
-            const yearTitleBtn = document.getElementById('yearTitleBtn2');
             const yearTitleText = document.getElementById('yearTitleText2');
-            const yearDropdown = document.getElementById('yearDropdown2');
             const weekdaysContainer = document.getElementById('calendarWeekdays2');
             const daysContainer = document.getElementById('calendarDays2');
-            const monthTextOnButton = document.getElementById('monthText');
+            const monthTextOnButton = document.getElementById('monthText2');
 
-            if (!monthTitleBtn || !daysContainer) return;
+            if (!monthTitleText || !yearTitleText || !weekdaysContainer || !daysContainer) return;
 
             // Кнопки навигации месяца/года
             const monthPrevBtn = document.getElementById('monthPrevBtn');
@@ -490,9 +508,8 @@
             weekdaysContainer.innerHTML = '';
             weekdays.forEach(w => { const el = document.createElement('div'); el.className = 'calendar-weekday'; el.textContent = w; weekdaysContainer.appendChild(el); });
 
-            // Раньше были выпадающие списки месяца/года — убираем их в этой версии
-
             function setMonthYearLabel() {
+                // Показываем текущий месяц, но для стабилизации ширины сам контейнер имеет padding
                 monthTitleText.textContent = monthNames[state.viewMonth];
                 yearTitleText.textContent = String(state.viewYear);
             }
@@ -526,18 +543,10 @@
                     btn.addEventListener('click', () => {
                         state.viewYear = y; state.viewMonth = m; state.selected = { y, m, d };
                         setMonthYearLabel(); renderDays();
-                        // Проставляем выбранную дату в текст кнопки селекта и закрываем dropdown
-                        const monthLabel = monthNames[m];
-                        monthTextOnButton.textContent = `${String(d).padStart(2,'0')} ${monthLabel} ${y}`;
-                        const monthSelectContainer = document.querySelector('[data-select="month"]');
-                        if (monthSelectContainer) {
-                            const dd = monthSelectContainer.querySelector('#selectDropdown-month');
-                            const btn = monthSelectContainer.querySelector('#selectButton-month');
-                            const icon = monthSelectContainer.querySelector('#selectIcon-month');
-                            if (dd) dd.classList.remove('select-dropdown-open');
-                            if (btn) btn.setAttribute('aria-expanded','false');
-                            if (icon) icon.classList.remove('select-icon-up');
-                            if (dd) dd.setAttribute('aria-hidden','true');
+                        // Проставляем выбранную дату в текст кнопки селекта и закрываем dropdown (вариант 2)
+                        if (monthTextOnButton) {
+                            const monthLabel = monthNames[m];
+                            monthTextOnButton.textContent = `${String(d).padStart(2,'0')} ${monthLabel} ${y}`;
                         }
                     });
                     daysContainer.appendChild(btn);
@@ -545,10 +554,10 @@
             }
 
             // Обработчики стрелок
-            monthPrevBtn.addEventListener('click', () => { state.viewMonth = (state.viewMonth + 11) % 12; if (state.viewMonth === 11) state.viewYear -= 1; setMonthYearLabel(); renderDays(); });
-            monthNextBtn.addEventListener('click', () => { state.viewMonth = (state.viewMonth + 1) % 12; if (state.viewMonth === 0) state.viewYear += 1; setMonthYearLabel(); renderDays(); });
-            yearPrevBtn.addEventListener('click', () => { state.viewYear -= 1; setMonthYearLabel(); renderDays(); });
-            yearNextBtn.addEventListener('click', () => { state.viewYear += 1; setMonthYearLabel(); renderDays(); });
+            monthPrevBtn && monthPrevBtn.addEventListener('click', () => { state.viewMonth = (state.viewMonth + 11) % 12; if (state.viewMonth === 11) state.viewYear -= 1; setMonthYearLabel(); renderDays(); });
+            monthNextBtn && monthNextBtn.addEventListener('click', () => { state.viewMonth = (state.viewMonth + 1) % 12; if (state.viewMonth === 0) state.viewYear += 1; setMonthYearLabel(); renderDays(); });
+            yearPrevBtn && yearPrevBtn.addEventListener('click', () => { state.viewYear -= 1; setMonthYearLabel(); renderDays(); });
+            yearNextBtn && yearNextBtn.addEventListener('click', () => { state.viewYear += 1; setMonthYearLabel(); renderDays(); });
 
             setMonthYearLabel(); renderDays();
         }
