@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Поле для ввода текста - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        
+        .experiment-result {
+            margin-top: 40px;
+        }
+        
+        /* Стили для текст-эрии как у обычного input */
+        .text-aria-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 150px;
+            padding: var(--size-s) var(--size-m);
+            border-radius: 12px;
+            border: 1px solid var(--color-border-primary);
+            background: var(--color-bg-primary);
+            transition: all 0.2s ease;
+            cursor: text;
+        }
+        
+        .text-aria-container:hover {
+            border-color: var(--color-text-primary);
+        }
+        
+        .text-aria-container:focus-within {
+            border-color: var(--color-text-primary);
+        }
+        
+        .text-aria-input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: var(--typography-body-font-family);
+            font-weight: var(--typography-body-font-weight);
+            font-size: var(--typography-body-font-size);
+            line-height: var(--typography-body-line-height);
+            color: var(--color-text-primary);
+            resize: none;
+        }
+        
+        .text-aria-input::placeholder {
+            color: var(--color-text-secondary);
+        }
+        
+        .text-aria-stats {
+            position: absolute;
+            bottom: var(--size-s);
+            left: var(--size-s);
+            right: var(--size-s);
+            font-family: var(--typography-caption-font-family);
+            font-weight: var(--typography-caption-font-weight);
+            font-size: var(--typography-caption-font-size);
+            line-height: var(--typography-caption-line-height);
+            color: var(--color-text-secondary);
+            background-color: var(--color-bg-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-align: left;
+        }
+        
+        .text-aria-lines {
+            font-weight: var(--typography-subheader-2-font-weight);
+            color: var(--color-text-primary);
+        }
+        
+        .text-aria-total {
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <div class="experiment-header">
+            <a href="../index.html#experiments" class="btn btn--size-32 btn--style-fill btn--icon-only" aria-label="Назад">
+                <span class="btn__icon" id="backIcon-ta"></span>
+            </a>
+            <h1 class="experiment-title">Поле для ввода текста</h1>
+        </div>
+        
+        <div class="experiment-result">
+            <div class="text-aria-container">
+                <textarea 
+                    class="text-aria-input" 
+                    placeholder="Введите текст или ссылку"
+                    id="textAriaInput"
+                ></textarea>
+                <div class="text-aria-stats">
+                    <span class="text-aria-lines" id="linesCount">0</span>
+                    <span class="text-aria-total"> / 100 строк</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 16px; display: flex; gap: var(--size-s);">
+                <button class="btn btn--size-40 btn--style-primary">
+                    Отправить
+                </button>
+                <button class="btn btn--size-40 btn--style-outline" id="clearButton">
+                    Очистить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Применяем сохраненную тему
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            // Рендерим иконку Back
+            try {
+                const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon');
+                const el = document.getElementById('backIcon-ta');
+                if (el) el.innerHTML = svg;
+            } catch {}
+            
+            // Функция подсчета строк
+            function updateLinesCount() {
+                const textarea = document.getElementById('textAriaInput');
+                const linesCount = document.getElementById('linesCount');
+                
+                if (textarea && linesCount) {
+                    const lines = textarea.value.split('\n').filter(line => line.trim() !== '').length;
+                    linesCount.textContent = lines;
+                }
+            }
+            
+            const textarea = document.getElementById('textAriaInput');
+            const clearButton = document.getElementById('clearButton');
+            
+            if (textarea) {
+                // Подсчет строк при вводе
+                textarea.addEventListener('input', updateLinesCount);
+                
+                // Подсчет строк при изменении размера
+                textarea.addEventListener('resize', updateLinesCount);
+                
+                // Начальный подсчет
+                updateLinesCount();
+            }
+            
+            if (clearButton) {
+                // Очистка текста при клике на кнопку
+                clearButton.addEventListener('click', function() {
+                    if (textarea) {
+                        textarea.value = '';
+                        updateLinesCount();
+                        textarea.focus();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
