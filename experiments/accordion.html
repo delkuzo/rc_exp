@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент: Аккордеон - RC Experiment</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../icons/icon-system-v3.js"></script>
+    <style>
+        .experiment-page {
+            max-width: 1200px;
+            margin: 0;
+            margin-left: 80px;
+            padding: 40px 20px;
+        }
+        .experiment-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border-secondary);
+        }
+        .back-link:hover {
+            background-color: var(--color-hover);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-primary);
+        }
+        .back-link svg { width: 16px; height: 16px; }
+        .experiment-title {
+            font-family: var(--typography-display-2-font-family);
+            font-weight: var(--typography-display-2-font-weight);
+            font-size: var(--typography-display-2-font-size);
+            line-height: var(--typography-display-2-line-height);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+        .experiment-result {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="experiment-page">
+        <div class="experiment-header">
+            <a href="../index.html#experiments" class="btn btn--size-32 btn--style-fill btn--icon-only" aria-label="Назад">
+                <span class="btn__icon" id="backIcon-accordion"></span>
+            </a>
+            <h1 class="experiment-title">Аккордеон</h1>
+        </div>
+
+        <div class="experiment-result">
+            <!-- Здесь будет контент эксперимента -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            try { 
+                const svg = await window.iconSystemV3.renderIconOriginal('chevron-left', 16, 'icon'); 
+                const el = document.getElementById('backIcon-accordion'); 
+                if (el) el.innerHTML = svg; 
+            } catch {}
+        });
+    </script>
+</body>
+</html>
